@@ -65,8 +65,8 @@ body {
 }
 
 .site-logo {
-    height: 150px;
-    width: 150px;
+    height: 80px;
+    width: 80px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -465,8 +465,8 @@ body {
     }
     
     .site-logo {
-        height: 100px;
-        width: 100px;
+        height: 60px;
+        width: 60px;
     }
     
     .site-description {
