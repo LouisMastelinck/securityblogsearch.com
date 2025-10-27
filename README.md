@@ -51,6 +51,8 @@ We welcome contributions! To submit a blog post:
 3. Add required front matter (see below)
 4. Submit a pull request
 
+**Note for External Contributors:** For security, external contributors can only modify files in the `_posts/` directory. Pull requests that modify other files (configuration, layouts, workflows, etc.) will be automatically blocked. See [.github/RULESETS.md](.github/RULESETS.md) for more information.
+
 ### Post Format
 
 ```yaml

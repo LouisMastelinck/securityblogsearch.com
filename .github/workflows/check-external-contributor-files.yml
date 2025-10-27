@@ -1,0 +1,109 @@
+---
+name: Check Modified Files for External Contributors
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-modified-files:
+    runs-on: ubuntu-latest
+    # Only run for PRs from forks or non-admin users
+    if: >
+      github.event.pull_request.head.repo.fork == true ||
+      github.event.pull_request.author_association != 'OWNER'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v41
+        with:
+          base_sha: ${{ github.event.pull_request.base.sha }}
+          sha: ${{ github.event.pull_request.head.sha }}
+
+      - name: Check if only _posts modified
+        run: |
+          echo "Checking files modified by external contributor..."
+          echo "PR Author: ${{ github.event.pull_request.user.login }}"
+          AUTH_ASSOC="${{ github.event.pull_request.author_association }}"
+          echo "Author Association: ${AUTH_ASSOC}"
+
+          # List all changed files
+          echo "Changed files:"
+          echo "${{ steps.changed-files.outputs.all_changed_files }}"
+
+          # Check if any files outside _posts were modified
+          INVALID_FILES=""
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}
+          do
+            # Allow only files in _posts/ directory
+            if [[ ! "$file" =~ ^_posts/ ]]; then
+              INVALID_FILES="${INVALID_FILES}\n  - ${file}"
+            fi
+          done
+
+          if [ -n "$INVALID_FILES" ]; then
+            echo ""
+            echo "❌ ERROR: External contributors can only modify"
+            echo "files in the _posts/ directory"
+            echo ""
+            echo "The following files are not allowed:"
+            echo -e "$INVALID_FILES"
+            echo ""
+            echo "Please remove changes to these files and only"
+            echo "submit changes to files in the _posts/ folder."
+            echo ""
+            echo "If you are a repository maintainer, please push"
+            echo "directly or use your admin privileges."
+            exit 1
+          fi
+
+          echo ""
+          echo "✅ All files in _posts/ directory - check passed!"
+          echo ""
+          echo "Files to be added/modified:"
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}
+          do
+            echo "  ✓ $file"
+          done
+
+      - name: Comment on PR if check fails
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = [
+              '❌ **External Contributor File Restriction**',
+              '',
+              'This pull request modifies files outside the `_posts/`',
+              'directory. External contributors are only allowed to add',
+              'or modify blog posts in the `_posts/` folder.',
+              '',
+              '**What you can do:**',
+              '- Remove changes to files outside `_posts/`',
+              '- Only submit new blog posts or modifications',
+              '',
+              '**Allowed:** `_posts/YYYY-MM-DD-your-post.md`',
+              '',
+              '**Not allowed:** Changes to `_config.yml`, `_layouts/`,',
+              '`_includes/`, `.github/`, or any other files',
+              '',
+              'If you believe this is an error, please contact the',
+              'repository maintainers.',
+              '',
+              '---',
+              '',
+              `See the [Contributing Guide](https://github.com/${context.repo.owner}/${context.repo.repo}/blob/main/contributing.md) for more information.`
+            ].join('\n');
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
