@@ -106,7 +106,7 @@ summary: "An in-depth guide to preventing cross-site scripting attacks using Con
 - Write clear, informative summaries
 - You can submit your own posts or posts you've found useful
 
-📖 **Detailed instructions**: See [CONTRIBUTING.md](contributing.md) for complete guidelines and examples.
+📖 **Detailed instructions**: See [contributing.md](contributing.md) for complete guidelines and examples.
 
 ### 2. Improve the Website (Code Contributions)
 
