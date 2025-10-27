@@ -44,7 +44,17 @@ bundle exec jekyll serve
 
 ## Contributing
 
-We welcome contributions! To submit a blog post:
+We welcome contributions! To submit a blog post, you have two options:
+
+### Option 1: Use the Submit Form (Recommended)
+
+Visit the [Submit Post page](https://securityblogsearch.com/submit) on the website. The form will:
+- Help you fill in all required fields
+- Let you select from existing tags or create new ones
+- Automatically generate the properly formatted markdown file
+- Provide instructions for submitting via pull request
+
+### Option 2: Manual Submission
 
 1. Fork this repository
 2. Create a new file in `_posts` directory with format: `YYYY-MM-DD-title-slug.md`

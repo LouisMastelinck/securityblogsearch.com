@@ -11,7 +11,24 @@ title: Contributing to Security Blog Search
         
         <h2>How to Submit a Blog Post</h2>
         
-        <p>To submit a security blog post, please follow these steps:</p>
+        <p>There are two ways to submit a security blog post:</p>
+        
+        <h3>Option 1: Use the Submit Form (Recommended)</h3>
+        
+        <p>The easiest way to submit a post is to use our <a href="{{ '/submit' | relative_url }}">Submit Post form</a>. This form will:</p>
+        
+        <ul>
+            <li>Help you fill in all required fields</li>
+            <li>Let you select from existing tags or create new ones</li>
+            <li>Automatically generate the properly formatted markdown file</li>
+            <li>Provide clear instructions for submitting via pull request</li>
+        </ul>
+        
+        <p><a href="{{ '/submit' | relative_url }}" class="external-link">Go to Submit Form →</a></p>
+        
+        <h3>Option 2: Manual Submission</h3>
+        
+        <p>If you prefer, you can manually create the post file:</p>
         
         <ol>
             <li><strong>Fork the repository</strong> on GitHub: <a href="https://github.com/LouisMastelinck/securityblogsearch.com">securityblogsearch.com</a></li>

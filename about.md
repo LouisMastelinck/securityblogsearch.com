@@ -16,7 +16,7 @@ title: About Security Blog Search
         <p>Our platform operates on a simple principle: the community curates and shares valuable security content.</p>
         
         <ul>
-            <li><strong>Community Submissions</strong>: Anyone can submit security blog posts via pull request</li>
+            <li><strong>Community Submissions</strong>: Anyone can submit security blog posts using our easy submission form or via pull request</li>
             <li><strong>Quality Control</strong>: Submissions are reviewed to ensure relevance and quality</li>
             <li><strong>Easy Discovery</strong>: Users can search and filter posts by tags, author, date, and keywords</li>
             <li><strong>Always Free</strong>: The platform is open-source and freely accessible to everyone</li>
@@ -44,7 +44,7 @@ title: About Security Blog Search
         <p>There are several ways to contribute to Security Blog Search:</p>
         
         <ul>
-            <li><strong>Submit Posts</strong>: Share interesting security blog posts you've written or discovered</li>
+            <li><strong>Submit Posts</strong>: Use our <a href="{{ '/submit' | relative_url }}">Submit Post form</a> to share interesting security blog posts you've written or discovered</li>
             <li><strong>Improve the Platform</strong>: Help us enhance the website by contributing code or suggesting features</li>
             <li><strong>Spread the Word</strong>: Tell other security professionals about this resource</li>
         </ul>
