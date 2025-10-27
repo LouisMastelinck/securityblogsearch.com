@@ -67,6 +67,26 @@ summary: "A brief summary of the blog post"
 
 See [CONTRIBUTING.md](contributing.md) for detailed guidelines.
 
+## Deployment
+
+This site is automatically deployed to GitHub Pages using GitHub Actions. When changes are pushed to the `main` branch:
+
+1. The GitHub Actions workflow (`.github/workflows/jekyll.yml`) is triggered
+2. Jekyll builds the site with the appropriate base path
+3. The built site is deployed to GitHub Pages
+
+### Manual Deployment
+
+You can also manually trigger a deployment from the Actions tab in the GitHub repository.
+
+### GitHub Pages Setup
+
+To enable GitHub Pages for this repository:
+
+1. Go to repository Settings → Pages
+2. Under "Build and deployment", select "GitHub Actions" as the source
+3. The site will be available at `https://securityblogsearch.com` (or your custom domain)
+
 ## Technology Stack
 
 - **Jekyll**: Static site generator
