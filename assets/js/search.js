@@ -108,3 +108,40 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial load - apply default sorting
     filterPosts();
 });
+
+// Shared function to build filter options from posts (used by subject pages)
+function buildFilterOptions() {
+    const posts = document.querySelectorAll('.post-card');
+    const tagFilter = document.getElementById('tagFilter');
+    const authorFilter = document.getElementById('authorFilter');
+    
+    if (!tagFilter || !authorFilter) return;
+    
+    // Collect unique tags and authors
+    const tags = new Set();
+    const authors = new Set();
+    
+    posts.forEach(post => {
+        const postTags = (post.dataset.tags || '').split(',').filter(t => t.trim());
+        postTags.forEach(tag => tags.add(tag.trim()));
+        
+        const author = post.dataset.author;
+        if (author) authors.add(author);
+    });
+    
+    // Populate tag filter
+    Array.from(tags).sort().forEach(tag => {
+        const option = document.createElement('option');
+        option.value = tag;
+        option.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
+        tagFilter.appendChild(option);
+    });
+    
+    // Populate author filter
+    Array.from(authors).sort().forEach(author => {
+        const option = document.createElement('option');
+        option.value = author;
+        option.textContent = author.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        authorFilter.appendChild(option);
+    });
+}
