@@ -168,8 +168,8 @@ body {
 }
 
 .posts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     margin-bottom: 2rem;
 }
@@ -180,6 +180,9 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1 1 350px;
+    max-width: calc(33.333% - 1.5rem);
+    order: 0;
 }
 
 .post-card:hover {
@@ -345,7 +348,11 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .posts-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+    
+    .post-card {
+        max-width: 100%;
     }
     
     .filters {

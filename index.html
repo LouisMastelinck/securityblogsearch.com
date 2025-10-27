@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const authors = new Set();
     
     posts.forEach(post => {
-        const postTags = post.dataset.tags.split(',').filter(t => t.trim());
+        const postTags = (post.dataset.tags || '').split(',').filter(t => t.trim());
         postTags.forEach(tag => tags.add(tag.trim()));
         
         const author = post.dataset.author;

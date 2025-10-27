@@ -13,12 +13,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Collections
-collections:
-  posts:
-    output: true
-    permalink: /posts/:year/:month/:day/:title/
-
 # Defaults
 defaults:
   - scope:

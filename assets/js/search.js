@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Filter posts
         let visiblePosts = posts.filter(post => {
-            const title = post.dataset.title;
-            const author = post.dataset.author;
-            const tags = post.dataset.tags;
-            const summary = post.dataset.summary;
+            const title = post.dataset.title || '';
+            const author = post.dataset.author || '';
+            const tags = post.dataset.tags || '';
+            const summary = post.dataset.summary || '';
             
             // Search filter
             const matchesSearch = !searchTerm || 
@@ -60,15 +60,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Hide all posts
-        posts.forEach(post => post.style.display = 'none');
+        // Hide all posts and set order
+        posts.forEach((post, index) => {
+            const isVisible = visiblePosts.includes(post);
+            post.style.display = isVisible ? 'block' : 'none';
+            post.style.order = isVisible ? visiblePosts.indexOf(post) : 999;
+        });
         
-        // Show filtered posts
+        // Show/hide no results message
         if (visiblePosts.length > 0) {
-            visiblePosts.forEach(post => {
-                post.style.display = 'block';
-                postsContainer.appendChild(post); // Re-append to reorder
-            });
             noResults.style.display = 'none';
         } else {
             noResults.style.display = 'block';
