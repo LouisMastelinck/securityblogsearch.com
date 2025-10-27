@@ -49,17 +49,13 @@
   ],
   "bypass_actors": [
     {
-      "actor_id": null,
       "actor_type": "RepositoryRole",
       "bypass_mode": "always",
-      "organization_admin": false,
       "repository_role_name": "admin"
     },
     {
-      "actor_id": null,
       "actor_type": "RepositoryRole", 
       "bypass_mode": "always",
-      "organization_admin": false,
       "repository_role_name": "maintain"
     }
   ]
