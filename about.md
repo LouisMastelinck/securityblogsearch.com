@@ -24,19 +24,19 @@ title: About Security Blog Search
         
         <h2>What We Feature</h2>
         
-        <p>We welcome blog posts covering all aspects of information security, including but not limited to:</p>
+        <p>We welcome blog posts covering all aspects of Microsoft security:</p>
         
         <ul>
-            <li>Vulnerability research and disclosures</li>
-            <li>Security tools and techniques</li>
-            <li>Incident response and forensics</li>
-            <li>Threat intelligence and analysis</li>
-            <li>Web application security</li>
-            <li>Network security</li>
-            <li>Cloud security</li>
-            <li>Malware analysis</li>
-            <li>Cryptography</li>
-            <li>Security best practices and tutorials</li>
+            <li>Entra ID</li>
+            <li>PowerShell</li>
+            <li>Conditional Access</li>
+            <li>Purview</li>
+            <li>MDE</li>
+            <li>MDO</li>
+            <li>MDI</li>
+            <li>Sentinel</li>
+            <li>XDR</li>
+            <li>...</li>
         </ul>
         
         <h2>Get Involved</h2>
@@ -45,7 +45,6 @@ title: About Security Blog Search
         
         <ul>
             <li><strong>Submit Posts</strong>: Share interesting security blog posts you've written or discovered</li>
-            <li><strong>Improve the Platform</strong>: Help us enhance the website by contributing code or suggesting features</li>
             <li><strong>Spread the Word</strong>: Tell other security professionals about this resource</li>
         </ul>
         

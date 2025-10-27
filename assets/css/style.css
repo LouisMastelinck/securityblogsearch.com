@@ -133,6 +133,17 @@ body {
     border-color: rgba(255, 255, 255, 0.4);
 }
 
+/* Special styling for About and Contribute buttons */
+.site-nav a.nav-special {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.site-nav a.nav-special:hover {
+    background: rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
 /* Main Content */
 .main-content {
     min-height: calc(100vh - 300px);
@@ -366,6 +377,17 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     max-width: 800px;
     margin: 0 auto;
+}
+
+.post ul,
+.post ol {
+    margin-left: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.post li {
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
 }
 
 .post-header {
