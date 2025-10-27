@@ -1,0 +1,39 @@
+# Site settings
+title: Security Blog Search
+description: >-
+  A community-driven platform for discovering and sharing security blog posts.
+  Find the latest security research, vulnerabilities, and insights from the community.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://securityblogsearch.com" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /posts/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md

@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
+        <div class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+            <span class="post-author">by {{ page.author }}</span>
+        </div>
+        {% if page.tags %}
+        <div class="post-tags">
+            {% for tag in page.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </header>
+    
+    <div class="post-content">
+        <div class="post-summary">
+            {{ page.summary }}
+        </div>
+        
+        {% if page.link %}
+        <div class="post-link">
+            <a href="{{ page.link }}" target="_blank" rel="noopener noreferrer" class="external-link">
+                Read full article →
+            </a>
+        </div>
+        {% endif %}
+        
+        {{ content }}
+    </div>
+</article>
