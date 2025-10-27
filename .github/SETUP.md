@@ -93,15 +93,16 @@ Nothing changes for you!
 
 - ✅ Push to any branch directly
 - ✅ Modify any files
-- ✅ The workflow won't run for your PRs (you're marked as OWNER)
+- ✅ The workflow won't run for your PRs (you're explicitly allowed by username)
 - ✅ Bypass all restrictions
 
 ## For GitHub Copilot
 
-If you want GitHub Copilot to be able to modify any files:
+GitHub Copilot can now modify any files!
 
-1. The current workflow already allows all changes from repository owners
-2. For enhanced protection with Rulesets, add Copilot as a bypass actor when setting up the ruleset
+1. ✅ The workflow explicitly allows changes from the Copilot bot (user login: 'Copilot')
+2. ✅ No restrictions apply when Copilot creates or updates PRs
+3. For enhanced protection with Rulesets, you can also add Copilot as a bypass actor when setting up the ruleset
 
 ## Current Status
 

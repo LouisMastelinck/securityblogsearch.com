@@ -13,10 +13,10 @@ permissions:
 jobs:
   check-modified-files:
     runs-on: ubuntu-latest
-    # Only run for PRs from forks or non-admin users
+    # Only run for external contributors (not repo owner or Copilot bot)
     if: >
-      github.event.pull_request.head.repo.fork == true ||
-      github.event.pull_request.author_association != 'OWNER'
+      github.event.pull_request.user.login != 'LouisMastelinck' &&
+      github.event.pull_request.user.login != 'Copilot'
 
     steps:
       - name: Checkout code
