@@ -1,8 +1,7 @@
 # Site settings
 title: Security Blog Search
 description: >-
-  A community-driven platform for discovering and sharing security blog posts.
-  Find the latest security research, vulnerabilities, and insights from the community.
+  Search for Microsoft security blog posts written and shared by the community.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://securityblogsearch.com" # the base hostname & protocol for your site
 
