@@ -9,6 +9,10 @@ title: Contributing to Security Blog Search
         
         <p>Thank you for your interest in contributing to Security Blog Search! This platform is community-driven, and we welcome blog post submissions from security researchers, bloggers, and enthusiasts.</p>
         
+        <div class="alert alert-info">
+            <strong>⚠️ Important for External Contributors:</strong> For security reasons, external contributors can <strong>only</strong> modify files in the <code>_posts/</code> directory. Pull requests that attempt to modify configuration files, layouts, workflows, or any other files outside the posts folder will be automatically rejected. See <a href="https://github.com/LouisMastelinck/securityblogsearch.com/blob/main/.github/RULESETS.md">Repository Rulesets Documentation</a> for more details.
+        </div>
+        
         <h2>How to Submit a Blog Post</h2>
         
         <p>To submit a security blog post, please follow these steps:</p>

@@ -1,0 +1,23 @@
+# CODEOWNERS file for Security Blog Search
+# This file defines ownership for different parts of the repository
+
+# Repository owner(s) own everything by default
+* @LouisMastelinck
+
+# The _posts folder can be modified by anyone (external contributors)
+# but still requires approval from repository owners
+/_posts/ @LouisMastelinck
+
+# All other files and directories are protected
+# and can only be modified by repository owners
+/.github/ @LouisMastelinck
+/_config.yml @LouisMastelinck
+/_includes/ @LouisMastelinck
+/_layouts/ @LouisMastelinck
+/assets/ @LouisMastelinck
+/index.html @LouisMastelinck
+/about.md @LouisMastelinck
+/contributing.md @LouisMastelinck
+/README.md @LouisMastelinck
+/Gemfile @LouisMastelinck
+/CNAME @LouisMastelinck

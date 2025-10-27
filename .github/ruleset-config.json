@@ -1,0 +1,66 @@
+{
+  "name": "External Contributors - Posts Only",
+  "target": "branch",
+  "enforcement": "active",
+  "conditions": {
+    "ref_name": {
+      "include": ["refs/heads/main"],
+      "exclude": []
+    }
+  },
+  "rules": [
+    {
+      "type": "pull_request",
+      "parameters": {
+        "required_approving_review_count": 1,
+        "dismiss_stale_reviews_on_push": true,
+        "require_code_owner_review": true,
+        "require_last_push_approval": false,
+        "required_review_thread_resolution": false
+      }
+    },
+    {
+      "type": "required_status_checks",
+      "parameters": {
+        "required_status_checks": [
+          {
+            "context": "check-modified-files / check-modified-files",
+            "integration_id": null
+          }
+        ],
+        "strict_required_status_checks_policy": true
+      }
+    },
+    {
+      "type": "file_path_restriction",
+      "parameters": {
+        "restricted_file_paths": [
+          "**",
+          "!_posts/**"
+        ]
+      }
+    },
+    {
+      "type": "deletion"
+    },
+    {
+      "type": "non_fast_forward"
+    }
+  ],
+  "bypass_actors": [
+    {
+      "actor_id": null,
+      "actor_type": "RepositoryRole",
+      "bypass_mode": "always",
+      "organization_admin": false,
+      "repository_role_name": "admin"
+    },
+    {
+      "actor_id": null,
+      "actor_type": "RepositoryRole", 
+      "bypass_mode": "always",
+      "organization_admin": false,
+      "repository_role_name": "maintain"
+    }
+  ]
+}
