@@ -20,9 +20,9 @@ body {
 
 /* Header */
 .site-header {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3498db 100%);
+    background: linear-gradient(135deg, #2B5F9E 0%, #3498db 30%, #5DADE2 60%, #F39C12 100%);
     color: #fff;
-    padding: 2.5rem 0;
+    padding: 3rem 0;
     margin-bottom: 2rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     position: relative;
@@ -58,18 +58,38 @@ body {
 .site-title a {
     color: #fff;
     text-decoration: none;
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
+    justify-content: center;
+    position: relative;
 }
 
-.site-title a::before {
-    content: '🔒';
-    font-size: 2.25rem;
+.site-logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+}
+
+/* Add a subtle gradient overlay for faded edges */
+.site-title a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, transparent 50%, rgba(243, 156, 18, 0.2) 100%);
+    pointer-events: none;
 }
 
 .site-description {
@@ -444,12 +464,9 @@ body {
         gap: 0.5rem;
     }
     
-    .site-title a {
-        font-size: 1.75rem;
-    }
-    
-    .site-title a::before {
-        font-size: 1.5rem;
+    .site-logo {
+        height: 100px;
+        width: 100px;
     }
     
     .site-description {

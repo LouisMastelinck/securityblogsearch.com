@@ -2,7 +2,9 @@
     <div class="container">
         <div class="header-content">
             <h1 class="site-title">
-                <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+                <a href="{{ '/' | relative_url }}">
+                    <img src="{{ '/assets/logo.png' | relative_url }}" alt="Security Blog Search Logo" class="site-logo">
+                </a>
             </h1>
             <p class="site-description">{{ site.description }}</p>
         </div>
@@ -17,6 +19,7 @@
             <a href="{{ '/sentinel.html' | relative_url }}">Sentinel</a>
             <a href="{{ '/defender-office.html' | relative_url }}">Defender for Office</a>
             <a href="{{ '/office365.html' | relative_url }}">Office 365</a>
+            <a href="{{ '/purview.html' | relative_url }}">Purview</a>
             <a href="{{ '/about' | relative_url }}">About</a>
             <a href="{{ '/contributing' | relative_url }}">Contribute</a>
         </nav>
