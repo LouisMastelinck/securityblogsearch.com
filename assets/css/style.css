@@ -20,9 +20,9 @@ body {
 
 /* Header */
 .site-header {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3498db 100%);
+    background: linear-gradient(135deg, #2B5F9E 0%, #3498db 30%, #5DADE2 60%, #F39C12 100%);
     color: #fff;
-    padding: 2.5rem 0;
+    padding: 3rem 0;
     margin-bottom: 2rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     position: relative;
@@ -65,8 +65,8 @@ body {
 }
 
 .site-logo {
-    height: 80px;
-    width: 80px;
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -88,7 +88,7 @@ body {
     right: 0;
     bottom: 0;
     border-radius: 50%;
-    background: radial-gradient(circle at center, transparent 50%, rgba(30, 60, 114, 0.4) 100%);
+    background: radial-gradient(circle at center, transparent 50%, rgba(243, 156, 18, 0.2) 100%);
     pointer-events: none;
 }
 
@@ -465,8 +465,8 @@ body {
     }
     
     .site-logo {
-        height: 60px;
-        width: 60px;
+        height: 100px;
+        width: 100px;
     }
     
     .site-description {
