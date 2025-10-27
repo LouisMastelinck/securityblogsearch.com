@@ -58,23 +58,38 @@ body {
 .site-title a {
     color: #fff;
     text-decoration: none;
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
+    justify-content: center;
+    position: relative;
 }
 
 .site-logo {
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    background-color: white;
-    padding: 2px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+}
+
+/* Add a subtle gradient overlay for faded edges */
+.site-title a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, transparent 50%, rgba(30, 60, 114, 0.4) 100%);
+    pointer-events: none;
 }
 
 .site-description {
@@ -449,13 +464,9 @@ body {
         gap: 0.5rem;
     }
     
-    .site-title a {
-        font-size: 1.75rem;
-    }
-    
     .site-logo {
-        height: 45px;
-        width: 45px;
+        height: 60px;
+        width: 60px;
     }
     
     .site-description {
