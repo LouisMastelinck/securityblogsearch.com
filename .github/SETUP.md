@@ -36,7 +36,7 @@ This repository now has security measures to restrict external contributors to o
 ### Quick Steps for Ruleset Setup:
 1. Go to your repo → Settings → Rules → Rulesets
 2. Create new ruleset: "External Contributors - Posts Only"
-3. Enable "Restrict file paths" with pattern: `**` and exception `!_posts/**`
+3. Enable "Restrict file paths" with pattern: ** (two asterisks) and exception: !_posts/** (exclamation mark, then _posts/ then two asterisks)
 4. Add yourself and GitHub Copilot to bypass list
 5. Set enforcement to "Active"
 
@@ -89,7 +89,7 @@ When an external contributor tries to modify protected files:
 
 ## How You (Owner) Work
 
-Nothing changes for you! 
+Nothing changes for you!
 
 - ✅ Push to any branch directly
 - ✅ Modify any files
