@@ -1,0 +1,12 @@
+# Configuration file for websites to crawl for new blog posts
+# Each website should have:
+#   - url: The base URL of the website
+#   - rss_feed: (optional) Direct RSS/Atom feed URL
+#   - author: Default author name for posts from this site
+#   - tags: Default tags to apply to posts from this site
+
+websites:
+  - url: https://lousec.be
+    author: "Louis Mastelinck"
+    tags: [security, azure, entra-id]
+    rss_feed: https://lousec.be/feed/  # Will try to auto-detect if not provided
