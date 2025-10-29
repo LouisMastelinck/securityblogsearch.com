@@ -15,32 +15,6 @@ Security Blog Search helps security professionals, researchers, and enthusiasts 
 - 📝 **Community-Driven**: Submit posts via pull request
 - 🎨 **Clean Interface**: Easy-to-use, responsive design
 
-## Local Development
-
-### Prerequisites
-
-- Ruby (version 2.7 or higher)
-- Bundler gem
-
-### Setup
-
-1. Clone the repository:
-```bash
-git clone https://github.com/LouisMastelinck/securityblogsearch.com.git
-cd securityblogsearch.com
-```
-
-2. Install dependencies:
-```bash
-bundle install
-```
-
-3. Run Jekyll locally:
-```bash
-bundle exec jekyll serve
-```
-
-4. Open your browser to `http://localhost:4000`
 
 ## Contributing
 
