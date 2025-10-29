@@ -36,8 +36,9 @@ jobs:
       
       - name: Configure Git
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config user.name "automation"
+          git config user.email "automation@yourdomain.example"
+          git remote set-url origin https://x-access-token:${{ secrets.ACTIONS_PUSH_PAT }}@github.com/${{ github.repository }}.git
       
       - name: Run crawler
         id: crawl
@@ -47,7 +48,7 @@ jobs:
         if: steps.crawl.outputs.new_posts == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACTIONS_PUSH_PAT }}
           commit-message: 'Add new blog posts from automated crawl'
           branch: automated-blog-posts-${{ github.run_number }}
           delete-branch: true
