@@ -13,6 +13,7 @@ Security Blog Search helps security professionals, researchers, and enthusiasts 
 - 👤 **Filter by Author**: Find posts from specific authors
 - 📅 **Sort by Date**: View newest or oldest posts first
 - 📝 **Community-Driven**: Submit posts via pull request
+- 🤖 **Automated Crawling**: Hourly automated discovery of new blog posts from configured websites
 - 🎨 **Clean Interface**: Easy-to-use, responsive design
 
 
@@ -42,6 +43,15 @@ summary: "A brief summary of the blog post"
 ```
 
 See [CONTRIBUTING.md](contributing.md) for detailed guidelines.
+
+## Automated Blog Crawling
+
+This repository includes automated blog crawling that runs every hour to discover new posts from configured websites. See [CRAWLING.md](CRAWLING.md) for details on:
+
+- How the crawler works
+- Adding new websites to crawl
+- Configuring RSS feeds
+- Reviewing automated pull requests
 
 ## Deployment
 
