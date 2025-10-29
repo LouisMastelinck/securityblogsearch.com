@@ -84,6 +84,49 @@ def test_post_format():
     expected_filename = f"{post_data['date'].strftime('%Y-%m-%d')}-{slug}.md"
     print(f"  ✓ Expected filename: '{expected_filename}'")
 
+def test_author_extraction():
+    """Test author extraction from RSS entries"""
+    from crawl_blogs import BlogCrawler
+    
+    print("\nTesting author extraction:")
+    
+    crawler = BlogCrawler()
+    
+    # Test with author field
+    entry1 = {'author': 'John Doe'}
+    author1 = crawler.extract_author_from_entry(entry1)
+    print(f"  ✓ Extracted author from 'author' field: '{author1}'")
+    
+    # Test with no author
+    entry2 = {}
+    author2 = crawler.extract_author_from_entry(entry2)
+    print(f"  ✓ Handles missing author: {author2}")
+
+def test_tag_extraction():
+    """Test tag extraction from RSS entries"""
+    from crawl_blogs import BlogCrawler
+    
+    print("\nTesting tag extraction:")
+    
+    crawler = BlogCrawler()
+    
+    # Test with RSS tags
+    entry1 = {
+        'tags': [{'term': 'azure'}, {'term': 'security'}],
+        'title': 'Test Post',
+        'summary': 'A test post'
+    }
+    tags1 = crawler.extract_tags_from_entry(entry1)
+    print(f"  ✓ Extracted tags from RSS feed: {tags1}")
+    
+    # Test with content inference (now separate method)
+    entry2 = {
+        'title': 'Azure Security and Entra ID Best Practices',
+        'summary': 'Learn about Microsoft Defender and conditional access policies'
+    }
+    tags2 = crawler.infer_tags_from_content(entry2)
+    print(f"  ✓ Inferred tags from content: {tags2}")
+
 if __name__ == '__main__':
     print("Blog Crawler Unit Tests")
     print("=" * 60)
@@ -93,6 +136,8 @@ if __name__ == '__main__':
         test_config_loading()
         test_existing_posts()
         test_post_format()
+        test_author_extraction()
+        test_tag_extraction()
         
         print("\n" + "=" * 60)
         print("All tests completed!")
