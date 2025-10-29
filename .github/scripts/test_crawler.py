@@ -116,7 +116,7 @@ def test_tag_extraction():
         'title': 'Test Post',
         'summary': 'A test post'
     }
-    tags1 = crawler.extract_tags_from_entry(entry1, 'https://example.com')
+    tags1 = crawler.extract_tags_from_entry(entry1)
     print(f"  ✓ Extracted tags from RSS feed: {tags1}")
     
     # Test with content inference (now separate method)

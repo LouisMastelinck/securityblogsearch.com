@@ -115,7 +115,7 @@ class BlogCrawler:
             author = entry.get('dc_creator', '')
         return author.strip() if author else None
     
-    def extract_tags_from_entry(self, entry, base_url):
+    def extract_tags_from_entry(self, entry):
         """Extract tags from RSS feed entry categories and content."""
         tags = []
         
@@ -220,7 +220,7 @@ class BlogCrawler:
                 author = self.extract_author_from_entry(entry)
                 
                 # Extract tags from entry
-                tags = self.extract_tags_from_entry(entry, base_url)
+                tags = self.extract_tags_from_entry(entry)
                 
                 if not summary:
                     summary = f"Blog post from {author if author else 'the author'}"
