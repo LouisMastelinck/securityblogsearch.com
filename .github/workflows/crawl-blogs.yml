@@ -81,8 +81,9 @@ jobs:
       - name: Summary
         run: |
           POST_COUNT="${{ steps.crawl.outputs.post_count }}"
+          PLURAL=$([ "$POST_COUNT" -eq 1 ] && echo "post" || echo "posts")
           if [ "${{ steps.crawl.outputs.new_posts }}" == "true" ]; then
-            echo "✅ Found ${POST_COUNT} new blog post(s) and created PR"
+            echo "✅ Found ${POST_COUNT} new ${PLURAL} and created PR"
           else
             echo "ℹ️ No new blog posts found this time"
           fi
