@@ -273,8 +273,19 @@ def main():
     crawler = BlogCrawler()
     new_count = crawler.run()
     
-    # Exit with code 0 if new posts were found (for GitHub Actions)
-    sys.exit(0 if new_count > 0 else 1)
+    # Write result to GitHub Actions output if running in GitHub Actions
+    github_output = os.environ.get('GITHUB_OUTPUT')
+    if github_output:
+        try:
+            with open(github_output, 'a') as f:
+                f.write(f"new_posts={'true' if new_count > 0 else 'false'}\n")
+                f.write(f"post_count={new_count}\n")
+        except Exception as e:
+            print(f"Warning: Could not write to GITHUB_OUTPUT: {e}")
+    
+    # Always exit with success - the script ran without errors
+    # The workflow will check the output to determine if new posts were found
+    sys.exit(0)
 
 
 if __name__ == '__main__':
