@@ -102,7 +102,89 @@ class BlogCrawler:
         
         return None
     
-    def crawl_rss_feed(self, feed_url):
+    def extract_author_from_entry(self, entry):
+        """Extract author from RSS feed entry."""
+        # Try various author fields
+        author = entry.get('author', '')
+        if not author:
+            author = entry.get('author_detail', {}).get('name', '')
+        if not author and 'authors' in entry and entry['authors']:
+            author = entry['authors'][0].get('name', '')
+        if not author:
+            # Try dc:creator (Dublin Core)
+            author = entry.get('dc_creator', '')
+        return author.strip() if author else None
+    
+    def extract_tags_from_entry(self, entry, base_url):
+        """Extract tags from RSS feed entry categories and content."""
+        tags = []
+        
+        # Extract from RSS categories/tags
+        if 'tags' in entry:
+            for tag in entry['tags']:
+                tag_name = tag.get('term', '') or tag.get('label', '')
+                if tag_name:
+                    # Clean and normalize tag
+                    tag_name = tag_name.lower().strip()
+                    # Remove special characters and spaces
+                    tag_name = re.sub(r'[^\w\s-]', '', tag_name)
+                    tag_name = re.sub(r'[-\s]+', '-', tag_name)
+                    if tag_name and tag_name not in tags:
+                        tags.append(tag_name)
+        
+        # Extract from categories field
+        if 'categories' in entry:
+            for category in entry['categories']:
+                if isinstance(category, str):
+                    cat_name = category.lower().strip()
+                elif isinstance(category, dict):
+                    cat_name = (category.get('term', '') or category.get('label', '')).lower().strip()
+                else:
+                    continue
+                
+                cat_name = re.sub(r'[^\w\s-]', '', cat_name)
+                cat_name = re.sub(r'[-\s]+', '-', cat_name)
+                if cat_name and cat_name not in tags:
+                    tags.append(cat_name)
+        
+        # Limit to 5 tags
+        return tags[:5] if tags else []
+    
+    def infer_tags_from_content(self, entry):
+        """Infer tags from post title and summary when no explicit tags are available."""
+        tags = []
+        title = entry.get('title', '').lower()
+        summary = entry.get('summary', '') or entry.get('description', '')
+        content = f"{title} {summary}".lower()
+        
+        # Common security-related keywords to detect
+        security_keywords = {
+            'azure': ['azure'],
+            'entra-id': ['entra', 'azure ad', 'azure active directory'],
+            'security': ['security', 'secure', 'vulnerability', 'threat'],
+            'defender': ['defender', 'microsoft defender'],
+            'intune': ['intune', 'mdm', 'mobile device'],
+            'sentinel': ['sentinel', 'siem'],
+            'zero-trust': ['zero trust', 'zero-trust'],
+            'conditional-access': ['conditional access'],
+            'mfa': ['mfa', 'multi-factor', 'multifactor'],
+            'identity': ['identity', 'identities'],
+            'compliance': ['compliance', 'regulatory'],
+            'cloud': ['cloud'],
+        }
+        
+        for tag, keywords in security_keywords.items():
+            if any(keyword in content for keyword in keywords):
+                tags.append(tag)
+        
+        # Always ensure 'security' is included if no other tags found
+        if not tags:
+            tags.append('security')
+        
+        # Limit to 5 tags
+        return tags[:5]
+    
+    def crawl_rss_feed(self, feed_url, base_url):
         """Crawl an RSS/Atom feed for blog posts."""
         try:
             print(f"Fetching feed: {feed_url}")
@@ -134,14 +216,23 @@ class BlogCrawler:
                     if len(summary) > 200:
                         summary = summary[:197] + '...'
                 
+                # Extract author from entry
+                author = self.extract_author_from_entry(entry)
+                
+                # Extract tags from entry
+                tags = self.extract_tags_from_entry(entry, base_url)
+                
                 if not summary:
-                    summary = f"Blog post from {entry.get('author', 'the author')}"
+                    summary = f"Blog post from {author if author else 'the author'}"
                 
                 posts.append({
                     'link': link,
                     'title': title,
                     'date': date,
-                    'summary': summary
+                    'summary': summary,
+                    'author': author,
+                    'tags': tags,
+                    'entry': entry  # Keep entry for potential tag inference
                 })
             
             return posts
@@ -174,9 +265,25 @@ class BlogCrawler:
             filepath = self.posts_dir / filename
             counter += 1
         
-        # Get tags - ensure it's a list
-        tags = website_config.get('tags', [])
-        if isinstance(tags, str):
+        # Get author - prefer from post data, fallback to website config
+        author = post_data.get('author')
+        if not author:
+            author = website_config.get('author', 'Unknown')
+        
+        # Get tags with priority: RSS feed tags > config tags > inferred tags
+        tags = post_data.get('tags', [])
+        if not tags:
+            # No tags from RSS, check config
+            tags = website_config.get('tags', [])
+            if isinstance(tags, str):
+                tags = [tags]
+            
+            # If still no tags, infer from content
+            if not tags and 'entry' in post_data:
+                tags = self.infer_tags_from_content(post_data['entry'])
+            elif not tags:
+                tags = ['security']
+        elif isinstance(tags, str):
             tags = [tags]
         
         # Format tags as a simple list (matching existing format)
@@ -190,7 +297,7 @@ class BlogCrawler:
         front_matter = f"""---
 layout: post
 title: "{title}"
-author: "{website_config.get('author', 'Unknown')}"
+author: "{author}"
 date: {date_str}
 tags: {tags_str}
 link: "{post_data['link']}"
@@ -226,7 +333,7 @@ summary: "{summary}"
         print(f"Using feed: {feed_url}")
         
         # Crawl the feed
-        posts = self.crawl_rss_feed(feed_url)
+        posts = self.crawl_rss_feed(feed_url, url)
         print(f"Found {len(posts)} posts in feed")
         
         # Filter new posts

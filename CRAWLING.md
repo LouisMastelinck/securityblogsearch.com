@@ -17,17 +17,15 @@ To add a new website to the crawler, edit the `websites.yml` file:
 ```yaml
 websites:
   - url: https://example.com
-    author: "Author Name"
-    tags: [security, tag2, tag3]
     rss_feed: https://example.com/feed/  # Optional - will auto-detect if omitted
 ```
 
 ### Configuration Options
 
 - **url** (required): The base URL of the website
-- **author** (required): Default author name for posts from this site
-- **tags** (required): List of tags to apply to posts from this site
 - **rss_feed** (optional): Direct URL to RSS/Atom feed. If not provided, the crawler will attempt to auto-detect the feed URL
+- **author** (optional): Default author name for posts from this site. If not provided, the crawler will extract the author from the RSS feed entries
+- **tags** (optional): List of default tags to apply to posts from this site. If not provided, the crawler will extract tags from the RSS feed categories or infer them from the post content
 
 ## Manual Triggering
 
@@ -45,6 +43,18 @@ You can manually trigger the crawler workflow:
 If no RSS feed is specified, the crawler attempts to auto-detect feeds by:
 1. Parsing the website's HTML for `<link>` tags with RSS/Atom types
 2. Trying common feed paths like `/feed/`, `/rss/`, `/atom.xml`, etc.
+
+### Content Enrichment
+
+The crawler automatically enriches posts with metadata from the RSS feed:
+
+1. **Author Extraction**: Attempts to extract author information from RSS feed entries (author field, dc:creator, etc.). If no author is found in the feed and none is specified in the config, defaults to "Unknown"
+2. **Tag Extraction**: Extracts tags from:
+   - RSS feed categories and tags
+   - Content analysis (keywords like azure, entra-id, security, defender, etc.)
+   - Defaults to ['security'] if no tags can be determined
+
+This allows you to simply provide the website URL and RSS feed, and the crawler will automatically populate author and tags based on the crawled content.
 
 ### Post Format
 

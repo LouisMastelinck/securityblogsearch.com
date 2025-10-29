@@ -14,7 +14,7 @@ import shutil
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent))
 
-def create_mock_entry(link, title, date, summary):
+def create_mock_entry(link, title, date, summary, author=None, tags=None):
     """Create a mock RSS entry"""
     class MockEntry(dict):
         def __init__(self, *args, **kwargs):
@@ -26,6 +26,10 @@ def create_mock_entry(link, title, date, summary):
     entry['title'] = title
     entry['published_parsed'] = date.timetuple()[:6] + (0, 0, 0)
     entry['summary'] = summary
+    if author:
+        entry['author'] = author
+    if tags:
+        entry['tags'] = [{'term': tag} for tag in tags]
     return entry
 
 def create_mock_feed():
@@ -38,18 +42,24 @@ def create_mock_feed():
             'Azure Security Best Practices for 2024',
             datetime(2024, 10, 29, 10, 0, 0),
             '<p>A comprehensive guide to securing your Azure environment with the latest best practices and recommendations.</p>',
+            author='Louis Mastelinck',
+            tags=['azure', 'security', 'cloud']
         ),
         create_mock_entry(
             'https://lousec.be/blog/entra-id-conditional-access-tips',
             'Entra ID Conditional Access - Advanced Tips & Tricks',
             datetime(2024, 10, 28, 14, 30, 0),
             'Learn advanced techniques for implementing conditional access policies in Microsoft Entra ID.',
+            author='Louis Mastelinck',
+            tags=['entra-id', 'conditional-access', 'identity']
         ),
         create_mock_entry(
             'https://lousec.be/blog/zero-trust-architecture',
             'Implementing Zero Trust Architecture in Modern Enterprises',
             datetime(2024, 10, 27, 9, 15, 0),
             'A practical guide to implementing zero trust security architecture in your organization.',
+            author='Louis Mastelinck',
+            tags=['zero-trust', 'security', 'architecture']
         ),
     ]
     return mock_feed
@@ -64,13 +74,11 @@ def test_crawler_with_mock_data():
         posts_dir = Path(temp_dir) / '_posts'
         posts_dir.mkdir()
         
-        # Create mock config
+        # Create mock config (without author and tags to test auto-extraction)
         config_path = Path(temp_dir) / 'websites.yml'
         with open(config_path, 'w') as f:
             f.write("""websites:
   - url: https://lousec.be
-    author: "Louis Mastelinck"
-    tags: [security, azure, entra-id]
     rss_feed: https://lousec.be/feed/
 """)
         
@@ -118,6 +126,8 @@ def test_crawler_with_mock_data():
         print("\nThis demonstrates that the crawler will:")
         print("  • Parse RSS feeds correctly")
         print("  • Extract blog post metadata (title, date, summary)")
+        print("  • Extract author from RSS feed entries")
+        print("  • Extract tags from RSS feed categories")
         print("  • Generate properly formatted markdown files")
         print("  • Place files in the _posts directory")
         print("  • Format posts according to existing conventions")
