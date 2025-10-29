@@ -40,14 +40,7 @@ jobs:
       
       - name: Run crawler
         id: crawl
-        run: |
-          python3 .github/scripts/crawl_blogs.py
-          if [ $? -eq 0 ]; then
-            echo "new_posts=true" >> $GITHUB_OUTPUT
-          else
-            echo "new_posts=false" >> $GITHUB_OUTPUT
-          fi
-        continue-on-error: true
+        run: python3 .github/scripts/crawl_blogs.py
       
       - name: Create Pull Request
         if: steps.crawl.outputs.new_posts == 'true'

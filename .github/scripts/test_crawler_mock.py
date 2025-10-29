@@ -16,12 +16,17 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 def create_mock_entry(link, title, date, summary):
     """Create a mock RSS entry"""
-    entry = {}
+    class MockEntry(dict):
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.__dict__ = self
+    
+    entry = MockEntry()
     entry['link'] = link
     entry['title'] = title
     entry['published_parsed'] = date.timetuple()[:6] + (0, 0, 0)
     entry['summary'] = summary
-    return type('Entry', (), entry)()
+    return entry
 
 def create_mock_feed():
     """Create a mock RSS feed response"""
