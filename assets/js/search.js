@@ -120,6 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Check if page needs more content to be scrollable
     function checkAndLoadMore() {
+        // Guard against concurrent execution - isLoading flag also protects displayNextBatch
+        if (isLoading) return;
         if (currentlyDisplayed >= filteredPosts.length) return;
         if (autoLoadCount >= MAX_AUTO_LOAD_ITERATIONS) {
             console.warn(`Reached maximum auto-load iterations (${autoLoadCount}/${MAX_AUTO_LOAD_ITERATIONS}). Stopping auto-load.`);
@@ -132,9 +134,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!isScrollable) {
             autoLoadCount++;
+            isLoading = true; // Prevent concurrent auto-loading
             // Page is not scrollable yet, load more posts automatically
             // Use setTimeout with small delay to allow browser to render between batches
             setTimeout(() => {
+                isLoading = false;
                 displayNextBatch();
             }, 10);
         }
