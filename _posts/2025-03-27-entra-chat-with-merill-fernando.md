@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entra Chat with Merill Fernando"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2025-03-27
 tags: [entra-id]
 link: "https://nathanmcnulty.com/media/2025/03/entra-chat/"

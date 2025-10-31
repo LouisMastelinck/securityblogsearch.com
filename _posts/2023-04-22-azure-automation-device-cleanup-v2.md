@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Automation - Device Cleanup v2"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2023-04-22
 tags: [azure]
 link: "https://nathanmcnulty.com/blog/2023/04/azure-automation-device-cleanup-v2/"

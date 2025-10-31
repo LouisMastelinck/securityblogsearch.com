@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Improving passkey registration experiences"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2025-09-09
 tags: [entra-id, identity, compliance]
 link: "https://nathanmcnulty.com/blog/2025/09/improving-passkey-registration-experiences/"

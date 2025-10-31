@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MDE Analyzer²"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2025-01-22
 tags: [security]
 link: "https://nathanmcnulty.com/solutions/defender/mde-analyzer/"

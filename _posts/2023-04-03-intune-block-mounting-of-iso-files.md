@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Intune - Block mounting of ISO files"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2023-04-03
 tags: [intune]
 link: "https://nathanmcnulty.com/blog/2023/04/intune-block-mounting-of-iso-files/"

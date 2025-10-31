@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Getting more data from the CA Insights and Reporting Workbook"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2025-02-01
 tags: [security]
 link: "https://nathanmcnulty.com/notes/entra/getting-more-data-from-the-ca-insights-and-reporting-workbook/"

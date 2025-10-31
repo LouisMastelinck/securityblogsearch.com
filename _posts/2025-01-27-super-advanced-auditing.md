@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Super Advanced Auditing"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2025-01-27
 tags: [azure]
 link: "https://nathanmcnulty.com/solutions/purview/super-advanced-auditing/"

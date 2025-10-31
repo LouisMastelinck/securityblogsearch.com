@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Trimarc Happy Hour"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2024-03-29
 tags: [security]
 link: "https://nathanmcnulty.com/media/2024/03/trimarc-happy-hour/"

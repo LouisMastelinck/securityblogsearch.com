@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Arc - Onboarding Servers with Group Policy"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2023-02-14
 tags: [azure]
 link: "https://nathanmcnulty.com/blog/2023/02/azure-arc-onboarding-servers-with-group-policy/"

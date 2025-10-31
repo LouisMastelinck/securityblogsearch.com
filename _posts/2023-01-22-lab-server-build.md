@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Lab - Server Build"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2023-01-22
 tags: [security]
 link: "https://nathanmcnulty.com/blog/2023/01/lab-server-build/"

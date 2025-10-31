@@ -108,6 +108,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 endOfPosts.style.display = 'none';
             }
         }
+        
+        // Check if page is scrollable after loading batch
+        // If not scrollable and more posts available, load more automatically
+        checkAndLoadMore();
+    }
+    
+    // Check if page needs more content to be scrollable
+    function checkAndLoadMore() {
+        if (currentlyDisplayed >= filteredPosts.length) return;
+        
+        // Check if page is scrollable (content height > viewport height)
+        const isScrollable = document.documentElement.scrollHeight > window.innerHeight;
+        
+        if (!isScrollable) {
+            // Page is not scrollable yet, load more posts automatically
+            setTimeout(() => {
+                displayNextBatch();
+            }, 100);
+        }
     }
     
     // Infinite scroll handler

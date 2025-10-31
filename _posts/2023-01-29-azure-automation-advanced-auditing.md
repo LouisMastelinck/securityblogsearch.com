@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Automation - Advanced Auditing"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2023-01-29
 tags: [azure]
 link: "https://nathanmcnulty.com/blog/2023/01/azure-automation-advanced-auditing/"

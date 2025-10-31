@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Lab - Certificate Authority Setup"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2023-05-04
 tags: [security]
 link: "https://nathanmcnulty.com/blog/2023/05/lab-certificate-authority-setup/"

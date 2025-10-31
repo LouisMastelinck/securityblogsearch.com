@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Managing Restricted Groups with Access Packages"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2025-04-03
 tags: [entra-id, conditional-access]
 link: "https://nathanmcnulty.com/blog/2025/04/managing-restricted-groups-with-access-packages/"

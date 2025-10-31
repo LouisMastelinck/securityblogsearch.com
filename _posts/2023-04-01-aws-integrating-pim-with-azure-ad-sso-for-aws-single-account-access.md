@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AWS - Integrating PIM with Azure AD SSO for AWS Single-Account Access"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2023-04-01
 tags: [azure, entra-id]
 link: "https://nathanmcnulty.com/blog/2023/04/aws-integrating-pim-with-azure-ad-sso-for-aws-single-account-access/"

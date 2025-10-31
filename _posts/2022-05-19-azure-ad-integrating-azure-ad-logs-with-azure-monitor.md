@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure AD - Integrating Azure AD logs with Azure Monitor"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2022-05-19
 tags: [azure, entra-id]
 link: "https://nathanmcnulty.com/blog/2022/05/azure-ad-integrating-azure-ad-logs-with-azure-monitor/"

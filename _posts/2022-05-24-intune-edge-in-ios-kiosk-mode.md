@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Intune - Edge in iOS Kiosk Mode"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2022-05-24
 tags: [intune]
 link: "https://nathanmcnulty.com/blog/2022/05/intune-edge-in-ios-kiosk-mode/"

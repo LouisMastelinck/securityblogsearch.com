@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Defender AutoConfig"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2025-01-26
 tags: [defender]
 link: "https://nathanmcnulty.com/solutions/defender/defender-autoconfig/"

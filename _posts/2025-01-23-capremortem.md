@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CAPremortem"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2025-01-23
 tags: [security]
 link: "https://nathanmcnulty.com/solutions/entra/capremortem/"

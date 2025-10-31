@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AWS - Integrating PIM with Azure AD SSO for AWS IAM Identity Center"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2023-03-30
 tags: [azure, entra-id, identity]
 link: "https://nathanmcnulty.com/blog/2023/03/aws-integrating-pim-with-azure-ad-sso-for-aws-iam-identity-center/"
