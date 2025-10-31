@@ -62,7 +62,8 @@ subject_filter: defender-office
                      data-author="{{ post.author | downcase }}"
                      data-tags="{{ post.tags | join: ',' | downcase }}"
                      data-date="{{ post.date | date: '%Y-%m-%d' }}"
-                     data-summary="{{ post.summary | downcase }}">
+                     data-summary="{{ post.summary | downcase }}"
+                     data-index="{{ forloop.index0 }}">
                 <h3 class="post-card-title">
                     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                 </h3>
@@ -94,8 +95,16 @@ subject_filter: defender-office
             {% endfor %}
         </div>
         
+        <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+            <p>Loading more posts...</p>
+        </div>
+        
         <div id="noResults" class="no-results" style="display: none;">
             <p>No posts found matching your criteria. Try adjusting your filters or search terms.</p>
+        </div>
+        
+        <div id="endOfPosts" class="end-of-posts" style="display: none;">
+            <p>You've reached the end of all posts!</p>
         </div>
     </section>
 </div>
