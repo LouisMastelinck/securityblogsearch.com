@@ -6,10 +6,9 @@
 #   - tags: (optional) Default tags. Will extract from RSS feed content if not provided
 
 websites:
- # - url: https://lousec.be
- #   rss_feed: https://lousec.be/feed/  # Will try to auto-detect if not provided  
+  # - url: https://lousec.be
+  #   rss_feed: https://lousec.be/feed/  # Will try to auto-detect if not provided
   - url: https://janbakker.tech/
-   rss_feed: https://janbakker.tech/feed/  # Will try to auto-detect if not provided
+    rss_feed: https://janbakker.tech/feed/  # Will try to auto-detect if not provided
   - url: https://www.cloud-architekt.net/
-    rss_feed: 
-    
+    # rss_feed will be auto-detected

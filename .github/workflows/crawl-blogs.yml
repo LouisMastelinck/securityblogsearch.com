@@ -34,6 +34,9 @@ jobs:
           pip install --upgrade pip
           pip install pyyaml feedparser requests beautifulsoup4
       
+      - name: Validate websites.yml
+        run: python3 .github/scripts/validate_websites_yml.py websites.yml
+      
       - name: Configure Git
         run: |
           git config user.name "automation"

@@ -184,6 +184,48 @@ class BlogCrawler:
         # Limit to 5 tags
         return tags[:5]
     
+    def extract_summary_from_url(self, url):
+        """Try to extract a better summary directly from the blog post URL."""
+        try:
+            response = requests.get(url, timeout=10, headers={
+                'User-Agent': 'SecurityBlogSearch-Crawler/1.0'
+            })
+            if response.status_code != 200:
+                return None
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Try to find meta description
+            meta_desc = soup.find('meta', attrs={'name': 'description'})
+            if not meta_desc:
+                meta_desc = soup.find('meta', attrs={'property': 'og:description'})
+            
+            if meta_desc and meta_desc.get('content'):
+                summary = meta_desc.get('content').strip()
+                if len(summary) > 50:  # Only use if substantial
+                    summary = ' '.join(summary.split())  # Normalize whitespace
+                    if len(summary) > 200:
+                        summary = summary[:197] + '...'
+                    return summary
+            
+            # Try to extract from first paragraph
+            article = soup.find('article') or soup.find('main') or soup
+            paragraphs = article.find_all('p')
+            
+            for p in paragraphs[:3]:  # Check first 3 paragraphs
+                text = p.get_text().strip()
+                # Skip very short paragraphs
+                if len(text) > 50:
+                    text = ' '.join(text.split())  # Normalize whitespace
+                    if len(text) > 200:
+                        text = text[:197] + '...'
+                    return text
+            
+        except Exception as e:
+            print(f"  Could not extract summary from URL: {e}")
+        
+        return None
+    
     def crawl_rss_feed(self, feed_url, base_url):
         """Crawl an RSS/Atom feed for blog posts."""
         try:
@@ -216,12 +258,21 @@ class BlogCrawler:
                     if len(summary) > 200:
                         summary = summary[:197] + '...'
                 
+                # If summary is missing or too short, try to extract from the post URL
+                if not summary or len(summary) < 50:
+                    print(f"  Attempting to extract better summary from: {link}")
+                    extracted_summary = self.extract_summary_from_url(link)
+                    if extracted_summary:
+                        summary = extracted_summary
+                        print(f"  ✓ Extracted summary from post URL")
+                
                 # Extract author from entry
                 author = self.extract_author_from_entry(entry)
                 
                 # Extract tags from entry
                 tags = self.extract_tags_from_entry(entry)
                 
+                # Fallback summary if still missing
                 if not summary:
                     summary = f"Blog post from {author if author else 'the author'}"
                 
