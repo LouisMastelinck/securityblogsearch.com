@@ -18,12 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Pagination variables
     const POSTS_PER_PAGE = 20;
-    const MAX_AUTO_LOAD_ITERATIONS = 50; // Safety limit: max recursive auto-load iterations to prevent infinite loops
-    const SCROLLABLE_BUFFER_PX = 10; // Buffer for scrollable detection (accounts for browser differences)
     let currentlyDisplayed = 0;
     let filteredPosts = [];
     let isLoading = false;
-    let autoLoadCount = 0; // Tracks recursive auto-load iterations (resets on filter change)
     
     // Filter and search function
     function filterPosts() {
@@ -73,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Reset pagination and display initial posts
         currentlyDisplayed = 0;
-        autoLoadCount = 0; // Reset auto-load counter
         hideAllPosts();
         displayNextBatch();
     }
@@ -113,56 +109,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // Check if page is scrollable after loading batch
-        // If not scrollable and more posts available, load more automatically
-        checkAndLoadMore();
+        // Update load more button visibility
+        updateLoadMoreButton();
     }
     
-    // Check if page needs more content to be scrollable
-    function checkAndLoadMore() {
-        // Guard against concurrent execution - isLoading flag also protects displayNextBatch
-        if (isLoading) return;
-        if (currentlyDisplayed >= filteredPosts.length) return;
-        if (autoLoadCount >= MAX_AUTO_LOAD_ITERATIONS) {
-            console.warn(`Reached maximum auto-load iterations (${autoLoadCount}/${MAX_AUTO_LOAD_ITERATIONS}). Stopping auto-load.`);
-            return;
-        }
-        
-        // Check if page is scrollable (content height > viewport height + buffer)
-        // Buffer accounts for browser differences and ensures reliable detection
-        const isScrollable = document.documentElement.scrollHeight > window.innerHeight + SCROLLABLE_BUFFER_PX;
-        
-        if (!isScrollable) {
-            autoLoadCount++;
-            isLoading = true; // Prevent concurrent auto-loading
-            // Page is not scrollable yet, load more posts automatically
-            // Use setTimeout with small delay to allow browser to render between batches
-            setTimeout(() => {
-                displayNextBatch(); // Synchronous function, completes immediately
-                isLoading = false; // Safe to reset: displayNextBatch() has completed
-            }, 10);
+    // Update load more button visibility
+    function updateLoadMoreButton() {
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (loadMoreBtn) {
+            if (currentlyDisplayed >= filteredPosts.length) {
+                loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'block';
+            }
         }
     }
     
-    // Infinite scroll handler
-    function handleScroll() {
+    // Load more button handler
+    function handleLoadMore() {
         if (isLoading || currentlyDisplayed >= filteredPosts.length) return;
         
-        // Calculate if user is near the bottom (within 500px)
-        const scrollPosition = window.innerHeight + window.scrollY;
-        const pageHeight = document.documentElement.scrollHeight;
+        isLoading = true;
+        loadingIndicator.style.display = 'block';
         
-        if (scrollPosition >= pageHeight - 500) {
-            isLoading = true;
-            loadingIndicator.style.display = 'block';
-            
-            // Simulate a small delay for loading effect
-            setTimeout(() => {
-                displayNextBatch();
-                loadingIndicator.style.display = 'none';
-                isLoading = false;
-            }, 300);
-        }
+        // Simulate a small delay for loading effect
+        setTimeout(() => {
+            displayNextBatch();
+            loadingIndicator.style.display = 'none';
+            isLoading = false;
+        }, 300);
     }
     
     // Reset filters
@@ -195,8 +170,11 @@ document.addEventListener('DOMContentLoaded', function() {
         resetFilters.addEventListener('click', resetAllFilters);
     }
     
-    // Add scroll event listener for infinite scroll
-    window.addEventListener('scroll', handleScroll);
+    // Add load more button event listener
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', handleLoadMore);
+    }
     
     // Initial load - apply default sorting and show first batch
     filterPosts();
