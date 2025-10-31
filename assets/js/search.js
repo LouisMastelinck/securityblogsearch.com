@@ -7,12 +7,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const resetFilters = document.getElementById('resetFilters');
     const postsContainer = document.getElementById('postsContainer');
     const noResults = document.getElementById('noResults');
+    const loadingIndicator = document.getElementById('loadingIndicator');
+    const endOfPosts = document.getElementById('endOfPosts');
     const posts = Array.from(document.querySelectorAll('.post-card'));
     
     // Exit early if we're not on a page with posts
     if (!searchInput || !postsContainer || posts.length === 0) {
         return;
     }
+    
+    // Pagination variables
+    const POSTS_PER_PAGE = 20;
+    let currentlyDisplayed = 0;
+    let filteredPosts = [];
+    let isLoading = false;
     
     // Filter and search function
     function filterPosts() {
@@ -22,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const sortOption = sortBy.value;
         
         // Filter posts
-        let visiblePosts = posts.filter(post => {
+        filteredPosts = posts.filter(post => {
             const title = post.dataset.title || '';
             const author = post.dataset.author || '';
             const tags = post.dataset.tags || '';
@@ -45,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Sort posts
-        visiblePosts.sort((a, b) => {
+        filteredPosts.sort((a, b) => {
             switch(sortOption) {
                 case 'date-desc':
                     return new Date(b.dataset.date) - new Date(a.dataset.date);
@@ -60,18 +68,66 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Hide all posts and set order
-        posts.forEach((post, index) => {
-            const isVisible = visiblePosts.includes(post);
-            post.style.display = isVisible ? 'block' : 'none';
-            post.style.order = isVisible ? visiblePosts.indexOf(post) : 999;
+        // Reset pagination and display initial posts
+        currentlyDisplayed = 0;
+        hideAllPosts();
+        displayNextBatch();
+    }
+    
+    // Hide all posts
+    function hideAllPosts() {
+        posts.forEach(post => {
+            post.style.display = 'none';
         });
+    }
+    
+    // Display next batch of posts
+    function displayNextBatch() {
+        if (isLoading) return;
         
-        // Show/hide no results message
-        if (visiblePosts.length > 0) {
-            noResults.style.display = 'none';
-        } else {
+        const endIndex = Math.min(currentlyDisplayed + POSTS_PER_PAGE, filteredPosts.length);
+        
+        // Show posts in the current batch
+        for (let i = currentlyDisplayed; i < endIndex; i++) {
+            filteredPosts[i].style.display = 'block';
+            filteredPosts[i].style.order = i;
+        }
+        
+        currentlyDisplayed = endIndex;
+        
+        // Update UI elements
+        if (filteredPosts.length === 0) {
             noResults.style.display = 'block';
+            endOfPosts.style.display = 'none';
+        } else {
+            noResults.style.display = 'none';
+            
+            if (currentlyDisplayed >= filteredPosts.length) {
+                endOfPosts.style.display = 'block';
+            } else {
+                endOfPosts.style.display = 'none';
+            }
+        }
+    }
+    
+    // Infinite scroll handler
+    function handleScroll() {
+        if (isLoading || currentlyDisplayed >= filteredPosts.length) return;
+        
+        // Calculate if user is near the bottom (within 500px)
+        const scrollPosition = window.innerHeight + window.scrollY;
+        const pageHeight = document.documentElement.scrollHeight;
+        
+        if (scrollPosition >= pageHeight - 500) {
+            isLoading = true;
+            loadingIndicator.style.display = 'block';
+            
+            // Simulate a small delay for loading effect
+            setTimeout(() => {
+                displayNextBatch();
+                loadingIndicator.style.display = 'none';
+                isLoading = false;
+            }, 300);
         }
     }
     
@@ -105,7 +161,10 @@ document.addEventListener('DOMContentLoaded', function() {
         resetFilters.addEventListener('click', resetAllFilters);
     }
     
-    // Initial load - apply default sorting
+    // Add scroll event listener for infinite scroll
+    window.addEventListener('scroll', handleScroll);
+    
+    // Initial load - apply default sorting and show first batch
     filterPosts();
 });
 

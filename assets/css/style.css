@@ -369,6 +369,30 @@ body {
     color: #7f8c8d;
 }
 
+/* Loading Indicator */
+.loading-indicator {
+    text-align: center;
+    padding: 2rem;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.loading-indicator p {
+    margin: 0;
+}
+
+/* End of Posts */
+.end-of-posts {
+    text-align: center;
+    padding: 2rem;
+    color: #95a5a6;
+    font-style: italic;
+}
+
+.end-of-posts p {
+    margin: 0;
+}
+
 /* Post Page */
 .post {
     background: #fff;
