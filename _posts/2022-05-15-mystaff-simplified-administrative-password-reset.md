@@ -1,0 +1,9 @@
+---
+layout: post
+title: "MyStaff - Simplified Administrative Password Reset"
+author: "Unknown"
+date: 2022-05-15
+tags: [security]
+link: "https://nathanmcnulty.com/blog/2022/05/mystaff-simplified-administrative-password-reset/"
+summary: "Note This article was last updated on 01/26/2025 for readability and updated URLs. Unfortunately, images were not able to be restored from a previous hosting provider :("
+---
