@@ -127,6 +127,25 @@ def test_tag_extraction():
     tags2 = crawler.infer_tags_from_content(entry2)
     print(f"  ✓ Inferred tags from content: {tags2}")
 
+def test_summary_extraction():
+    """Test summary extraction from blog post URLs"""
+    from crawl_blogs import BlogCrawler
+    
+    print("\nTesting summary extraction:")
+    
+    crawler = BlogCrawler()
+    
+    # Note: This would make a real HTTP request, so we just test that the method exists
+    # and can handle errors gracefully
+    print("  ✓ Summary extraction method is available")
+    
+    # Test with invalid URL to verify error handling
+    summary = crawler.extract_summary_from_url('https://invalid-url-that-does-not-exist-12345.com')
+    if summary is None:
+        print("  ✓ Gracefully handles invalid URLs")
+    else:
+        print("  ✗ Should return None for invalid URLs")
+
 if __name__ == '__main__':
     print("Blog Crawler Unit Tests")
     print("=" * 60)
@@ -138,6 +157,7 @@ if __name__ == '__main__':
         test_post_format()
         test_author_extraction()
         test_tag_extraction()
+        test_summary_extraction()
         
         print("\n" + "=" * 60)
         print("All tests completed!")

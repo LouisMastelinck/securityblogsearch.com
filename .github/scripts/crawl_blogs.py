@@ -22,6 +22,10 @@ from bs4 import BeautifulSoup
 class BlogCrawler:
     """Crawls websites for new blog posts."""
     
+    # Constants
+    MIN_SUMMARY_LENGTH = 50  # Minimum length for a useful summary
+    MAX_SUMMARY_LENGTH = 200  # Maximum length before truncation
+    
     def __init__(self, config_path='websites.yml', posts_dir='_posts'):
         """Initialize the crawler."""
         self.config_path = config_path
@@ -184,6 +188,53 @@ class BlogCrawler:
         # Limit to 5 tags
         return tags[:5]
     
+    def extract_summary_from_url(self, url):
+        """Try to extract a better summary directly from the blog post URL."""
+        try:
+            response = requests.get(url, timeout=10, headers={
+                'User-Agent': 'SecurityBlogSearch-Crawler/1.0'
+            })
+            response.raise_for_status()  # Raise HTTPError for bad status codes
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Try to find meta description
+            meta_desc = soup.find('meta', attrs={'name': 'description'})
+            if not meta_desc:
+                meta_desc = soup.find('meta', attrs={'property': 'og:description'})
+            
+            if meta_desc and meta_desc.get('content'):
+                summary = meta_desc.get('content').strip()
+                if len(summary) > self.MIN_SUMMARY_LENGTH:  # Only use if substantial
+                    summary = ' '.join(summary.split())  # Normalize whitespace
+                    if len(summary) > self.MAX_SUMMARY_LENGTH:
+                        summary = summary[:self.MAX_SUMMARY_LENGTH - 3] + '...'
+                    return summary
+            
+            # Try to extract from first paragraph
+            article = soup.find('article') or soup.find('main') or soup
+            paragraphs = article.find_all('p')
+            
+            for p in paragraphs[:3]:  # Check first 3 paragraphs
+                text = p.get_text().strip()
+                # Skip very short paragraphs
+                if len(text) > self.MIN_SUMMARY_LENGTH:
+                    text = ' '.join(text.split())  # Normalize whitespace
+                    if len(text) > self.MAX_SUMMARY_LENGTH:
+                        text = text[:self.MAX_SUMMARY_LENGTH - 3] + '...'
+                    return text
+            
+        except requests.exceptions.Timeout:
+            print(f"  Timeout while fetching URL")
+        except requests.exceptions.ConnectionError:
+            print(f"  Connection error while fetching URL")
+        except requests.exceptions.HTTPError as e:
+            print(f"  HTTP error {e.response.status_code} while fetching URL")
+        except Exception as e:
+            print(f"  Could not extract summary from URL: {e}")
+        
+        return None
+    
     def crawl_rss_feed(self, feed_url, base_url):
         """Crawl an RSS/Atom feed for blog posts."""
         try:
@@ -213,8 +264,16 @@ class BlogCrawler:
                     summary = re.sub(r'<[^>]+>', '', summary)
                     summary = ' '.join(summary.split())  # Normalize whitespace
                     # Limit summary length
-                    if len(summary) > 200:
-                        summary = summary[:197] + '...'
+                    if len(summary) > self.MAX_SUMMARY_LENGTH:
+                        summary = summary[:self.MAX_SUMMARY_LENGTH - 3] + '...'
+                
+                # If summary is missing or too short, try to extract from the post URL
+                if not summary or len(summary) < self.MIN_SUMMARY_LENGTH:
+                    print(f"  Attempting to extract better summary from: {link}")
+                    extracted_summary = self.extract_summary_from_url(link)
+                    if extracted_summary:
+                        summary = extracted_summary
+                        print(f"  ✓ Extracted summary from post URL")
                 
                 # Extract author from entry
                 author = self.extract_author_from_entry(entry)
@@ -222,6 +281,7 @@ class BlogCrawler:
                 # Extract tags from entry
                 tags = self.extract_tags_from_entry(entry)
                 
+                # Fallback summary if still missing
                 if not summary:
                     summary = f"Blog post from {author if author else 'the author'}"
                 

@@ -1,0 +1,39 @@
+---
+name: Validate Configuration
+
+on:
+  pull_request:
+    paths:
+      - 'websites.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'websites.yml'
+  workflow_dispatch:
+
+jobs:
+  validate-websites-yml:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install pyyaml
+      
+      - name: Validate websites.yml
+        run: python3 .github/scripts/validate_websites_yml.py websites.yml
+      
+      - name: Summary
+        run: |
+          echo "✅ Configuration validation passed"
+          echo "The websites.yml file is properly formatted and valid"
