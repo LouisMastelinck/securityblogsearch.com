@@ -69,12 +69,12 @@ Optional: Additional content or notes about the post.
         
         <pre><code>---
 layout: post
-title: "Advanced XSS Prevention Techniques"
-author: "Alex Security"
+title: "Advanced Threat Protection with Microsoft Defender for Endpoint"
+author: "Sarah Mitchell"
 date: 2024-10-27
-tags: [web-security, xss, prevention]
-link: "https://example.com/xss-prevention"
-summary: "This article explores advanced techniques for preventing cross-site scripting (XSS) attacks in modern web applications, including Content Security Policy and sanitization best practices."
+tags: [defender, microsoft-defender-xdr, endpoint-security, threat-hunting]
+link: "https://example.com/defender-endpoint-threat-protection"
+summary: "This article explores advanced threat protection capabilities in Microsoft Defender for Endpoint, including automated investigation and response, threat hunting with KQL, and integration with Microsoft Sentinel for enhanced security operations."
 ---
 </code></pre>
         
