@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Pagination variables
     const POSTS_PER_PAGE = 20;
     const MAX_AUTO_LOAD_ITERATIONS = 50; // Safety limit for auto-loading
+    const SCROLLABLE_BUFFER_PX = 10; // Buffer for scrollable detection
     let currentlyDisplayed = 0;
     let filteredPosts = [];
     let isLoading = false;
@@ -121,13 +122,13 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkAndLoadMore() {
         if (currentlyDisplayed >= filteredPosts.length) return;
         if (autoLoadCount >= MAX_AUTO_LOAD_ITERATIONS) {
-            console.warn('Reached maximum auto-load iterations');
+            console.warn(`Reached maximum auto-load iterations (${autoLoadCount}/${MAX_AUTO_LOAD_ITERATIONS}). Stopping auto-load.`);
             return;
         }
         
         // Check if page is scrollable (content height > viewport height + buffer)
         // Buffer accounts for browser differences and ensures reliable detection
-        const isScrollable = document.documentElement.scrollHeight > window.innerHeight + 10;
+        const isScrollable = document.documentElement.scrollHeight > window.innerHeight + SCROLLABLE_BUFFER_PX;
         
         if (!isScrollable) {
             autoLoadCount++;
