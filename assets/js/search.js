@@ -138,8 +138,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Page is not scrollable yet, load more posts automatically
             // Use setTimeout with small delay to allow browser to render between batches
             setTimeout(() => {
-                isLoading = false;
                 displayNextBatch();
+                isLoading = false; // Reset after batch is displayed
             }, 10);
         }
     }
