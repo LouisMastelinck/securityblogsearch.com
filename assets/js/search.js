@@ -18,9 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Pagination variables
     const POSTS_PER_PAGE = 20;
+    const MAX_AUTO_LOAD_ITERATIONS = 50; // Safety limit for auto-loading
     let currentlyDisplayed = 0;
     let filteredPosts = [];
     let isLoading = false;
+    let autoLoadCount = 0;
     
     // Filter and search function
     function filterPosts() {
@@ -70,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Reset pagination and display initial posts
         currentlyDisplayed = 0;
+        autoLoadCount = 0; // Reset auto-load counter
         hideAllPosts();
         displayNextBatch();
     }
@@ -117,17 +120,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check if page needs more content to be scrollable
     function checkAndLoadMore() {
         if (currentlyDisplayed >= filteredPosts.length) return;
+        if (autoLoadCount >= MAX_AUTO_LOAD_ITERATIONS) {
+            console.warn('Reached maximum auto-load iterations');
+            return;
+        }
         
         // Check if page is scrollable (content height > viewport height + buffer)
         // Buffer accounts for browser differences and ensures reliable detection
         const isScrollable = document.documentElement.scrollHeight > window.innerHeight + 10;
         
         if (!isScrollable) {
+            autoLoadCount++;
             // Page is not scrollable yet, load more posts automatically
-            // Use requestAnimationFrame for better performance and to prevent issues
-            requestAnimationFrame(() => {
+            // Use setTimeout with small delay to allow browser to render between batches
+            setTimeout(() => {
                 displayNextBatch();
-            });
+            }, 10);
         }
     }
     
