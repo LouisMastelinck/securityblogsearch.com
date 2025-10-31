@@ -12,3 +12,17 @@ websites:
     rss_feed: https://janbakker.tech/feed/  # Will try to auto-detect if not provided
   - url: https://www.cloud-architekt.net/
     # rss_feed will be auto-detected
+  - url: https://www.natehutchinson.co.uk/
+  - url: https://campbell.scot/
+  - url: https://blog.sonnes.cloud/
+  - url: https://wmatthyssen.com/
+  - url: https://call4cloud.nl/
+  - url: https://jeffreyappel.nl/
+  - url: https://cloudbrothers.info/en/
+  - url: https://kqlquery.com/
+  - url: https://www.kustoking.com/
+  - url: https://thalpius.com/
+  - url: https://hybridbrothers.com/
+  - url: https://mortenknudsen.net/
+  - url: https://nathanmcnulty.com
+  - url: https://www.welkasworld.com/
