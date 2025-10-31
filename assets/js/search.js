@@ -118,14 +118,16 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkAndLoadMore() {
         if (currentlyDisplayed >= filteredPosts.length) return;
         
-        // Check if page is scrollable (content height > viewport height)
-        const isScrollable = document.documentElement.scrollHeight > window.innerHeight;
+        // Check if page is scrollable (content height > viewport height + buffer)
+        // Buffer accounts for browser differences and ensures reliable detection
+        const isScrollable = document.documentElement.scrollHeight > window.innerHeight + 10;
         
         if (!isScrollable) {
             // Page is not scrollable yet, load more posts automatically
-            setTimeout(() => {
+            // Use requestAnimationFrame for better performance and to prevent issues
+            requestAnimationFrame(() => {
                 displayNextBatch();
-            }, 100);
+            });
         }
     }
     
