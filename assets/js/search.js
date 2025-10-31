@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Pagination variables
     const POSTS_PER_PAGE = 20;
-    const MAX_AUTO_LOAD_ITERATIONS = 50; // Safety limit for auto-loading
-    const SCROLLABLE_BUFFER_PX = 10; // Buffer for scrollable detection
+    const MAX_AUTO_LOAD_ITERATIONS = 50; // Safety limit: max recursive auto-load iterations to prevent infinite loops
+    const SCROLLABLE_BUFFER_PX = 10; // Buffer for scrollable detection (accounts for browser differences)
     let currentlyDisplayed = 0;
     let filteredPosts = [];
     let isLoading = false;
-    let autoLoadCount = 0;
+    let autoLoadCount = 0; // Tracks recursive auto-load iterations (resets on filter change)
     
     // Filter and search function
     function filterPosts() {
@@ -138,8 +138,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Page is not scrollable yet, load more posts automatically
             // Use setTimeout with small delay to allow browser to render between batches
             setTimeout(() => {
-                displayNextBatch();
-                isLoading = false; // Reset after batch is displayed
+                displayNextBatch(); // Synchronous function, completes immediately
+                isLoading = false; // Safe to reset: displayNextBatch() has completed
             }, 10);
         }
     }
