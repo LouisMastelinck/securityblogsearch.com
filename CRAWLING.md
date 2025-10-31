@@ -53,8 +53,14 @@ The crawler automatically enriches posts with metadata from the RSS feed:
    - RSS feed categories and tags
    - Content analysis (keywords like azure, entra-id, security, defender, etc.)
    - Defaults to ['security'] if no tags can be determined
+3. **Summary Generation**: Creates meaningful summaries for each post:
+   - First tries to use the summary/description from the RSS feed
+   - If RSS summary is missing or too short (< 50 characters), fetches the actual blog post and extracts:
+     - Meta description from the page
+     - First substantial paragraph from the article
+   - Ensures all posts have relevant, descriptive summaries
 
-This allows you to simply provide the website URL and RSS feed, and the crawler will automatically populate author and tags based on the crawled content.
+This allows you to simply provide the website URL and RSS feed, and the crawler will automatically populate author, tags, and summaries based on the crawled content.
 
 ### Post Format
 
@@ -111,10 +117,32 @@ Review the PR to:
 - If formatting issues occur, they should be fixed in the automated PR before merging
 - Consider updating the crawler script if systematic issues are found
 
+## Configuration Validation
+
+To ensure the `websites.yml` file is properly formatted, a validation script is available:
+
+```bash
+python3 .github/scripts/validate_websites_yml.py websites.yml
+```
+
+This validation is automatically run:
+- Before each crawler run
+- On pull requests that modify `websites.yml`
+- On pushes to the main branch
+
+The validator checks for:
+- Valid YAML syntax
+- Required fields (url)
+- Proper data types for all fields
+- Common configuration mistakes
+
 ## Files
 
-- `.github/workflows/crawl-blogs.yml` - GitHub Actions workflow
+- `.github/workflows/crawl-blogs.yml` - GitHub Actions workflow for crawling
+- `.github/workflows/validate-config.yml` - GitHub Actions workflow for validation
 - `.github/scripts/crawl_blogs.py` - Python crawler script
+- `.github/scripts/validate_websites_yml.py` - Configuration validation script
+- `.github/scripts/test_crawler.py` - Unit tests for crawler functionality
 - `websites.yml` - Website configuration
 
 ## Requirements
