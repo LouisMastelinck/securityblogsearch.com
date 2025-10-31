@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MyStaff - Simplified Administrative Password Reset"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2022-05-15
 tags: [security]
 link: "https://nathanmcnulty.com/blog/2022/05/mystaff-simplified-administrative-password-reset/"

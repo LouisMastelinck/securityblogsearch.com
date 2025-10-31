@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Defender AV - Improving Windows Defender Update Efficacy"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2022-05-15
 tags: [defender]
 link: "https://nathanmcnulty.com/blog/2022/05/defender-av-improving-windows-defender-update-efficacy/"

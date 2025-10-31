@@ -18,9 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Pagination variables
     const POSTS_PER_PAGE = 20;
+    const MAX_AUTO_LOAD_ITERATIONS = 50; // Safety limit: max recursive auto-load iterations to prevent infinite loops
+    const SCROLLABLE_BUFFER_PX = 10; // Buffer for scrollable detection (accounts for browser differences)
     let currentlyDisplayed = 0;
     let filteredPosts = [];
     let isLoading = false;
+    let autoLoadCount = 0; // Tracks recursive auto-load iterations (resets on filter change)
     
     // Filter and search function
     function filterPosts() {
@@ -70,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Reset pagination and display initial posts
         currentlyDisplayed = 0;
+        autoLoadCount = 0; // Reset auto-load counter
         hideAllPosts();
         displayNextBatch();
     }
@@ -107,6 +111,36 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 endOfPosts.style.display = 'none';
             }
+        }
+        
+        // Check if page is scrollable after loading batch
+        // If not scrollable and more posts available, load more automatically
+        checkAndLoadMore();
+    }
+    
+    // Check if page needs more content to be scrollable
+    function checkAndLoadMore() {
+        // Guard against concurrent execution - isLoading flag also protects displayNextBatch
+        if (isLoading) return;
+        if (currentlyDisplayed >= filteredPosts.length) return;
+        if (autoLoadCount >= MAX_AUTO_LOAD_ITERATIONS) {
+            console.warn(`Reached maximum auto-load iterations (${autoLoadCount}/${MAX_AUTO_LOAD_ITERATIONS}). Stopping auto-load.`);
+            return;
+        }
+        
+        // Check if page is scrollable (content height > viewport height + buffer)
+        // Buffer accounts for browser differences and ensures reliable detection
+        const isScrollable = document.documentElement.scrollHeight > window.innerHeight + SCROLLABLE_BUFFER_PX;
+        
+        if (!isScrollable) {
+            autoLoadCount++;
+            isLoading = true; // Prevent concurrent auto-loading
+            // Page is not scrollable yet, load more posts automatically
+            // Use setTimeout with small delay to allow browser to render between batches
+            setTimeout(() => {
+                displayNextBatch(); // Synchronous function, completes immediately
+                isLoading = false; // Safe to reset: displayNextBatch() has completed
+            }, 10);
         }
     }
     

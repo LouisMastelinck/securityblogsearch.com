@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "One Full Scan"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2025-01-26
 tags: [defender]
 link: "https://nathanmcnulty.com/solutions/defender/full-scan-once/"

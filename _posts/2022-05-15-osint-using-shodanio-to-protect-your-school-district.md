@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "OSINT - Using Shodan.io to protect your school district"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2022-05-15
 tags: [security]
 link: "https://nathanmcnulty.com/blog/2022/05/osint-using-shodan.io-to-protect-your-school-district/"

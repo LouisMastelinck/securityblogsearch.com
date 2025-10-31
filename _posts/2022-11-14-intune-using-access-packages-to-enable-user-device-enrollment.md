@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Intune - Using Access Packages to Enable User Device Enrollment"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2022-11-14
 tags: [intune]
 link: "https://nathanmcnulty.com/blog/2022/11/intune-using-access-packages-to-enable-user-device-enrollment/"

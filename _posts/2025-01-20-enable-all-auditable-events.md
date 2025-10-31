@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Enable all auditable events"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2025-01-20
 tags: [security]
 link: "https://nathanmcnulty.com/notes/purview/enable-all-auditable-events/"

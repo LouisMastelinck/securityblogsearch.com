@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Comprehensive Guide to Configuring Advanced Auditing"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2025-04-15
 tags: [security]
 link: "https://nathanmcnulty.com/blog/2025/04/comprehensive-guide-to-configuring-advanced-auditing/"

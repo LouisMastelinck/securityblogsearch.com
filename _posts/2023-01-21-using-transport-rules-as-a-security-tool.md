@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using transport rules as a security tool"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2023-01-21
 tags: [security]
 link: "https://nathanmcnulty.com/blog/2023/01/using-transport-rules-as-a-security-tool/"

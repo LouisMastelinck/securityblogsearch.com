@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Defender for Endpoint - Removable Storage Access Control"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2022-05-04
 tags: [defender, intune]
 link: "https://nathanmcnulty.com/blog/2022/05/defender-for-endpoint-removable-storage-access-control/"

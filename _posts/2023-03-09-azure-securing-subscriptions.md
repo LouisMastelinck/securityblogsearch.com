@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure - Securing Subscriptions"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2023-03-09
 tags: [azure]
 link: "https://nathanmcnulty.com/blog/2023/03/azure-securing-subscriptions/"

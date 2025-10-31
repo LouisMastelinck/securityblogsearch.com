@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Intune - Discover Defender AV exclusions using Proactive Remediation"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2023-04-05
 tags: [defender, intune]
 link: "https://nathanmcnulty.com/blog/2023/04/intune-discover-defender-av-exclusions-using-proactive-remediation/"

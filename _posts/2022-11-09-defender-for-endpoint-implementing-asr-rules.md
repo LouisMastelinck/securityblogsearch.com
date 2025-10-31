@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Defender for Endpoint - Implementing ASR Rules"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2022-11-09
 tags: [defender]
 link: "https://nathanmcnulty.com/blog/2022/11/defender-for-endpoint-implementing-asr-rules/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Intune - Microsoft Tunnel VPN Gateway"
-author: "Unknown"
+author: "Nathan McNulty"
 date: 2023-05-01
 tags: [intune]
 link: "https://nathanmcnulty.com/blog/2023/05/intune-microsoft-tunnel-vpn-gateway/"
