@@ -25,15 +25,19 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const comment = `${{ inputs.comment_message }}`;
+            // Safely get comment from inputs
+            const comment = context.payload.inputs?.comment_message || '';
 
-            // Get all open pull requests
-            const { data: pullRequests } = await github.rest.pulls.list({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: 'open',
-              per_page: 100
-            });
+            // Get all open pull requests with pagination
+            const pullRequests = await github.paginate(
+              github.rest.pulls.list,
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open',
+                per_page: 100
+              }
+            );
 
             const prCount = pullRequests.length;
             console.log(`Found ${prCount} open pull request(s)`);
