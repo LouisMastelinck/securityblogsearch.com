@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install pyyaml feedparser requests beautifulsoup4
+          pip install pyyaml feedparser requests beautifulsoup4 lxml
       
       - name: Validate websites.yml
         run: python3 .github/scripts/validate_websites_yml.py websites.yml

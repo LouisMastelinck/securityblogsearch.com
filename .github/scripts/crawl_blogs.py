@@ -25,6 +25,8 @@ class BlogCrawler:
     # Constants
     MIN_SUMMARY_LENGTH = 50  # Minimum length for a useful summary
     MAX_SUMMARY_LENGTH = 200  # Maximum length before truncation
+    MAX_PAGES_PER_FEED = 20  # Maximum RSS feed pages to crawl (prevents infinite loops)
+    MAX_POSTS_PER_WEBSITE = 500  # Maximum posts to process per website (safety limit)
     
     def __init__(self, config_path='websites.yml', posts_dir='_posts'):
         """Initialize the crawler."""
@@ -105,6 +107,64 @@ class BlogCrawler:
                 continue
         
         return None
+    
+    def find_sitemap_url(self, base_url):
+        """Try to find sitemap URL from a website."""
+        # Try common sitemap locations
+        common_sitemap_paths = [
+            '/sitemap.xml',
+            '/sitemap_index.xml',
+            '/post-sitemap.xml',
+            '/wp-sitemap-posts-post-1.xml',
+        ]
+        
+        for path in common_sitemap_paths:
+            sitemap_url = urljoin(base_url, path)
+            try:
+                response = requests.head(sitemap_url, timeout=5, headers={
+                    'User-Agent': 'SecurityBlogSearch-Crawler/1.0'
+                }, allow_redirects=True)
+                if response.status_code == 200:
+                    return sitemap_url
+            except:
+                continue
+        
+        return None
+    
+    def parse_sitemap(self, sitemap_url):
+        """Parse sitemap and return list of URLs."""
+        urls = []
+        try:
+            response = requests.get(sitemap_url, timeout=10, headers={
+                'User-Agent': 'SecurityBlogSearch-Crawler/1.0'
+            })
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'xml')
+            
+            # Check if this is a sitemap index
+            sitemaps = soup.find_all('sitemap')
+            if sitemaps:
+                # This is a sitemap index, parse sub-sitemaps
+                for sitemap in sitemaps:
+                    loc = sitemap.find('loc')
+                    if loc:
+                        sub_sitemap_url = loc.text
+                        # Look for post sitemaps
+                        if 'post' in sub_sitemap_url.lower():
+                            print(f"  Found post sitemap: {sub_sitemap_url}")
+                            urls.extend(self.parse_sitemap(sub_sitemap_url))
+            else:
+                # This is a regular sitemap with URLs
+                url_tags = soup.find_all('url')
+                for url_tag in url_tags:
+                    loc = url_tag.find('loc')
+                    if loc:
+                        urls.append(loc.text)
+        except Exception as e:
+            print(f"  Error parsing sitemap {sitemap_url}: {e}")
+        
+        return urls
     
     def extract_author_from_entry(self, entry):
         """Extract author from RSS feed entry."""
@@ -235,70 +295,110 @@ class BlogCrawler:
         
         return None
     
-    def crawl_rss_feed(self, feed_url, base_url):
-        """Crawl an RSS/Atom feed for blog posts."""
-        try:
-            print(f"Fetching feed: {feed_url}")
-            feed = feedparser.parse(feed_url)
-            
-            if feed.bozo and feed.bozo_exception:
-                print(f"Warning: Feed parse error: {feed.bozo_exception}")
-            
-            posts = []
-            for entry in feed.entries:
-                # Extract post data
-                link = entry.get('link', '')
-                title = entry.get('title', 'Untitled')
-                
-                # Get published date
-                published = entry.get('published_parsed') or entry.get('updated_parsed')
-                if published:
-                    date = datetime(*published[:6])
+    def crawl_rss_feed(self, feed_url, base_url, paginate=True):
+        """Crawl an RSS/Atom feed for blog posts with pagination support."""
+        all_posts = []
+        seen_links = set()
+        page = 1
+        
+        # Determine pagination URL pattern
+        page_param = '&paged=' if '?' in feed_url else '?paged='
+        
+        while page <= self.MAX_PAGES_PER_FEED:
+            try:
+                # Construct paginated URL
+                if page == 1:
+                    current_url = feed_url
                 else:
-                    date = datetime.now()
+                    current_url = f"{feed_url}{page_param}{page}"
                 
-                # Get summary/description
-                summary = entry.get('summary', '') or entry.get('description', '')
-                # Clean HTML tags from summary
-                if summary:
-                    summary = re.sub(r'<[^>]+>', '', summary)
-                    summary = ' '.join(summary.split())  # Normalize whitespace
-                    # Limit summary length
-                    if len(summary) > self.MAX_SUMMARY_LENGTH:
-                        summary = summary[:self.MAX_SUMMARY_LENGTH - 3] + '...'
+                print(f"Fetching feed page {page}: {current_url}")
+                feed = feedparser.parse(current_url)
                 
-                # If summary is missing or too short, try to extract from the post URL
-                if not summary or len(summary) < self.MIN_SUMMARY_LENGTH:
-                    print(f"  Attempting to extract better summary from: {link}")
-                    extracted_summary = self.extract_summary_from_url(link)
-                    if extracted_summary:
-                        summary = extracted_summary
-                        print(f"  ✓ Extracted summary from post URL")
+                if feed.bozo and feed.bozo_exception:
+                    print(f"Warning: Feed parse error: {feed.bozo_exception}")
                 
-                # Extract author from entry
-                author = self.extract_author_from_entry(entry)
+                # If no entries, we've reached the end
+                if not feed.entries:
+                    print(f"  No more entries found, stopping pagination")
+                    break
                 
-                # Extract tags from entry
-                tags = self.extract_tags_from_entry(entry)
+                posts_on_page = 0
+                for entry in feed.entries:
+                    # Extract post data
+                    link = entry.get('link', '')
+                    
+                    # Skip if we've already seen this link (duplicate detection for pagination)
+                    if link in seen_links:
+                        continue
+                    seen_links.add(link)
+                    
+                    title = entry.get('title', 'Untitled')
+                    
+                    # Get published date
+                    published = entry.get('published_parsed') or entry.get('updated_parsed')
+                    if published:
+                        date = datetime(*published[:6])
+                    else:
+                        date = datetime.now()
+                    
+                    # Get summary/description
+                    summary = entry.get('summary', '') or entry.get('description', '')
+                    # Clean HTML tags from summary
+                    if summary:
+                        summary = re.sub(r'<[^>]+>', '', summary)
+                        summary = ' '.join(summary.split())  # Normalize whitespace
+                        # Limit summary length
+                        if len(summary) > self.MAX_SUMMARY_LENGTH:
+                            summary = summary[:self.MAX_SUMMARY_LENGTH - 3] + '...'
+                    
+                    # If summary is missing or too short, try to extract from the post URL
+                    if not summary or len(summary) < self.MIN_SUMMARY_LENGTH:
+                        print(f"  Attempting to extract better summary from: {link}")
+                        extracted_summary = self.extract_summary_from_url(link)
+                        if extracted_summary:
+                            summary = extracted_summary
+                            print(f"  ✓ Extracted summary from post URL")
+                    
+                    # Extract author from entry
+                    author = self.extract_author_from_entry(entry)
+                    
+                    # Extract tags from entry
+                    tags = self.extract_tags_from_entry(entry)
+                    
+                    # Fallback summary if still missing
+                    if not summary:
+                        summary = f"Blog post from {author if author else 'the author'}"
+                    
+                    all_posts.append({
+                        'link': link,
+                        'title': title,
+                        'date': date,
+                        'summary': summary,
+                        'author': author,
+                        'tags': tags,
+                        'entry': entry  # Keep entry for potential tag inference
+                    })
+                    posts_on_page += 1
                 
-                # Fallback summary if still missing
-                if not summary:
-                    summary = f"Blog post from {author if author else 'the author'}"
+                print(f"  Found {posts_on_page} unique posts on page {page}")
                 
-                posts.append({
-                    'link': link,
-                    'title': title,
-                    'date': date,
-                    'summary': summary,
-                    'author': author,
-                    'tags': tags,
-                    'entry': entry  # Keep entry for potential tag inference
-                })
-            
-            return posts
-        except Exception as e:
-            print(f"Error crawling RSS feed {feed_url}: {e}")
-            return []
+                # Safety check: stop if we've collected too many posts
+                if len(all_posts) >= self.MAX_POSTS_PER_WEBSITE:
+                    print(f"  Reached maximum posts limit ({self.MAX_POSTS_PER_WEBSITE}), stopping")
+                    break
+                
+                # If pagination is disabled or we got fewer entries than expected, stop
+                if not paginate or len(feed.entries) < 10:
+                    break
+                
+                page += 1
+                
+            except Exception as e:
+                print(f"Error crawling RSS feed page {page}: {e}")
+                break
+        
+        return all_posts
     
     def create_slug(self, title):
         """Create a URL-friendly slug from title."""
@@ -392,9 +492,9 @@ summary: "{summary}"
         
         print(f"Using feed: {feed_url}")
         
-        # Crawl the feed
-        posts = self.crawl_rss_feed(feed_url, url)
-        print(f"Found {len(posts)} posts in feed")
+        # Crawl the feed with pagination enabled
+        posts = self.crawl_rss_feed(feed_url, url, paginate=True)
+        print(f"Found {len(posts)} total posts across all pages")
         
         # Filter new posts
         new_posts = [p for p in posts if p['link'] not in self.existing_links]
