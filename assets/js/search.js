@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const resetFilters = document.getElementById('resetFilters');
     const postsContainer = document.getElementById('postsContainer');
     const noResults = document.getElementById('noResults');
-    const loadingIndicator = document.getElementById('loadingIndicator');
     const endOfPosts = document.getElementById('endOfPosts');
     const loadMoreBtn = document.getElementById('loadMoreBtn');
     const posts = Array.from(document.querySelectorAll('.post-card'));
@@ -22,14 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let authorChoices = null;
     
     // Pagination variables
-    const POSTS_PER_PAGE = 20;
-    const MAX_AUTO_LOAD_POSTS = 50; // Show load more button after this many posts
-    const MAX_AUTO_LOAD_ITERATIONS = 50; // Safety limit: max recursive auto-load iterations to prevent infinite loops
-    const SCROLLABLE_BUFFER_PX = 10; // Buffer for scrollable detection (accounts for browser differences)
+    const POSTS_PER_PAGE = 50;
     let currentlyDisplayed = 0;
     let filteredPosts = [];
     let isLoading = false;
-    let autoLoadCount = 0; // Tracks recursive auto-load iterations (resets on filter change)
     
     // Filter and search function
     function filterPosts() {
@@ -80,9 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
+        // Update filter options based on filtered posts
+        updateFilterOptions();
+        
         // Reset pagination and display initial posts
         currentlyDisplayed = 0;
-        autoLoadCount = 0; // Reset auto-load counter
         hideAllPosts();
         displayNextBatch();
     }
@@ -121,84 +118,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (loadMoreBtn) loadMoreBtn.style.display = 'none';
             } else {
                 endOfPosts.style.display = 'none';
-                // Show load more button if we've displayed 50+ posts, otherwise hide it
+                // Always show load more button if there are more posts
                 if (loadMoreBtn) {
-                    loadMoreBtn.style.display = currentlyDisplayed >= MAX_AUTO_LOAD_POSTS ? 'block' : 'none';
+                    loadMoreBtn.style.display = 'block';
                 }
             }
         }
-        
-        // Check if page is scrollable after loading batch
-        // If not scrollable and more posts available, load more automatically (but only if under 50 posts)
-        if (currentlyDisplayed < MAX_AUTO_LOAD_POSTS) {
-            checkAndLoadMore();
-        }
     }
     
-    // Check if page needs more content to be scrollable
-    function checkAndLoadMore() {
-        // Guard against concurrent execution - isLoading flag also protects displayNextBatch
-        if (isLoading) return;
-        if (currentlyDisplayed >= filteredPosts.length) return;
-        if (autoLoadCount >= MAX_AUTO_LOAD_ITERATIONS) {
-            console.warn(`Reached maximum auto-load iterations (${autoLoadCount}/${MAX_AUTO_LOAD_ITERATIONS}). Stopping auto-load.`);
-            return;
-        }
-        
-        // Check if page is scrollable (content height > viewport height + buffer)
-        // Buffer accounts for browser differences and ensures reliable detection
-        const isScrollable = document.documentElement.scrollHeight > window.innerHeight + SCROLLABLE_BUFFER_PX;
-        
-        if (!isScrollable) {
-            autoLoadCount++;
-            isLoading = true; // Prevent concurrent auto-loading
-            // Page is not scrollable yet, load more posts automatically
-            // Use setTimeout with small delay to allow browser to render between batches
-            setTimeout(() => {
-                displayNextBatch(); // Synchronous function, completes immediately
-                isLoading = false; // Safe to reset: displayNextBatch() has completed
-            }, 10);
-        }
-    }
-    
-    // Infinite scroll handler (only active before 50 posts threshold)
-    function handleScroll() {
-        if (isLoading || currentlyDisplayed >= filteredPosts.length) return;
-        
-        // Only auto-load via scroll if we haven't reached the 50 post threshold
-        if (currentlyDisplayed >= MAX_AUTO_LOAD_POSTS) return;
-        
-        // Calculate if user is near the bottom (within 500px)
-        const scrollPosition = window.innerHeight + window.scrollY;
-        const pageHeight = document.documentElement.scrollHeight;
-        
-        if (scrollPosition >= pageHeight - 500) {
-            isLoading = true;
-            loadingIndicator.style.display = 'block';
-            
-            // Simulate a small delay for loading effect
-            setTimeout(() => {
-                displayNextBatch();
-                loadingIndicator.style.display = 'none';
-                isLoading = false;
-            }, 300);
-        }
-    }
+
     
     // Load more button handler
     function handleLoadMoreClick() {
         if (isLoading || currentlyDisplayed >= filteredPosts.length) return;
         
         isLoading = true;
-        loadingIndicator.style.display = 'block';
         if (loadMoreBtn) loadMoreBtn.style.display = 'none';
         
-        // Simulate a small delay for loading effect
-        setTimeout(() => {
-            displayNextBatch();
-            loadingIndicator.style.display = 'none';
-            isLoading = false;
-        }, 300);
+        displayNextBatch();
+        isLoading = false;
     }
     
     // Reset filters
@@ -223,9 +161,6 @@ document.addEventListener('DOMContentLoaded', function() {
         resetFilters.addEventListener('click', resetAllFilters);
     }
     
-    // Add scroll event listener for infinite scroll
-    window.addEventListener('scroll', handleScroll);
-    
     // Add load more button event listener
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', handleLoadMoreClick);
@@ -234,16 +169,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Build filter options before initial load
     buildFilterOptionsInternal();
     
-    // Initialize Choices.js after options are built
+    // Initialize Choices.js with empty options
     if (tagFilter && typeof Choices !== 'undefined') {
         tagChoices = new Choices(tagFilter, {
             removeItemButton: true,
             searchEnabled: true,
-            searchPlaceholderValue: 'Search tags...',
+            searchPlaceholderValue: 'Type to search tags...',
             placeholder: true,
-            placeholderValue: 'Select tags...',
+            placeholderValue: 'Click to select tags...',
             noResultsText: 'No tags found',
-            itemSelectText: 'Press to select'
+            itemSelectText: '',
+            shouldSort: false
         });
         
         // Listen for changes
@@ -254,18 +190,20 @@ document.addEventListener('DOMContentLoaded', function() {
         authorChoices = new Choices(authorFilter, {
             removeItemButton: true,
             searchEnabled: true,
-            searchPlaceholderValue: 'Search authors...',
+            searchPlaceholderValue: 'Type to search authors...',
             placeholder: true,
-            placeholderValue: 'Select authors...',
+            placeholderValue: 'Click to select authors...',
             noResultsText: 'No authors found',
-            itemSelectText: 'Press to select'
+            itemSelectText: '',
+            shouldSort: false
         });
         
         // Listen for changes
         authorFilter.addEventListener('change', filterPosts);
     }
     
-    // Initial load - apply default sorting and show first batch
+    // Initial load - populate filter options and show first batch
+    updateFilterOptions();
     filterPosts();
     
     // Helper function to build filter options (called internally)
@@ -284,24 +222,93 @@ document.addEventListener('DOMContentLoaded', function() {
             if (author) authors.add(author);
         });
         
-        // Populate tag filter
-        if (tagFilter) {
-            Array.from(tags).sort().forEach(tag => {
-                const option = document.createElement('option');
-                option.value = tag;
-                option.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
-                tagFilter.appendChild(option);
+        // Store all available tags and authors for later use
+        window.allTags = Array.from(tags).sort();
+        window.allAuthors = Array.from(authors).sort();
+        
+        // Populate tag filter - no options initially, will be updated dynamically
+        // Populate author filter - no options initially, will be updated dynamically
+    }
+    
+    // Function to update filter options based on current selections
+    function updateFilterOptions() {
+        const selectedTags = tagChoices ? tagChoices.getValue(true).map(t => t.toLowerCase()) : [];
+        const selectedAuthors = authorChoices ? authorChoices.getValue(true).map(a => a.toLowerCase()) : [];
+        
+        // Collect available tags and authors based on current filters
+        let availableTags = new Set();
+        let availableAuthors = new Set();
+        
+        // If no filters are selected, show all
+        if (selectedTags.length === 0 && selectedAuthors.length === 0) {
+            window.allTags.forEach(tag => availableTags.add(tag));
+            window.allAuthors.forEach(author => availableAuthors.add(author));
+        } else {
+            // Filter based on current selections
+            posts.forEach(post => {
+                const author = (post.dataset.author || '').trim();
+                const postTags = (post.dataset.tags || '').split(',').map(t => t.trim()).filter(t => t);
+                
+                // If tags are selected, only show authors who have those tags
+                if (selectedTags.length > 0) {
+                    const hasSelectedTag = selectedTags.some(selectedTag => 
+                        postTags.map(t => t.toLowerCase()).includes(selectedTag)
+                    );
+                    if (hasSelectedTag && author) {
+                        availableAuthors.add(author);
+                    }
+                }
+                
+                // If authors are selected, only show tags used by those authors
+                if (selectedAuthors.length > 0) {
+                    const isSelectedAuthor = selectedAuthors.includes(author.toLowerCase());
+                    if (isSelectedAuthor) {
+                        postTags.forEach(tag => {
+                            if (tag) availableTags.add(tag);
+                        });
+                    }
+                }
+                
+                // If only tags selected, still collect all tags for the dropdown
+                if (selectedTags.length > 0 && selectedAuthors.length === 0) {
+                    postTags.forEach(tag => {
+                        if (tag) availableTags.add(tag);
+                    });
+                }
+                
+                // If only authors selected, still collect all authors for the dropdown
+                if (selectedAuthors.length > 0 && selectedTags.length === 0) {
+                    if (author) availableAuthors.add(author);
+                }
             });
         }
         
-        // Populate author filter
-        if (authorFilter) {
-            Array.from(authors).sort().forEach(author => {
-                const option = document.createElement('option');
-                option.value = author;
-                option.textContent = author.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-                authorFilter.appendChild(option);
-            });
+        // Update tag choices
+        if (tagChoices) {
+            const currentTagValues = tagChoices.getValue(true);
+            tagChoices.clearChoices();
+            
+            const tagOptions = Array.from(availableTags).sort().map(tag => ({
+                value: tag,
+                label: tag.charAt(0).toUpperCase() + tag.slice(1),
+                selected: currentTagValues.includes(tag)
+            }));
+            
+            tagChoices.setChoices(tagOptions, 'value', 'label', true);
+        }
+        
+        // Update author choices
+        if (authorChoices) {
+            const currentAuthorValues = authorChoices.getValue(true);
+            authorChoices.clearChoices();
+            
+            const authorOptions = Array.from(availableAuthors).sort().map(author => ({
+                value: author,
+                label: author.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
+                selected: currentAuthorValues.includes(author)
+            }));
+            
+            authorChoices.setChoices(authorOptions, 'value', 'label', true);
         }
     }
 });
