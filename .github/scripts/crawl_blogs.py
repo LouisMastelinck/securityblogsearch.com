@@ -71,6 +71,8 @@ class BlogCrawler:
         common_feed_paths = [
             '/feed/',
             '/rss/',
+            '/index.xml',  # Hugo standard
+            '/posts/index.xml',  # Hugo posts feed
             '/atom.xml',
             '/feed.xml',
             '/rss.xml',

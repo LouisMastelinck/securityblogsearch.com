@@ -23,6 +23,7 @@ websites:
   - url: https://www.kustoking.com/
   - url: https://thalpius.com/
   - url: https://hybridbrothers.com/
+    rss_feed: https://hybridbrothers.com/index.xml
   - url: https://mortenknudsen.net/
   - url: https://nathanmcnulty.com
     author: "Nathan McNulty"
