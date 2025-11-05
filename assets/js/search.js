@@ -20,6 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let tagChoices = null;
     let authorChoices = null;
     
+    // Store all available tags and authors for filtering
+    let allTags = [];
+    let allAuthors = [];
+    
     // Pagination variables
     const POSTS_PER_PAGE = 50;
     let currentlyDisplayed = 0;
@@ -126,8 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-
-    
     // Load more button handler
     function handleLoadMoreClick() {
         if (isLoading || currentlyDisplayed >= filteredPosts.length) return;
@@ -222,12 +224,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (author) authors.add(author);
         });
         
-        // Store all available tags and authors for later use
-        window.allTags = Array.from(tags).sort();
-        window.allAuthors = Array.from(authors).sort();
-        
-        // Populate tag filter - no options initially, will be updated dynamically
-        // Populate author filter - no options initially, will be updated dynamically
+        // Store all available tags and authors for dynamic filtering
+        allTags = Array.from(tags).sort();
+        allAuthors = Array.from(authors).sort();
     }
     
     // Function to update filter options based on current selections
@@ -241,8 +240,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // If no filters are selected, show all
         if (selectedTags.length === 0 && selectedAuthors.length === 0) {
-            window.allTags.forEach(tag => availableTags.add(tag));
-            window.allAuthors.forEach(author => availableAuthors.add(author));
+            allTags.forEach(tag => availableTags.add(tag));
+            allAuthors.forEach(author => availableAuthors.add(author));
         } else {
             // Filter based on current selections
             posts.forEach(post => {
