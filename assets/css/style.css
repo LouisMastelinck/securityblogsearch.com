@@ -393,6 +393,33 @@ body {
     margin: 0;
 }
 
+/* Load More Button */
+.load-more-container {
+    text-align: center;
+    padding: 2rem;
+}
+
+.btn-load-more {
+    padding: 0.75rem 2rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-load-more:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.btn-load-more:active {
+    transform: translateY(0);
+}
+
 /* Post Page */
 .post {
     background: #fff;

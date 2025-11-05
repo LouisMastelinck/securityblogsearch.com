@@ -86,6 +86,10 @@ title: Security Blog Search - Find the Best Security Posts
             <p>Loading more posts...</p>
         </div>
         
+        <div id="loadMoreBtn" class="load-more-container" style="display: none;">
+            <button class="btn-load-more">Load More Posts</button>
+        </div>
+        
         <div id="noResults" class="no-results" style="display: none;">
             <p>No posts found matching your criteria. Try adjusting your filters or search terms.</p>
         </div>
@@ -95,40 +99,3 @@ title: Security Blog Search - Find the Best Security Posts
         </div>
     </section>
 </div>
-
-<script>
-// Build filter options from posts
-document.addEventListener('DOMContentLoaded', function() {
-    const posts = document.querySelectorAll('.post-card');
-    const tagFilter = document.getElementById('tagFilter');
-    const authorFilter = document.getElementById('authorFilter');
-    
-    // Collect unique tags and authors
-    const tags = new Set();
-    const authors = new Set();
-    
-    posts.forEach(post => {
-        const postTags = (post.dataset.tags || '').split(',').filter(t => t.trim());
-        postTags.forEach(tag => tags.add(tag.trim()));
-        
-        const author = post.dataset.author;
-        if (author) authors.add(author);
-    });
-    
-    // Populate tag filter
-    Array.from(tags).sort().forEach(tag => {
-        const option = document.createElement('option');
-        option.value = tag;
-        option.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
-        tagFilter.appendChild(option);
-    });
-    
-    // Populate author filter
-    Array.from(authors).sort().forEach(author => {
-        const option = document.createElement('option');
-        option.value = author;
-        option.textContent = author.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-        authorFilter.appendChild(option);
-    });
-});
-</script>

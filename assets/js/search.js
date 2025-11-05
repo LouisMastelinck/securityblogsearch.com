@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const noResults = document.getElementById('noResults');
     const loadingIndicator = document.getElementById('loadingIndicator');
     const endOfPosts = document.getElementById('endOfPosts');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
     const posts = Array.from(document.querySelectorAll('.post-card'));
     
     // Exit early if we're not on a page with posts
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Pagination variables
     const POSTS_PER_PAGE = 20;
+    const MAX_AUTO_LOAD_POSTS = 50; // Show load more button after this many posts
     const MAX_AUTO_LOAD_ITERATIONS = 50; // Safety limit: max recursive auto-load iterations to prevent infinite loops
     const SCROLLABLE_BUFFER_PX = 10; // Buffer for scrollable detection (accounts for browser differences)
     let currentlyDisplayed = 0;
@@ -103,19 +105,27 @@ document.addEventListener('DOMContentLoaded', function() {
         if (filteredPosts.length === 0) {
             noResults.style.display = 'block';
             endOfPosts.style.display = 'none';
+            if (loadMoreBtn) loadMoreBtn.style.display = 'none';
         } else {
             noResults.style.display = 'none';
             
             if (currentlyDisplayed >= filteredPosts.length) {
                 endOfPosts.style.display = 'block';
+                if (loadMoreBtn) loadMoreBtn.style.display = 'none';
             } else {
                 endOfPosts.style.display = 'none';
+                // Show load more button if we've displayed 50+ posts, otherwise hide it
+                if (loadMoreBtn) {
+                    loadMoreBtn.style.display = currentlyDisplayed >= MAX_AUTO_LOAD_POSTS ? 'block' : 'none';
+                }
             }
         }
         
         // Check if page is scrollable after loading batch
-        // If not scrollable and more posts available, load more automatically
-        checkAndLoadMore();
+        // If not scrollable and more posts available, load more automatically (but only if under 50 posts)
+        if (currentlyDisplayed < MAX_AUTO_LOAD_POSTS) {
+            checkAndLoadMore();
+        }
     }
     
     // Check if page needs more content to be scrollable
@@ -144,9 +154,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Infinite scroll handler
+    // Infinite scroll handler (only active before 50 posts threshold)
     function handleScroll() {
         if (isLoading || currentlyDisplayed >= filteredPosts.length) return;
+        
+        // Only auto-load via scroll if we haven't reached the 50 post threshold
+        if (currentlyDisplayed >= MAX_AUTO_LOAD_POSTS) return;
         
         // Calculate if user is near the bottom (within 500px)
         const scrollPosition = window.innerHeight + window.scrollY;
@@ -163,6 +176,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 isLoading = false;
             }, 300);
         }
+    }
+    
+    // Load more button handler
+    function handleLoadMoreClick() {
+        if (isLoading || currentlyDisplayed >= filteredPosts.length) return;
+        
+        isLoading = true;
+        loadingIndicator.style.display = 'block';
+        if (loadMoreBtn) loadMoreBtn.style.display = 'none';
+        
+        // Simulate a small delay for loading effect
+        setTimeout(() => {
+            displayNextBatch();
+            loadingIndicator.style.display = 'none';
+            isLoading = false;
+        }, 300);
     }
     
     // Reset filters
@@ -198,8 +227,53 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add scroll event listener for infinite scroll
     window.addEventListener('scroll', handleScroll);
     
+    // Add load more button event listener
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', handleLoadMoreClick);
+    }
+    
+    // Build filter options before initial load
+    buildFilterOptionsInternal();
+    
     // Initial load - apply default sorting and show first batch
     filterPosts();
+    
+    // Helper function to build filter options (called internally)
+    function buildFilterOptionsInternal() {
+        const tags = new Set();
+        const authors = new Set();
+        
+        posts.forEach(post => {
+            const postTags = (post.dataset.tags || '').split(',').filter(t => t.trim());
+            postTags.forEach(tag => {
+                const trimmedTag = tag.trim();
+                if (trimmedTag) tags.add(trimmedTag);
+            });
+            
+            const author = (post.dataset.author || '').trim();
+            if (author) authors.add(author);
+        });
+        
+        // Populate tag filter
+        if (tagFilter) {
+            Array.from(tags).sort().forEach(tag => {
+                const option = document.createElement('option');
+                option.value = tag;
+                option.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
+                tagFilter.appendChild(option);
+            });
+        }
+        
+        // Populate author filter
+        if (authorFilter) {
+            Array.from(authors).sort().forEach(author => {
+                const option = document.createElement('option');
+                option.value = author;
+                option.textContent = author.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                authorFilter.appendChild(option);
+            });
+        }
+    }
 });
 
 // Shared function to build filter options from posts (used by subject pages)
@@ -216,9 +290,12 @@ function buildFilterOptions() {
     
     posts.forEach(post => {
         const postTags = (post.dataset.tags || '').split(',').filter(t => t.trim());
-        postTags.forEach(tag => tags.add(tag.trim()));
+        postTags.forEach(tag => {
+            const trimmedTag = tag.trim();
+            if (trimmedTag) tags.add(trimmedTag);
+        });
         
-        const author = post.dataset.author;
+        const author = (post.dataset.author || '').trim();
         if (author) authors.add(author);
     });
     

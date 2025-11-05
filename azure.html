@@ -99,6 +99,10 @@ subject_filter: azure
             <p>Loading more posts...</p>
         </div>
         
+        <div id="loadMoreBtn" class="load-more-container" style="display: none;">
+            <button class="btn-load-more">Load More Posts</button>
+        </div>
+        
         <div id="noResults" class="no-results" style="display: none;">
             <p>No posts found matching your criteria. Try adjusting your filters or search terms.</p>
         </div>
@@ -108,8 +112,3 @@ subject_filter: azure
         </div>
     </section>
 </div>
-
-<script>
-// Build filter options from posts using shared function
-document.addEventListener('DOMContentLoaded', buildFilterOptions);
-</script>
