@@ -6,9 +6,10 @@ This repository includes an automated blog crawler that runs every hour to disco
 
 1. **Configuration**: Websites are configured in `websites.yml` at the root of the repository
 2. **Scheduled Runs**: A GitHub Actions workflow runs every hour to check for new posts
-3. **RSS/Atom Feeds**: The crawler uses RSS/Atom feeds to discover new blog posts
-4. **Duplicate Detection**: Posts are checked against existing links to avoid duplicates
-5. **Pull Requests**: When new posts are found, an automated PR is created with the new content
+3. **RSS/Atom Feeds**: The crawler uses RSS/Atom feeds with pagination support to discover blog posts
+4. **Pagination**: Automatically fetches all available posts (up to 500 per website across 20 pages)
+5. **Duplicate Detection**: Posts are checked against existing links to avoid duplicates
+6. **Pull Requests**: When new posts are found, an automated PR is created with the new content
 
 ## Adding a Website to Crawl
 
@@ -43,6 +44,17 @@ You can manually trigger the crawler workflow:
 If no RSS feed is specified, the crawler attempts to auto-detect feeds by:
 1. Parsing the website's HTML for `<link>` tags with RSS/Atom types
 2. Trying common feed paths like `/feed/`, `/rss/`, `/atom.xml`, etc.
+
+### RSS Feed Pagination
+
+The crawler now supports RSS feed pagination to index all available blog posts:
+- Automatically detects and fetches multiple pages of RSS feeds (typically using `?paged=` parameter)
+- Processes up to 20 pages per feed (configurable via `MAX_PAGES_PER_FEED`)
+- Supports up to 500 posts per website (configurable via `MAX_POSTS_PER_WEBSITE`)
+- Prevents duplicate posts across pages with intelligent link tracking
+- Works seamlessly with WordPress and other blog platforms
+
+This means the crawler can now index hundreds of historical posts from each website, not just the latest 10-20 posts.
 
 ### Content Enrichment
 
@@ -148,7 +160,8 @@ The validator checks for:
 ## Requirements
 
 The crawler requires these Python packages (automatically installed by the workflow):
-- PyYAML
-- feedparser
-- requests
-- beautifulsoup4
+- PyYAML - YAML configuration parsing
+- feedparser - RSS/Atom feed parsing
+- requests - HTTP requests
+- beautifulsoup4 - HTML/XML parsing
+- lxml - XML parser for sitemap support (future enhancement)
