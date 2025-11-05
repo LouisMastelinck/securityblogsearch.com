@@ -250,9 +250,12 @@ function buildFilterOptions() {
     
     posts.forEach(post => {
         const postTags = (post.dataset.tags || '').split(',').filter(t => t.trim());
-        postTags.forEach(tag => tags.add(tag.trim()));
+        postTags.forEach(tag => {
+            const trimmedTag = tag.trim();
+            if (trimmedTag) tags.add(trimmedTag);
+        });
         
-        const author = post.dataset.author;
+        const author = (post.dataset.author || '').trim();
         if (author) authors.add(author);
     });
     
