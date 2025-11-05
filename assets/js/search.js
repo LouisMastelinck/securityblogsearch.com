@@ -247,37 +247,22 @@ document.addEventListener('DOMContentLoaded', function() {
             posts.forEach(post => {
                 const author = (post.dataset.author || '').trim();
                 const postTags = (post.dataset.tags || '').split(',').map(t => t.trim()).filter(t => t);
+                const postTagsLower = postTags.map(t => t.toLowerCase());
                 
-                // If tags are selected, only show authors who have those tags
-                if (selectedTags.length > 0) {
-                    const hasSelectedTag = selectedTags.some(selectedTag => 
-                        postTags.map(t => t.toLowerCase()).includes(selectedTag)
-                    );
-                    if (hasSelectedTag && author) {
-                        availableAuthors.add(author);
-                    }
+                // Check if post matches the selected filters
+                const hasSelectedTag = selectedTags.length === 0 || selectedTags.some(selectedTag => postTagsLower.includes(selectedTag));
+                const isSelectedAuthor = selectedAuthors.length === 0 || selectedAuthors.includes(author.toLowerCase());
+                
+                // Only show authors who have posts matching selected tags (or all if no tags selected)
+                if (hasSelectedTag && author) {
+                    availableAuthors.add(author);
                 }
                 
-                // If authors are selected, only show tags used by those authors
-                if (selectedAuthors.length > 0) {
-                    const isSelectedAuthor = selectedAuthors.includes(author.toLowerCase());
-                    if (isSelectedAuthor) {
-                        postTags.forEach(tag => {
-                            if (tag) availableTags.add(tag);
-                        });
-                    }
-                }
-                
-                // If only tags selected, still collect all tags for the dropdown
-                if (selectedTags.length > 0 && selectedAuthors.length === 0) {
+                // Only show tags from posts by selected authors (or all if no authors selected)
+                if (isSelectedAuthor) {
                     postTags.forEach(tag => {
                         if (tag) availableTags.add(tag);
                     });
-                }
-                
-                // If only authors selected, still collect all authors for the dropdown
-                if (selectedAuthors.length > 0 && selectedTags.length === 0) {
-                    if (author) availableAuthors.add(author);
                 }
             });
         }
