@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Filter and search function
     function filterPosts() {
         const searchTerm = searchInput.value.toLowerCase();
-        const selectedTags = tagChoices ? tagChoices.getValue(true) : [];
-        const selectedAuthors = authorChoices ? authorChoices.getValue(true) : [];
+        const selectedTags = tagChoices ? tagChoices.getValue(true).map(t => t.toLowerCase()) : [];
+        const selectedAuthors = authorChoices ? authorChoices.getValue(true).map(a => a.toLowerCase()) : [];
         const sortOption = sortBy.value;
         
         // Filter posts
@@ -55,11 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Tag filter - post must have at least one of the selected tags
             const postTags = tags.split(',').map(t => t.trim());
             const matchesTag = selectedTags.length === 0 || 
-                selectedTags.some(selectedTag => postTags.includes(selectedTag.toLowerCase()));
+                selectedTags.some(selectedTag => postTags.includes(selectedTag));
             
             // Author filter - post must match one of the selected authors
             const matchesAuthor = selectedAuthors.length === 0 || 
-                selectedAuthors.some(selectedAuthor => author === selectedAuthor.toLowerCase());
+                selectedAuthors.some(selectedAuthor => author === selectedAuthor);
             
             return matchesSearch && matchesTag && matchesAuthor;
         });
