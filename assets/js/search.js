@@ -232,8 +232,48 @@ document.addEventListener('DOMContentLoaded', function() {
         loadMoreBtn.addEventListener('click', handleLoadMoreClick);
     }
     
+    // Build filter options before initial load
+    buildFilterOptionsInternal();
+    
     // Initial load - apply default sorting and show first batch
     filterPosts();
+    
+    // Helper function to build filter options (called internally)
+    function buildFilterOptionsInternal() {
+        const tags = new Set();
+        const authors = new Set();
+        
+        posts.forEach(post => {
+            const postTags = (post.dataset.tags || '').split(',').filter(t => t.trim());
+            postTags.forEach(tag => {
+                const trimmedTag = tag.trim();
+                if (trimmedTag) tags.add(trimmedTag);
+            });
+            
+            const author = (post.dataset.author || '').trim();
+            if (author) authors.add(author);
+        });
+        
+        // Populate tag filter
+        if (tagFilter) {
+            Array.from(tags).sort().forEach(tag => {
+                const option = document.createElement('option');
+                option.value = tag;
+                option.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
+                tagFilter.appendChild(option);
+            });
+        }
+        
+        // Populate author filter
+        if (authorFilter) {
+            Array.from(authors).sort().forEach(author => {
+                const option = document.createElement('option');
+                option.value = author;
+                option.textContent = author.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                authorFilter.appendChild(option);
+            });
+        }
+    }
 });
 
 // Shared function to build filter options from posts (used by subject pages)
