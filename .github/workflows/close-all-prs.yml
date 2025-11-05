@@ -1,0 +1,112 @@
+---
+name: Close All Open Pull Requests
+
+on:
+  # Allow manual trigger only
+  workflow_dispatch:
+    inputs:
+      comment_message:
+        description: 'Comment to add when closing PRs (optional)'
+        required: false
+        default: 'This PR has been closed by the repository maintainer.'
+        type: string
+
+# Set permissions to read contents and write to pull requests
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  close-all-prs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Close all open pull requests
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Safely get comment from inputs
+            const comment = context.payload.inputs?.comment_message || '';
+
+            // Get all open pull requests with pagination
+            const pullRequests = await github.paginate(
+              github.rest.pulls.list,
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open',
+                per_page: 100
+              }
+            );
+
+            const prCount = pullRequests.length;
+            console.log(`Found ${prCount} open pull request(s)`);
+
+            if (prCount === 0) {
+              console.log('No open pull requests to close.');
+              core.summary
+                .addHeading('Close All Pull Requests')
+                .addRaw('ℹ️ No open pull requests found.')
+                .write();
+              return;
+            }
+
+            // Close each pull request
+            let closedCount = 0;
+            let failedCount = 0;
+            const results = [];
+
+            for (const pr of pullRequests) {
+              try {
+                // Add a comment if message is provided
+                if (comment && comment.trim() !== '') {
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: pr.number,
+                    body: comment
+                  });
+                }
+
+                // Close the pull request
+                await github.rest.pulls.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: pr.number,
+                  state: 'closed'
+                });
+
+                console.log(`✅ Closed PR #${pr.number}: ${pr.title}`);
+                results.push(`✅ #${pr.number}: ${pr.title}`);
+                closedCount++;
+              } catch (error) {
+                const errMsg = error.message;
+                console.error(`❌ Failed to close PR #${pr.number}`);
+                results.push(`❌ #${pr.number}: ${pr.title} (${errMsg})`);
+                failedCount++;
+              }
+            }
+
+            // Create job summary
+            const summaryMsg =
+              `📊 **Summary**: Closed ${closedCount} of ${prCount}`;
+            core.summary
+              .addHeading('Close All Pull Requests')
+              .addRaw(summaryMsg + ' pull request(s)')
+              .addBreak()
+              .addHeading('Results', 3)
+              .addList(results)
+              .write();
+
+            // Report final status
+            console.log('');
+            console.log('='.repeat(50));
+            console.log(`✅ Successfully closed: ${closedCount}`);
+            console.log(`❌ Failed to close: ${failedCount}`);
+            console.log(`📊 Total processed: ${prCount}`);
+            console.log('='.repeat(50));
+
+            if (failedCount > 0) {
+              const msg = `Failed to close ${failedCount} PR(s)`;
+              core.setFailed(msg);
+            }
