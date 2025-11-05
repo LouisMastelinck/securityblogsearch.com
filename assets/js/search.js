@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
     
+    // Initialize Choices.js for multi-select dropdowns
+    let tagChoices = null;
+    let authorChoices = null;
+    
     // Pagination variables
     const POSTS_PER_PAGE = 20;
     const MAX_AUTO_LOAD_POSTS = 50; // Show load more button after this many posts
@@ -30,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Filter and search function
     function filterPosts() {
         const searchTerm = searchInput.value.toLowerCase();
-        const selectedTag = tagFilter.value.toLowerCase();
-        const selectedAuthor = authorFilter.value.toLowerCase();
+        const selectedTags = tagChoices ? tagChoices.getValue(true) : [];
+        const selectedAuthors = authorChoices ? authorChoices.getValue(true) : [];
         const sortOption = sortBy.value;
         
         // Filter posts
@@ -48,11 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 tags.includes(searchTerm) || 
                 summary.includes(searchTerm);
             
-            // Tag filter
-            const matchesTag = !selectedTag || tags.split(',').map(t => t.trim()).includes(selectedTag);
+            // Tag filter - post must have at least one of the selected tags
+            const postTags = tags.split(',').map(t => t.trim());
+            const matchesTag = selectedTags.length === 0 || 
+                selectedTags.some(selectedTag => postTags.includes(selectedTag.toLowerCase()));
             
-            // Author filter
-            const matchesAuthor = !selectedAuthor || author === selectedAuthor;
+            // Author filter - post must match one of the selected authors
+            const matchesAuthor = selectedAuthors.length === 0 || 
+                selectedAuthors.some(selectedAuthor => author === selectedAuthor.toLowerCase());
             
             return matchesSearch && matchesTag && matchesAuthor;
         });
@@ -197,8 +204,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Reset filters
     function resetAllFilters() {
         searchInput.value = '';
-        tagFilter.value = '';
-        authorFilter.value = '';
+        if (tagChoices) tagChoices.removeActiveItems();
+        if (authorChoices) authorChoices.removeActiveItems();
         sortBy.value = 'date-desc';
         filterPosts();
     }
@@ -206,14 +213,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listeners
     if (searchInput) {
         searchInput.addEventListener('input', filterPosts);
-    }
-    
-    if (tagFilter) {
-        tagFilter.addEventListener('change', filterPosts);
-    }
-    
-    if (authorFilter) {
-        authorFilter.addEventListener('change', filterPosts);
     }
     
     if (sortBy) {
@@ -234,6 +233,37 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Build filter options before initial load
     buildFilterOptionsInternal();
+    
+    // Initialize Choices.js after options are built
+    if (tagFilter && typeof Choices !== 'undefined') {
+        tagChoices = new Choices(tagFilter, {
+            removeItemButton: true,
+            searchEnabled: true,
+            searchPlaceholderValue: 'Search tags...',
+            placeholder: true,
+            placeholderValue: 'Select tags...',
+            noResultsText: 'No tags found',
+            itemSelectText: 'Press to select'
+        });
+        
+        // Listen for changes
+        tagFilter.addEventListener('change', filterPosts);
+    }
+    
+    if (authorFilter && typeof Choices !== 'undefined') {
+        authorChoices = new Choices(authorFilter, {
+            removeItemButton: true,
+            searchEnabled: true,
+            searchPlaceholderValue: 'Search authors...',
+            placeholder: true,
+            placeholderValue: 'Select authors...',
+            noResultsText: 'No authors found',
+            itemSelectText: 'Press to select'
+        });
+        
+        // Listen for changes
+        authorFilter.addEventListener('change', filterPosts);
+    }
     
     // Initial load - apply default sorting and show first batch
     filterPosts();
