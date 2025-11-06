@@ -248,9 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fuseOptions: {
                 threshold: 0.1,
                 keys: ['label']
-            },
-            searchFields: ['label'],
-            searchFloor: 1
+            }
         });
         
         // Listen for changes and removals
@@ -272,9 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fuseOptions: {
                 threshold: 0.1,
                 keys: ['label']
-            },
-            searchFields: ['label'],
-            searchFloor: 1
+            }
         });
         
         // Listen for changes and removals
