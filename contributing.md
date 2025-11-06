@@ -69,12 +69,12 @@ Optional: Additional content or notes about the post.
         
         <pre><code>---
 layout: post
-title: "Advanced XSS Prevention Techniques"
-author: "Alex Security"
+title: "Conditional access for beginners"
+author: "john doe"
 date: 2024-10-27
-tags: [web-security, xss, prevention]
-link: "https://example.com/xss-prevention"
-summary: "This article explores advanced techniques for preventing cross-site scripting (XSS) attacks in modern web applications, including Content Security Policy and sanitization best practices."
+tags: [Entra ID, CA, Conditional access]
+link: "https://example.com/xxx/xxxxx"
+summary: "This article explains the basic principles of CA"
 ---
 </code></pre>
         
