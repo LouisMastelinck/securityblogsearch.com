@@ -142,9 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Update filter options based on filtered posts
-        updateFilterOptions();
-        
         // Reset pagination and display initial posts
         currentlyDisplayed = 0;
         hideAllPosts();
@@ -329,53 +326,13 @@ document.addEventListener('DOMContentLoaded', function() {
         allAuthors = Array.from(authors).sort();
     }
     
-    // Function to update filter options based on current selections
+    // Function to populate initial filter options
     function updateFilterOptions() {
-        const selectedTags = tagChoices ? tagChoices.getValue(true).map(t => t.toLowerCase()) : [];
-        const selectedAuthors = authorChoices ? authorChoices.getValue(true).map(a => a.toLowerCase()) : [];
-        
-        // Collect available tags and authors based on current filters
-        let availableTags = new Set();
-        let availableAuthors = new Set();
-        
-        // If no filters are selected, show all
-        if (selectedTags.length === 0 && selectedAuthors.length === 0) {
-            allTags.forEach(tag => availableTags.add(tag));
-            allAuthors.forEach(author => availableAuthors.add(author));
-        } else {
-            // Filter based on current selections
-            posts.forEach(post => {
-                const author = (post.dataset.author || '').trim();
-                const postTags = (post.dataset.tags || '').split(',').map(t => t.trim()).filter(t => t);
-                const postTagsLower = postTags.map(t => t.toLowerCase());
-                
-                // Check if post matches the selected filters
-                const hasSelectedTag = selectedTags.length === 0 || selectedTags.some(selectedTag => postTagsLower.includes(selectedTag));
-                const isSelectedAuthor = selectedAuthors.length === 0 || selectedAuthors.includes(author.toLowerCase());
-                
-                // Only show authors who have posts matching selected tags (or all if no tags selected)
-                if (hasSelectedTag && author) {
-                    availableAuthors.add(author);
-                }
-                
-                // Only show tags from posts by selected authors (or all if no authors selected)
-                if (isSelectedAuthor) {
-                    postTags.forEach(tag => {
-                        if (tag) availableTags.add(tag);
-                    });
-                }
-            });
-        }
-        
         // Update tag choices
         if (tagChoices) {
-            const currentTagValues = tagChoices.getValue(true);
-            tagChoices.clearChoices();
-            
-            const tagOptions = Array.from(availableTags).sort().map(tag => ({
+            const tagOptions = allTags.map(tag => ({
                 value: tag,
-                label: tag.charAt(0).toUpperCase() + tag.slice(1),
-                selected: currentTagValues.includes(tag)
+                label: tag.charAt(0).toUpperCase() + tag.slice(1)
             }));
             
             tagChoices.setChoices(tagOptions, 'value', 'label', true);
@@ -383,13 +340,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Update author choices
         if (authorChoices) {
-            const currentAuthorValues = authorChoices.getValue(true);
-            authorChoices.clearChoices();
-            
-            const authorOptions = Array.from(availableAuthors).sort().map(author => ({
+            const authorOptions = allAuthors.map(author => ({
                 value: author,
-                label: author.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
-                selected: currentAuthorValues.includes(author)
+                label: author.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
             }));
             
             authorChoices.setChoices(authorOptions, 'value', 'label', true);
