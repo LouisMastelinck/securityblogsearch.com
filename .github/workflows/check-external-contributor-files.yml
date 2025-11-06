@@ -15,6 +15,8 @@ permissions:
 # 1. We only read file paths from the PR, we don't execute any code
 # 2. The workflow script is from the base branch, not the PR
 # 3. We use GitHub API actions to get file lists, not running PR code
+# 4. The checkout is only used for file comparison, not code execution
+# See: https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
 
 jobs:
   check-modified-files:

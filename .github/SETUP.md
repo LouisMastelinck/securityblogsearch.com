@@ -113,7 +113,7 @@ GitHub Copilot can now modify any files!
 | Repository Rulesets | ⚠️ Manual Setup | Strongest protection (optional) |
 | Documentation | ✅ Complete | Helps contributors understand rules |
 
-**Recent Fix (Nov 2025)**: The workflow now uses `pull_request_target` instead of `pull_request` to properly comment on PRs from forks. This fixes the "Resource not accessible by integration" error that was preventing the bot from posting comments on external contributor PRs.
+**Recent Fix (Nov 2024)**: The workflow now uses `pull_request_target` instead of `pull_request` to properly comment on PRs from forks. This fixes the "Resource not accessible by integration" error that was preventing the bot from posting comments on external contributor PRs.
 
 ## Next Steps (Optional)
 
