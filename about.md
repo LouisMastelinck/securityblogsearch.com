@@ -17,7 +17,7 @@ title: About Security Blog Search
         
         <ul>
             <li><strong>Community Submissions</strong>: Anyone can submit security blog posts via pull request</li>
-            <li><strong>Automated Crawling</strong>: We automatically discover new posts from configured websites every day using the website URLs defined in our <a href="https://github.com/LouisMastelinck/securityblogsearch.com/blob/main/websites.yml">websites.yml</a> file</li>
+            <li><strong>Automated Crawling</strong>: We automatically discover new posts from configured websites every day using the website URLs defined in our <a href="https://github.com/LouisMastelinck/securityblogsearch.com/blob/main/websites.yml">websites.yml</a> file. Each week we will add new discovered                         websites for auto crawling</li>
             <li><strong>Quality Control</strong>: Submissions are reviewed to ensure relevance and quality</li>
             <li><strong>Easy Discovery</strong>: Users can search and filter posts by tags, author, date, and keywords</li>
             <li><strong>Always Free</strong>: The platform is open-source and freely accessible to everyone</li>
