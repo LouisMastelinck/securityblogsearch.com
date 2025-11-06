@@ -243,11 +243,19 @@ document.addEventListener('DOMContentLoaded', function() {
             placeholderValue: 'Click to select tags...',
             noResultsText: 'No tags found',
             itemSelectText: '',
-            shouldSort: false
+            shouldSort: false,
+            duplicateItemsAllowed: false,
+            fuseOptions: {
+                threshold: 0.1,
+                keys: ['label']
+            },
+            searchFields: ['label'],
+            searchFloor: 1
         });
         
-        // Listen for changes
+        // Listen for changes and removals
         tagFilter.addEventListener('change', filterPosts);
+        tagFilter.addEventListener('removeItem', filterPosts);
     }
     
     if (authorFilter && typeof Choices !== 'undefined') {
@@ -259,11 +267,19 @@ document.addEventListener('DOMContentLoaded', function() {
             placeholderValue: 'Click to select authors...',
             noResultsText: 'No authors found',
             itemSelectText: '',
-            shouldSort: false
+            shouldSort: false,
+            duplicateItemsAllowed: false,
+            fuseOptions: {
+                threshold: 0.1,
+                keys: ['label']
+            },
+            searchFields: ['label'],
+            searchFloor: 1
         });
         
-        // Listen for changes
+        // Listen for changes and removals
         authorFilter.addEventListener('change', filterPosts);
+        authorFilter.addEventListener('removeItem', filterPosts);
     }
     
     // Initial load - populate filter options and show first batch
