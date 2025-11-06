@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Get control over corporate networks with device discovery"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-04-14
 tags: [security, sentinel, zero-trust]
 link: "https://hybridbrothers.com/posts/get-control-over-corporate-networks-with-device-discovery/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to check and block “malicious” browser extensions with Microsoft Defender and Intune?"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2025-01-05
 tags: [security, defender-for-endpoint, microsoft-365-defender]
 link: "https://jeffreyappel.nl/how-to-check-and-block-malicious-browser-extension-with-microsoft-defender-and-intune/"

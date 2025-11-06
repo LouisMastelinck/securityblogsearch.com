@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Deploy Sysmon and collect additional data with Sentinel and the AMA agent"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-01-26
 tags: [security, microsoft-sentinel, sysmon]
 link: "https://jeffreyappel.nl/deploy-sysmon-and-collect-data-with-sentinel-and-the-ama-agent/"

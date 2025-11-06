@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint series – Automation via Logic Apps and Sentinel – Part9"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-02-08
 tags: [security, defender-for-endpoint, mde-series]
 link: "https://jeffreyappel.nl/microsoft-defender-for-endpoint-series-automation-via-logic-apps-and-sentinel-part9/"

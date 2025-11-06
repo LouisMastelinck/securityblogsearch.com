@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Endpoint Manager filters: Use filtering for assigning policies, profiles and apps to specific devices"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-05-31
 tags: [modern-workplace, intune]
 link: "https://jeffreyappel.nl/endpoint-manager-filters-use-filtering-for-assigning-policies-profiles-and-apps-to-specific-devices/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Common mistakes during Microsoft Defender for Endpoint deployments"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2025-02-12
 tags: [security, defender-for-endpoint]
 link: "https://jeffreyappel.nl/common-mistakes-during-microsoft-defender-for-endpoint-deployments/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender ATP web content filtering; Zo werkt deze functionaliteit"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-07-06
 tags: [security, defender-for-endpoint]
 link: "https://jeffreyappel.nl/microsoft-defender-atp-web-content-filtering-zo-werkt-deze-functionaliteit/"

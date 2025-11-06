@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint series – What is Defender for Endpoint? – Part1"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-07-07
 tags: [security, defender-for-endpoint, mde-series]
 link: "https://jeffreyappel.nl/microsoft-defender-for-endpoint-series-what-is-defender-for-endpoint-part1/"

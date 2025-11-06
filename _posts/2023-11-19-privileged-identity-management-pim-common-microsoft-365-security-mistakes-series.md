@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Privileged Identity Management (PIM) – Common Microsoft 365 Security Mistakes Series"
-author: "Ru"
+author: "Ru Campbell"
 date: 2023-11-19
 tags: [conditional-access, entra-id-azure-active-directory, identity-governance, privileged-identity-management, authentication-context]
 link: "https://campbell.scot/pim-common-microsoft-365-security-mistakes-series/?utm_source=rss&utm_medium=rss&utm_campaign=pim-common-microsoft-365-security-mistakes-series"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint – The ultimate blog series for Windows (Intro) – P0"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-05-10
 tags: [security, defender-for-endpoint, mde-series]
 link: "https://jeffreyappel.nl/microsoft-defender-for-endpoint-the-ultimate-blog-series-for-windows-intro/"

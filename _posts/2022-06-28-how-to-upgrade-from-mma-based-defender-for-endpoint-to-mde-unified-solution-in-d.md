@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to upgrade from MMA-based Defender for Endpoint to MDE unified solution in Defender for Cloud?"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-06-28
 tags: [security, defender-for-cloud, defender-for-endpoint]
 link: "https://jeffreyappel.nl/how-to-upgrade-from-mma-based-defender-for-endpoint-to-mde-unified-solution-in-defender-for-cloud/"

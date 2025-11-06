@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint series – Tips and tricks/ common mistakes – Part10"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-02-14
 tags: [security, defender-for-endpoint, mde-series]
 link: "https://jeffreyappel.nl/microsoft-defender-for-endpoint-series-tips-and-tricks-common-mistakes-part10/"

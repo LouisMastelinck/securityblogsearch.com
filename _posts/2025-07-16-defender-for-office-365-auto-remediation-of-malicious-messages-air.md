@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Defender for Office 365 Auto-Remediation of Malicious Messages (AIR)"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2025-07-16
 tags: [security, defender-for-office]
 link: "https://jeffreyappel.nl/defender-for-office-365-auto-remediation-of-malicious-messages-air/"

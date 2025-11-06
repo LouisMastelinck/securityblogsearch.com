@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Configure File Integrity Monitoring (FIM) using Defender for Endpoint"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2024-09-11
 tags: [security, defender-for-cloud, defender-for-endpoint]
 link: "https://jeffreyappel.nl/configure-file-integrity-monitoring-fim-using-defender-for-endpoint/"

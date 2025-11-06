@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft 365 Security & Compliance User Group"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2025-04-30
 tags: [security, defender, sentinel, compliance]
 link: "https://hybridbrothers.com/public-speaking/30-04-2025/"

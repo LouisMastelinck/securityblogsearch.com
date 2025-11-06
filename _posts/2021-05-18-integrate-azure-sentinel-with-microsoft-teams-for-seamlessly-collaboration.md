@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Integrate Azure Sentinel with Microsoft Teams for seamlessly collaboration"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-05-18
 tags: [security, microsoft-sentinel]
 link: "https://jeffreyappel.nl/integrate-azure-sentinel-with-microsoft-teams-for-seamlessly-collaboration-using/"

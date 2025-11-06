@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Belgium Microsoft Cloud & Security Community"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2023-11-30
 tags: [security, cloud]
 link: "https://hybridbrothers.com/public-speaking/30-11-2023/"

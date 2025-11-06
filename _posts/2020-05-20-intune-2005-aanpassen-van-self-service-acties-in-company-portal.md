@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Intune 2005: Aanpassen van Self service acties in Company Portal"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-05-20
 tags: [modern-workplace, intune]
 link: "https://jeffreyappel.nl/intune-2005-aanpassen-van-self-service-acties-in-company-portal/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Review service principals with Azure AD Access Reviews and monitor with Azure Sentinel"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-06-18
 tags: [security, microsoft-sentinel]
 link: "https://jeffreyappel.nl/review-service-principals-with-azure-ad-access-reviews-and-monitor-with-azure-sentinel/"

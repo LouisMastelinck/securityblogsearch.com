@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Which data connector and activity is free in Microsoft Sentinel?"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-11-03
 tags: [security, microsoft-sentinel]
 link: "https://jeffreyappel.nl/which-data-connector-and-activity-is-free-in-microsoft-sentinel/"

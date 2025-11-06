@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "5 Manieren om Azure Active Directory accounts veiliger te maken"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-05-20
 tags: [security]
 link: "https://jeffreyappel.nl/5-manieren-om-azure-active-directory-accounts-veiliger-te-maken/"

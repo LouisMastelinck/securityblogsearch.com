@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azug @ Noest"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-09-26
 tags: [azure, entra-id, identity]
 link: "https://hybridbrothers.com/public-speaking/26-09-2024/"

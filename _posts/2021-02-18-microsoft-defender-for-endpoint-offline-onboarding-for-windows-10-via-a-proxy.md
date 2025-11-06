@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint – Offline Onboarding for Windows 10 via a Proxy"
-author: "Ru"
+author: "Ru Campbell"
 date: 2021-02-18
 tags: [group-policy, microsoft-365, microsoft-defender, microsoft-defender-for-endpoint, windows]
 link: "https://campbell.scot/microsoft-defender-for-endpoint-offline-onboarding-for-windows-10-via-proxy/?utm_source=rss&utm_medium=rss&utm_campaign=microsoft-defender-for-endpoint-offline-onboarding-for-windows-10-via-proxy"

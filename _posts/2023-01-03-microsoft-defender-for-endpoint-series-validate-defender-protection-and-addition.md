@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint series – Validate Defender protection and additional troubleshooting – Part6"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-01-03
 tags: [security, defender-for-endpoint, mde-series]
 link: "https://jeffreyappel.nl/microsoft-defender-for-endpoint-series-validate-defender-protection-and-additional-troubleshooting-part6/"

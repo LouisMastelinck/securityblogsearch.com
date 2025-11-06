@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Analyzing MDE Network Inspections"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-04-27
 tags: [security, defender, identity]
 link: "https://hybridbrothers.com/posts/mdi-nnr-health/"

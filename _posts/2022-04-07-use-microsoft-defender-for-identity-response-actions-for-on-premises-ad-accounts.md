@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Use Microsoft Defender for Identity Response Actions for on-premises AD accounts"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-04-07
 tags: [security, defender-for-identity]
 link: "https://jeffreyappel.nl/defender-for-identity-response-actions/"

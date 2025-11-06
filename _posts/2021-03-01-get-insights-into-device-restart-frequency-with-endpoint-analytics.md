@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Get insights into device restart frequency with Endpoint Analytics"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-03-01
 tags: [modern-workplace, intune]
 link: "https://jeffreyappel.nl/get-insight-into-device-restart-frequency-with-endpoint-analytics/"

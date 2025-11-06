@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ghost blogging on Azure Container Apps"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2023-01-29
 tags: [azure]
 link: "https://hybridbrothers.com/posts/ghost-blogging-on-azure-container-apps/"

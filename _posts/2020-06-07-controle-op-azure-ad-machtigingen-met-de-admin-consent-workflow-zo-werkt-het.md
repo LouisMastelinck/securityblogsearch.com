@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Controle op Azure AD machtigingen met de Admin consent workflow; zo werkt het"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-06-07
 tags: [security]
 link: "https://jeffreyappel.nl/controle-op-azure-ad-machtigingen-met-de-admin-consent-workflow-zo-werkt-het/"

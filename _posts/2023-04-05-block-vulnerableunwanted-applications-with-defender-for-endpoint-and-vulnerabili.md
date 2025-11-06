@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Block “vulnerable/unwanted” applications with Defender for Endpoint and Vulnerability Management"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-04-05
 tags: [security, defender-for-endpoint]
 link: "https://jeffreyappel.nl/block-vulnerable-unwanted-applications-with-defender-for-endpoint-and-vulnerability-management/"

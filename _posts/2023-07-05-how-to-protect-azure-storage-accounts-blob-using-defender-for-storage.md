@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to protect Azure storage accounts (Blob) using Defender for Storage"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-07-05
 tags: [security, defender-for-cloud]
 link: "https://jeffreyappel.nl/how-to-protect-azure-storage-accounts-blob-using-defender-for-storage/"

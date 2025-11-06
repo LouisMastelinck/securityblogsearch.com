@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Monitor RDP Brute Force Attack with Azure Sentinel & Azure Security Center"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-06-23
 tags: [security, microsoft-sentinel]
 link: "https://jeffreyappel.nl/monitor-rdp-brute-force-attack-with-azure-sentinel-azure-security-center/"

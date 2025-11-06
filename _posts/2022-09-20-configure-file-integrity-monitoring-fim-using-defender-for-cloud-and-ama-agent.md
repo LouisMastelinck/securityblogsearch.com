@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Configure File Integrity Monitoring (FIM) using Defender for Cloud and AMA-agent"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-09-20
 tags: [security, defender-for-cloud]
 link: "https://jeffreyappel.nl/configure-file-integrity-monitoring-fim-using-defender-for-cloud-and-ama-agent/"

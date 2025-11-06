@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Protect against AzureAD OAuth Consent phishing attempts (Illicit consent attack)"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-02-02
 tags: [security, azure-ad]
 link: "https://jeffreyappel.nl/protect-against-oauth-consent-phishing-attempts-illicit-consent-attack/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Three Cool Things To Do With Azure Information Protection"
-author: "Ru"
+author: "Ru Campbell"
 date: 2021-06-13
 tags: [microsoft-365, sensitivity-labels-azure-information-protection, aip, ems, information-protection]
 link: "https://campbell.scot/three-cool-things-to-do-with-azure-information-protection/?utm_source=rss&utm_medium=rss&utm_campaign=three-cool-things-to-do-with-azure-information-protection"

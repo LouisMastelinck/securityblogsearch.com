@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to protect against Device Code Flow abuse (Storm-2372 attacks) and block the authentication flow"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2025-02-16
 tags: [security, azure-ad, azure-ad-identity-protection, microsoft-365-defender]
 link: "https://jeffreyappel.nl/how-to-protect-against-device-code-flow-abuse-storm-2372-attacks-and-block-the-authentication-flow/"

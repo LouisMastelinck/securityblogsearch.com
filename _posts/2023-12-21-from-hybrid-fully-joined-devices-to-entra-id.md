@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "From hybrid / fully joined devices to Entra ID"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2023-12-21
 tags: [azure, entra-id, cloud]
 link: "https://hybridbrothers.com/posts/device-to-entraid/"

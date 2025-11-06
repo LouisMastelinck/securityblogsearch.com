@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Manage Defender for Endpoint for Windows, macOS, and Linux via Security settings management"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-07-18
 tags: [security, defender-for-endpoint]
 link: "https://jeffreyappel.nl/manage-mde-for-windows-macos-and-linux-via-security-settings-management/"

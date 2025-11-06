@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Conditional Access – Common Microsoft 365 Security Mistakes Series"
-author: "Ru"
+author: "Ru Campbell"
 date: 2023-10-05
 tags: [access-reviews, conditional-access, entitlement-management, entra-id-azure-active-directory, microsoft-365]
 link: "https://campbell.scot/conditional-access-common-microsoft-365-security-mistakes-series/?utm_source=rss&utm_medium=rss&utm_campaign=conditional-access-common-microsoft-365-security-mistakes-series"

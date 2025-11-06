@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "2025 Microsoft Defender Optimization & Configuration Cheat Sheet"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2025-11-03
 tags: [security, microsoft-365-defender]
 link: "https://jeffreyappel.nl/2025-microsoft-defender-optimization-configuration-cheat-sheet/"

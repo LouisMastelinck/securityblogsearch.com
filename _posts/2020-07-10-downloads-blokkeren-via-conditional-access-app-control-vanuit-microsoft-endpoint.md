@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Downloads blokkeren via Conditional Access App Control vanuit Microsoft Endpoint Manager"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-07-10
 tags: [security, azure-ad-conditional-access, defender-for-cloud-apps]
 link: "https://jeffreyappel.nl/downloads-blokkeren-via-conditional-access-app-control/"

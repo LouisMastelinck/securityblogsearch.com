@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bicep: Dynamic naming technique"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-10-03
 tags: [security]
 link: "https://hybridbrothers.com/posts/bicep-dynamic-naming-technique/"

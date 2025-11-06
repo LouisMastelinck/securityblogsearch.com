@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Exploring Microsoft 365’s NOBELIUM Defence Capabilities"
-author: "Ru"
+author: "Ru Campbell"
 date: 2021-12-24
 tags: [entra-id-azure-active-directory, microsoft-365, microsoft-defender, windows-server, defender]
 link: "https://campbell.scot/exploring-microsoft-365s-nobelium-defence-capabilities/?utm_source=rss&utm_medium=rss&utm_campaign=exploring-microsoft-365s-nobelium-defence-capabilities"

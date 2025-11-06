@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Active Directory Password Protection; hoe werkt deze extra beveiliging?"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-05-20
 tags: [security]
 link: "https://jeffreyappel.nl/azure-active-directory-password-protection-hoe-werkt-deze-extra-beveiliging/"

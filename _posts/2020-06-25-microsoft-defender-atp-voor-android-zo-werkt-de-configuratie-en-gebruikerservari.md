@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender ATP voor Android: Zo werkt de configuratie en gebruikerservaring tijdens de public preview"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-06-25
 tags: [security, defender-for-endpoint]
 link: "https://jeffreyappel.nl/microsoft-defender-atp-voor-android-zo-werkt-de-configuratie-en-gebruikerservaring-tijdens-de-public-preview/"

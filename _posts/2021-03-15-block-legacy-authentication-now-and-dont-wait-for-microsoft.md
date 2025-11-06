@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Block Legacy Authentication now, and don’t wait for Microsoft"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-03-15
 tags: [modern-workplace, security]
 link: "https://jeffreyappel.nl/block-legacy-authentication-now-and-dont-wait-for-microsoft/"

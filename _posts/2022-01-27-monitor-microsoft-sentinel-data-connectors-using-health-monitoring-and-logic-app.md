@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Monitor Microsoft Sentinel Data Connectors using Health Monitoring and Logic App"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-01-27
 tags: [security, microsoft-sentinel]
 link: "https://jeffreyappel.nl/monitor-microsoft-sentinel-data-connectors-using-health-monitoring-and-logic-app/"

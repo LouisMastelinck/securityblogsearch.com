@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Android Enterprise fully managed beschikbaar in Microsoft Intune voor zakelijke omgevingen"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-05-20
 tags: [modern-workplace, intune]
 link: "https://jeffreyappel.nl/android-enterprise-fully-managed-beschikbaar-in-microsoft-intune-voor-zakelijke-omgevingen/"

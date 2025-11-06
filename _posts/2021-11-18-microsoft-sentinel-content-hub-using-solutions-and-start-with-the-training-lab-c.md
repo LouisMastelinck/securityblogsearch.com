@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Sentinel content hub: Using solutions and start with the Training Lab content"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-11-18
 tags: [security, microsoft-sentinel]
 link: "https://jeffreyappel.nl/microsoft-sentinel-content-hub-using-content-hub-and-start-with-the-training-lab-content/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Three Considerations for Azure Information Protection Deployments"
-author: "Ru"
+author: "Ru Campbell"
 date: 2021-05-15
 tags: [microsoft-365, sensitivity-labels-azure-information-protection, aip, entra-id-azure-ad, information-protection]
 link: "https://campbell.scot/3-considerations-for-aip-deployments/?utm_source=rss&utm_medium=rss&utm_campaign=3-considerations-for-aip-deployments"

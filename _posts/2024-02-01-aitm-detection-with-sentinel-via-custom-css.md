@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AitM detection with Sentinel via custom CSS"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-02-01
 tags: [entra-id, sentinel]
 link: "https://hybridbrothers.com/posts/aitm-detection-via-css/"

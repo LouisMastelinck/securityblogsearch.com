@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Authorization Code Flow"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-06-22
 tags: [security]
 link: "https://hybridbrothers.com/posts/authorization-code-flow/"

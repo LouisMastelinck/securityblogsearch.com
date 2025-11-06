@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Endpoint Data Loss Prevention: Blokkeren van USB bestandstransfers"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-09-23
 tags: [security, microsoft-purview]
 link: "https://jeffreyappel.nl/microsoft-endpoint-data-loss-prevention/"

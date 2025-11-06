@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint Troubleshooting mode – how to use it?"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-05-18
 tags: [security, defender-for-endpoint]
 link: "https://jeffreyappel.nl/microsoft-defender-for-endpoint-troubleshooting-mode-how-to-use-it/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entra ID Private Access with private integrated storage accounts"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-11-04
 tags: [azure, entra-id, security]
 link: "https://hybridbrothers.com/posts/entra-private-access-with-private-integrated-storage-accounts/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Thoughts on Copilot for Security’s Early Days"
-author: "Ru"
+author: "Ru Campbell"
 date: 2024-05-13
 tags: [copilot-for-security, ai, copilot]
 link: "https://campbell.scot/thoughts-on-copilot-for-securitys-early-days/?utm_source=rss&utm_medium=rss&utm_campaign=thoughts-on-copilot-for-securitys-early-days"

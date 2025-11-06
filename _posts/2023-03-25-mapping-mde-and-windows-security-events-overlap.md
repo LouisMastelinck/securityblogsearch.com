@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mapping MDE and Windows Security Events overlap"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2023-03-25
 tags: [security]
 link: "https://hybridbrothers.com/posts/mapping-mde-and-windows-security-events-overlap/"

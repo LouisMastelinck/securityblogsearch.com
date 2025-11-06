@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Automated incident triage with Security Copilot and Microsoft Sentinel/ Defender XDR"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2025-03-26
 tags: [security, defender-xdr, security-copilot]
 link: "https://jeffreyappel.nl/automated-incident-triage-with-security-copilot-and-microsoft-sentinel-defender-xdr/"

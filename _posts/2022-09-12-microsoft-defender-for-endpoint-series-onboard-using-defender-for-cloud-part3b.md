@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint series – Onboard using Defender for Cloud – Part3B"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-09-12
 tags: [security, defender-for-cloud, defender-for-endpoint, mde-series]
 link: "https://jeffreyappel.nl/microsoft-defender-for-endpoint-series-onboard-using-defender-for-cloud-part3b/"

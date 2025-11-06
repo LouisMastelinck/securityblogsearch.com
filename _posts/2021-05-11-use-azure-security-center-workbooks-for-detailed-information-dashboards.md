@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Use Azure Security Center workbooks for detailed information/ dashboards"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-05-11
 tags: [security, defender-for-cloud]
 link: "https://jeffreyappel.nl/use-azure-security-center-workbooks-for-detailed-information-dashboards/"

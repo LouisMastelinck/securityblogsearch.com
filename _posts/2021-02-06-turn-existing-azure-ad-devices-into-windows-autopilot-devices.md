@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Turn Existing Azure AD Devices into Windows Autopilot Devices"
-author: "Ru"
+author: "Ru Campbell"
 date: 2021-02-06
 tags: [autopilot, entra-id-azure-active-directory, intune, microsoft-365, microsoft-intune]
 link: "https://campbell.scot/turn-existing-azure-ad-devices-into-autopilot-devices/?utm_source=rss&utm_medium=rss&utm_campaign=turn-existing-azure-ad-devices-into-autopilot-devices"

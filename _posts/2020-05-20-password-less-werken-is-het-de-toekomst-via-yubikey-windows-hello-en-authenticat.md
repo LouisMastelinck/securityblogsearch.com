@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Password-less werken: Is het de toekomst via Yubikey, Windows Hello en Authenticator?"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-05-20
 tags: [security]
 link: "https://jeffreyappel.nl/password-less-werken-is-het-de-toekomst-via-yubikey-windows-hello-en-authenticator/"

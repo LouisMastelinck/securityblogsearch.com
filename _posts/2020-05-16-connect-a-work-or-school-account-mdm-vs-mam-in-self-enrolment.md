@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Connect a Work or School Account – MDM vs. MAM in Self Enrolment"
-author: "Ru"
+author: "Ru Campbell"
 date: 2020-05-16
 tags: [intune, microsoft-365, microsoft-intune, mam, mem]
 link: "https://campbell.scot/connect-a-work-or-school-account-mdm-vs-mam-in-self-enrolment/?utm_source=rss&utm_medium=rss&utm_campaign=connect-a-work-or-school-account-mdm-vs-mam-in-self-enrolment"

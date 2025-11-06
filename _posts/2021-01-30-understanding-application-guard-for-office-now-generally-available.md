@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Understanding Application Guard for Office, Now Generally Available"
-author: "Ru"
+author: "Ru Campbell"
 date: 2021-01-30
 tags: [application-guard, intune, microsoft-365, microsoft-defender, news]
 link: "https://campbell.scot/understanding-application-guard-for-office-now-generally-available/?utm_source=rss&utm_medium=rss&utm_campaign=understanding-application-guard-for-office-now-generally-available"

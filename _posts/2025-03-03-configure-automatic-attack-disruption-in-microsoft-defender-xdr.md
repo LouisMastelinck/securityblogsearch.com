@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Configure automatic Attack Disruption in Microsoft Defender XDR"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2025-03-03
 tags: [security, defender-for-endpoint, microsoft-365-defender]
 link: "https://jeffreyappel.nl/configure-automatic-attack-disruption-in-microsoft-defender-xdr/"

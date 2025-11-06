@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Important changes to HybridBrothers.com"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2025-10-01
 tags: [security]
 link: "https://hybridbrothers.com/posts/important-changes-to-hybridbrothers-com/"

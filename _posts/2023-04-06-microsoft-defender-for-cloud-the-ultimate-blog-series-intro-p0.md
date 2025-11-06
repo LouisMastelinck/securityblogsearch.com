@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Cloud– The ultimate blog series (Intro) – P0"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-04-06
 tags: [security, defender-for-cloud, mdc-series]
 link: "https://jeffreyappel.nl/microsoft-defender-for-cloud-the-ultimate-blog-series-intro-p0/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Updated March 2022: Ultimate Comparison of Defender for Endpoint Features by Operating System"
-author: "Ru"
+author: "Ru Campbell"
 date: 2022-03-29
 tags: [microsoft-365, microsoft-defender-for-endpoint, microsoft-defender-xdr, windows, atp]
 link: "https://campbell.scot/march-22-defender-for-endpoint-feature-comparison/?utm_source=rss&utm_medium=rss&utm_campaign=march-22-defender-for-endpoint-feature-comparison"

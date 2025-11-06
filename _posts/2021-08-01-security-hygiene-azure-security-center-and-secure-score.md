@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Security Hygiene, Azure Security Center, and Secure Score"
-author: "Ru"
+author: "Ru Campbell"
 date: 2021-08-01
 tags: [azure, microsoft-defender-for-cloud, azure-security-center, cis]
 link: "https://campbell.scot/security-hygiene-az-security-center-secure-score/?utm_source=rss&utm_medium=rss&utm_campaign=security-hygiene-az-security-center-secure-score"

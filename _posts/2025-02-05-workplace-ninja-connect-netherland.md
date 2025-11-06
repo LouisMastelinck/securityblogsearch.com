@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Workplace Ninja Connect Netherland"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2025-02-05
 tags: [security, defender]
 link: "https://hybridbrothers.com/public-speaking/05-02-2025/"

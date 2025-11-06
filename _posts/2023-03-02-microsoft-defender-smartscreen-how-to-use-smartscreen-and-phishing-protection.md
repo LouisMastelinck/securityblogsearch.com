@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender SmartScreen – how to use SmartScreen and Phishing protection"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-03-02
 tags: [security, defender-for-endpoint]
 link: "https://jeffreyappel.nl/microsoft-defender-smartscreen-how-to-use-smartscreen-and-phishing-protection/"

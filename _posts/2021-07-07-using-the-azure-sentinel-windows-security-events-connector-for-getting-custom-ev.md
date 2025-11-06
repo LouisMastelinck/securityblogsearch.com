@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using the Azure Sentinel Windows Security Events Connector for getting custom events"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-07-07
 tags: [security, microsoft-sentinel]
 link: "https://jeffreyappel.nl/using-the-azure-sentinel-windows-security-events-connector-for-getting-custom-events/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to implement Defender for Identity and configure all prerequisites"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-10-04
 tags: [security, defender-for-identity]
 link: "https://jeffreyappel.nl/how-to-implement-defender-for-identity-and-configure-all-prerequisites/"

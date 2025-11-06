@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Experts Live Netherlands"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-06-04
 tags: [security, defender, sentinel]
 link: "https://hybridbrothers.com/public-speaking/04-06-2024/"

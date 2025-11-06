@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Onboard Defender for Endpoint without Azure Arc via Direct onboarding"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-06-05
 tags: [security, azure-arc, defender-for-cloud, defender-for-endpoint]
 link: "https://jeffreyappel.nl/onboard-defender-for-endpoint-without-azure-arc-via-direct-onboarding/"

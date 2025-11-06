@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Protecting against Lateral Movement with Defender for Identity and monitor with Azure Sentinel"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-08-11
 tags: [security, defender-for-identity, microsoft-sentinel]
 link: "https://jeffreyappel.nl/protecting-against-lateral-movement-with-defender-for-identity-and-monitor-with-azure-sentinel/"

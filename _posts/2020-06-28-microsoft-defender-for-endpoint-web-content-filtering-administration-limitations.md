@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint Web Content Filtering – Administration, Limitations, and User Experience"
-author: "Ru"
+author: "Ru Campbell"
 date: 2020-06-28
 tags: [configuration-manager, microsoft-365, microsoft-defender, microsoft-defender-for-endpoint, microsoft-intune]
 link: "https://campbell.scot/microsoft-defender-atp-web-content-filtering-administration-limitations-and-user-experience/?utm_source=rss&utm_medium=rss&utm_campaign=microsoft-defender-atp-web-content-filtering-administration-limitations-and-user-experience"

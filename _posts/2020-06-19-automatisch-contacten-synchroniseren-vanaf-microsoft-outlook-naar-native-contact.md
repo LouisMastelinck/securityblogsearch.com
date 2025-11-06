@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Automatisch contacten synchroniseren vanaf Microsoft Outlook naar native contact app via Microsoft Endpoint Manager"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-06-19
 tags: [modern-workplace, intune]
 link: "https://jeffreyappel.nl/automatisch-contacten-synchroniseren-vanaf-microsoft-outlook-naar-native-contact-app-via-microsoft-endpoint-manager/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Edge Chromium; zo configureer je beheerde favorieten via Microsoft Endpoint Manager"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-06-06
 tags: [modern-workplace, intune]
 link: "https://jeffreyappel.nl/edge-chromium-zo-configureer-je-beheerde-favorieten-via-microsoft-endpoint-manager/"

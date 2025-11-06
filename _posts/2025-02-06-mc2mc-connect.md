@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MC2MC Connect"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2025-02-06
 tags: [security, defender]
 link: "https://hybridbrothers.com/public-speaking/06-02-2025/"

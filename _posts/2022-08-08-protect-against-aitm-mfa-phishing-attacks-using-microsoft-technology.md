@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Protect against AiTM/ MFA phishing attacks using Microsoft technology"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-08-08
 tags: [security, azure-ad-identity-protection]
 link: "https://jeffreyappel.nl/protect-against-aitm-mfa-phishing-attacks-using-microsoft-technology/"

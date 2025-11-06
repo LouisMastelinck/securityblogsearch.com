@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure AD Sign-In Risk Policy: Zo werkt deze functionaliteit"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-05-20
 tags: [security, azure-ad-identity-protection]
 link: "https://jeffreyappel.nl/azure-ad-sign-in-risk-policy-zo-werkt-deze-functionaliteit/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Demystifying Data Collection Rules and Transformations"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2023-05-21
 tags: [security]
 link: "https://hybridbrothers.com/posts/demystifying-data-collection-rules-and-transformations/"

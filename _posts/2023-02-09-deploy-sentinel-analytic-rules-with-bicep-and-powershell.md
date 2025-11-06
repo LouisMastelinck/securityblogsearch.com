@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Deploy sentinel analytic rules with bicep and PowerShell"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2023-02-09
 tags: [sentinel]
 link: "https://hybridbrothers.com/posts/sentinel-using-bicep-and-powershell/"

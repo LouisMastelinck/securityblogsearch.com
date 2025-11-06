@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Collect Microsoft Teams activity in Azure Sentinel and start hunting"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-09-29
 tags: [security, microsoft-sentinel]
 link: "https://jeffreyappel.nl/collect-microsoft-teams-activity-in-azure-sentinel-and-start-hunting/"

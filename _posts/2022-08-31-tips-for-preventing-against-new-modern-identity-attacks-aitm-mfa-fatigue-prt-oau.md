@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tips for preventing against new modern identity attacks (AiTM, MFA Fatigue, PRT, OAuth)"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-08-31
 tags: [security, azure-ad, azure-ad-identity-protection, defender-for-cloud-apps]
 link: "https://jeffreyappel.nl/tips-for-preventing-against-new-modern-identity-attacks-aitm-mfa-fatigue-prt-oauth/"
