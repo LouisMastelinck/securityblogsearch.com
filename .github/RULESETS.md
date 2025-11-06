@@ -238,6 +238,13 @@ jobs:
 - This requires GitHub Enterprise or specific organization settings
 - Contact your GitHub organization admin
 
+### Issue: "Resource not accessible by integration" Error in Workflow
+- This error occurs when the workflow tries to comment on PRs from forks
+- **Cause**: The `pull_request` event has read-only permissions for fork PRs
+- **Solution**: Use `pull_request_target` instead of `pull_request` in the workflow
+- **Note**: This has been fixed in the current workflow configuration
+- See: `.github/workflows/check-external-contributor-files.yml`
+
 ## Additional Resources
 
 - [GitHub Rulesets Documentation](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets)
