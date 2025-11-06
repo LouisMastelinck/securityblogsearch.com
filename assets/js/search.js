@@ -226,7 +226,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add load more button event listener
     if (loadMoreBtn) {
-        loadMoreBtn.addEventListener('click', handleLoadMoreClick);
+        const loadMoreButton = loadMoreBtn.querySelector('.btn-load-more');
+        if (loadMoreButton) {
+            loadMoreButton.addEventListener('click', handleLoadMoreClick);
+        }
     }
     
     // Build filter options before initial load
