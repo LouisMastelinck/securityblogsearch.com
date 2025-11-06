@@ -54,7 +54,7 @@ subject_filter: defender-identity
             {% assign post_title = post.title | downcase %}
             {% assign post_tags = post.tags | join: ',' | downcase %}
             {% assign post_summary = post.summary | downcase %}
-            {% if post_title contains 'defender for identity' or post_title contains 'defender identity' or post_tags contains 'defender-identity' or post_tags contains 'defender for identity' or post_summary contains 'defender for identity' or post_content contains 'defender for identity' %}
+            {% if post_title contains 'defender for identity' or post_title contains 'defender identity' or post_tags contains 'defender-identity' or post_tags contains 'defender for identity' or post_tags contains 'defender identity' or post_summary contains 'defender for identity' or post_content contains 'defender for identity' %}
             <article class="post-card" 
                      data-title="{{ post.title | downcase }}"
                      data-author="{{ post.author | downcase }}"
