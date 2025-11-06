@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Protection of privileged users and groups by Azure AD Restricted Management Administrative Units"
-author: "Thomas Naunheim (thomas@naunheim.net)"
+author: "Thomas Naunheim"
 date: 2023-06-12
 tags: [azure-ad, azuread, privilegediam, azure]
 link: "https://www.cloud-architekt.net/restricted-management-administrative-unit/"

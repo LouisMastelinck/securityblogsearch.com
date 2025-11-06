@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Assigning groups to Azure AD roles and Privileged access groups, a first look!"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-08-20
 tags: [azuread, modern-workplace, privileged-identity-management, role-based-access-control, security]
 link: "https://www.vansurksum.com/2020/08/20/assigning-groups-to-azure-ad-roles-and-privileged-access-groups-a-first-look/?utm_source=rss&utm_medium=rss&utm_campaign=assigning-groups-to-azure-ad-roles-and-privileged-access-groups-a-first-look"

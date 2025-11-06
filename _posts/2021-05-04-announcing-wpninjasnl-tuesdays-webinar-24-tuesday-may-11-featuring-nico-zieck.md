@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Announcing #WPNinjasNL Tuesdays Webinar #24, Tuesday May 11, featuring Nico Zieck"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-05-04
 tags: [announcement, wpninjasnl]
 link: "https://www.vansurksum.com/2021/05/04/announcing-wpninjasnl-tuesdays-webinar-24-tuesday-may-11-featuring-nico-zieck/?utm_source=rss&utm_medium=rss&utm_campaign=announcing-wpninjasnl-tuesdays-webinar-24-tuesday-may-11-featuring-nico-zieck"

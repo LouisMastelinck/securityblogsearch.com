@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Endpoint Manager and the issue of the tattooing Block write access to removable data-drives not protected by BitLocker setting"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-11-18
 tags: [microsoft-endpoint-manager, troubleshooting, windows-11]
 link: "https://www.vansurksum.com/2021/11/18/microsoft-endpoint-manager-and-the-issue-of-the-tattooing-block-write-access-to-removable-data-drives-not-protected-by-bitlocker-setting/?utm_source=rss&utm_medium=rss&utm_campaign=microsoft-endpoint-manager-and-the-issue-of-the-tattooing-block-write-access-to-removable-data-drives-not-protected-by-bitlocker-setting"

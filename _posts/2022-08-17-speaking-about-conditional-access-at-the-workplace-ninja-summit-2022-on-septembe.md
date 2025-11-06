@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Speaking about Conditional Access at the Workplace Ninja Summit 2022 on September 12th in Luzern Switzerland"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2022-08-17
 tags: [announcement, azuread, conditional-access, events, privileged-identity-management]
 link: "https://www.vansurksum.com/2022/08/17/speaking-about-conditional-access-at-the-workplace-ninja-summit-2022-on-september-12th-in-luzern-switzerland/?utm_source=rss&utm_medium=rss&utm_campaign=speaking-about-conditional-access-at-the-workplace-ninja-summit-2022-on-september-12th-in-luzern-switzerland"

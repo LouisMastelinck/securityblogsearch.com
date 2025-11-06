@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Speaking at Workplace Ninja Virtual Edition 2020"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-05-05
 tags: [configuration-manager, events, intune, modern-workplace, speaking]
 link: "https://www.vansurksum.com/2020/05/05/speaking-at-workplace-ninja-virtual-edition-2020/?utm_source=rss&utm_medium=rss&utm_campaign=speaking-at-workplace-ninja-virtual-edition-2020"

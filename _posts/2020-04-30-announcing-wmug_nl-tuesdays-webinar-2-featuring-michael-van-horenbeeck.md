@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Announcing #WMUG_NL Tuesdays Webinar 2 featuring Michael van Horenbeeck"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-04-30
 tags: [announcement, wmugnl, community, microsoft365, security]
 link: "https://www.vansurksum.com/2020/04/30/announcing-wmug_nl-tuesdays-webinar-2-featuring-michael-van-horenbeeck/?utm_source=rss&utm_medium=rss&utm_campaign=announcing-wmug_nl-tuesdays-webinar-2-featuring-michael-van-horenbeeck"

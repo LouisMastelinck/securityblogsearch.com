@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SCSM 2012: Failed to execute Submit Operation, event id 26319"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2014-11-26
 tags: [service-manager, troubleshooting, rbac, system-center]
 link: "https://www.vansurksum.com/2014/11/26/scsm-2012-failed-to-execute-submit-operation-event-id-26319/?utm_source=rss&utm_medium=rss&utm_campaign=scsm-2012-failed-to-execute-submit-operation-event-id-26319"

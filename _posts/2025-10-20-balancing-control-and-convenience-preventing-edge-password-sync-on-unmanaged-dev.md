@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Balancing Control and Convenience: Preventing Edge Password Sync on Unmanaged Devices"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2025-10-20
 tags: [conditional-access, intune, mobile-application-management]
 link: "https://www.vansurksum.com/2025/10/20/balancing-control-and-convenience-preventing-edge-password-sync-on-unmanaged-devices/?utm_source=rss&utm_medium=rss&utm_campaign=balancing-control-and-convenience-preventing-edge-password-sync-on-unmanaged-devices"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My appearance in the Cloud Conversations podcast #32"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-11-16
 tags: [conditional-access, microsoft-endpoint-manager, modern-workplace, wpninjasnl]
 link: "https://www.vansurksum.com/2021/11/16/my-appearance-in-the-cloud-conversations-podcast-32/?utm_source=rss&utm_medium=rss&utm_campaign=my-appearance-in-the-cloud-conversations-podcast-32"

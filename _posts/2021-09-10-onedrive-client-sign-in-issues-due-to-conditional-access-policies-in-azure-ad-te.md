@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "OneDrive client sign-in issues due to Conditional Access policies in Azure AD tenant where you are a guest user"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-09-10
 tags: [azuread, conditional-access, troubleshooting]
 link: "https://www.vansurksum.com/2021/09/10/onedrive-client-sign-in-issues-due-to-conditional-access-policies-in-azure-ad-tenant-where-you-are-a-guest-user/?utm_source=rss&utm_medium=rss&utm_campaign=onedrive-client-sign-in-issues-due-to-conditional-access-policies-in-azure-ad-tenant-where-you-are-a-guest-user"

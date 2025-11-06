@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Apple Business Manager device import options for later use within Microsoft Endpoint Manager"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2022-02-22
 tags: [abm, intune, microsoft-endpoint-manager, modern-workplace]
 link: "https://www.vansurksum.com/2022/02/22/apple-business-manager-device-import-options-for-later-use-within-microsoft-endpoint-manager/?utm_source=rss&utm_medium=rss&utm_campaign=apple-business-manager-device-import-options-for-later-use-within-microsoft-endpoint-manager"

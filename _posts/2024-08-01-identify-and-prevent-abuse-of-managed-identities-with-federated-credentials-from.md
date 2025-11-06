@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Identify and prevent abuse of Managed Identities with Federated Credentials from unauthorized entities"
-author: "Thomas Naunheim (thomas@naunheim.net)"
+author: "Thomas Naunheim"
 date: 2024-08-01
 tags: [azure-ad, microsoft-entra, azuread, workload-id, azure]
 link: "https://www.cloud-architekt.net/identify-prevent-abuse-uami-fedcreds/"

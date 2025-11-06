@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A first look at the settings catalog in Microsoft Endpoint Manager"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-02-18
 tags: [microsoft-endpoint-manager, modern-workplace]
 link: "https://www.vansurksum.com/2021/02/18/a-first-look-at-the-settings-catalog-in-microsoft-endpoint-manager/?utm_source=rss&utm_medium=rss&utm_campaign=a-first-look-at-the-settings-catalog-in-microsoft-endpoint-manager"

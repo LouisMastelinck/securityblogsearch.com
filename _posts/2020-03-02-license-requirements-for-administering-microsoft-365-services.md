@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "License requirements for administering Microsoft 365 services"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-03-02
 tags: [azuread, cloud-app-security, intune, licensing, modern-workplace]
 link: "https://www.vansurksum.com/2020/03/02/license-requirements-for-administering-microsoft-365-services/?utm_source=rss&utm_medium=rss&utm_campaign=license-requirements-for-administering-microsoft-365-services"

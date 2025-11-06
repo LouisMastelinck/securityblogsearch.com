@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure AD Conditional Access sign-in troubleshooting tip: Flag sign-in errors for review"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-11-01
 tags: [azuread, conditional-access, modern-workplace, troubleshooting]
 link: "https://www.vansurksum.com/2021/11/01/azure-ad-conditional-access-sign-in-troubleshooting-tip-flag-sign-in-errors-for-review/?utm_source=rss&utm_medium=rss&utm_campaign=azure-ad-conditional-access-sign-in-troubleshooting-tip-flag-sign-in-errors-for-review"

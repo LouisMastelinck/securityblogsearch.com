@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Entra Workload ID - Introduction and Delegated Permissions"
-author: "Thomas Naunheim (thomas@naunheim.net)"
+author: "Thomas Naunheim"
 date: 2023-08-02
 tags: [azure-ad, microsoft-entra, azuread, workload-id, azure]
 link: "https://www.cloud-architekt.net/entra-workload-id-introduction-and-delegation/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Entra Workload ID - Threat detection with Microsoft Defender XDR and Sentinel"
-author: "Thomas Naunheim (thomas@naunheim.net)"
+author: "Thomas Naunheim"
 date: 2023-12-02
 tags: [azure-ad, microsoft-entra, azuread, workload-id, azure]
 link: "https://www.cloud-architekt.net/entra-workload-id-threat-detection/"

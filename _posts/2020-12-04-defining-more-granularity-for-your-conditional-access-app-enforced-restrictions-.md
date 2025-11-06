@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Defining more granularity for your Conditional Access App Enforced Restrictions using Sensitivity Labels"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-12-04
 tags: [azuread, conditional-access, modern-workplace, office-365, security]
 link: "https://www.vansurksum.com/2020/12/04/defining-more-granularity-for-your-conditional-access-app-enforced-restrictions-using-sensitivity-labels/?utm_source=rss&utm_medium=rss&utm_campaign=defining-more-granularity-for-your-conditional-access-app-enforced-restrictions-using-sensitivity-labels"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Announcing the #WMUG_NL Tuesday Webinars"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-04-17
 tags: [uncategorized]
 link: "https://www.vansurksum.com/2020/04/17/announcing-the-wmug_nl-tuesday-webinars/?utm_source=rss&utm_medium=rss&utm_campaign=announcing-the-wmug_nl-tuesday-webinars"

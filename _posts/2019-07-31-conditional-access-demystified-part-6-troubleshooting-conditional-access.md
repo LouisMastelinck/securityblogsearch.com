@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Conditional Access demystified, part 6: Troubleshooting Conditional Access"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2019-07-31
 tags: [azuread, conditional-access, overview, identity, intune]
 link: "https://www.vansurksum.com/2019/07/31/conditional-access-demystified-part-6-troubleshooting-conditional-access/?utm_source=rss&utm_medium=rss&utm_campaign=conditional-access-demystified-part-6-troubleshooting-conditional-access"

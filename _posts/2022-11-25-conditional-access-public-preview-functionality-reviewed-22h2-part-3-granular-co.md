@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Conditional Access public preview functionality reviewed (22H2) – Part 3: Granular control for external user types"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2022-11-25
 tags: [azuread, conditional-access, security]
 link: "https://www.vansurksum.com/2022/11/25/conditional-access-public-preview-functionality-reviewed-22h2-part-3-granular-control-for-external-user-types/?utm_source=rss&utm_medium=rss&utm_campaign=conditional-access-public-preview-functionality-reviewed-22h2-part-3-granular-control-for-external-user-types"

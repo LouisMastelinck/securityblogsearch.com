@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Speaking about Mobile Application Management at the Techorama Belgium 2022 event"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2022-05-18
 tags: [intune, microsoft-endpoint-manager, presentations, speaking]
 link: "https://www.vansurksum.com/2022/05/18/speaking-about-mobile-application-management-at-the-techorama-belgium-2022-event/?utm_source=rss&utm_medium=rss&utm_campaign=speaking-about-mobile-application-management-at-the-techorama-belgium-2022-event"

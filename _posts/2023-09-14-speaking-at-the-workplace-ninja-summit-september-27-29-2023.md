@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Speaking at the Workplace Ninja Summit, September 27-29 2023"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2023-09-14
 tags: [azuread, entra-id, events, intune, modern-workplace]
 link: "https://www.vansurksum.com/2023/09/14/speaking-at-the-workplace-ninja-summit-september-27-29-2023/?utm_source=rss&utm_medium=rss&utm_campaign=speaking-at-the-workplace-ninja-summit-september-27-29-2023"

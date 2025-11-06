@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ask yourself if you still really need ADFS"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2019-08-05
 tags: [azuread, modern-workplace, office-365, security]
 link: "https://www.vansurksum.com/2019/08/05/ask-yourself-if-you-still-really-need-adfs/?utm_source=rss&utm_medium=rss&utm_campaign=ask-yourself-if-you-still-really-need-adfs"

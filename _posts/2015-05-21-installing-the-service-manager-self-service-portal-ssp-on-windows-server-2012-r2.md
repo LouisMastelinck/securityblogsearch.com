@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Installing the Service Manager Self Service Portal (SSP) on Windows Server 2012 R2"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2015-05-21
 tags: [service-manager, scsm, self-service-portal, ssp]
 link: "https://www.vansurksum.com/2015/05/21/installing-the-service-manager-self-service-portal-ssp-on-windows-server-2012-r2/?utm_source=rss&utm_medium=rss&utm_campaign=installing-the-service-manager-self-service-portal-ssp-on-windows-server-2012-r2"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Speaking at the Cloud Identity Summit 2023, on September 7th 2023"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2023-08-24
 tags: [azuread, events, security, speaking]
 link: "https://www.vansurksum.com/2023/08/24/speaking-at-the-cloud-identity-summit-2023-on-september-7th-2023/?utm_source=rss&utm_medium=rss&utm_campaign=speaking-at-the-cloud-identity-summit-2023-on-september-7th-2023"

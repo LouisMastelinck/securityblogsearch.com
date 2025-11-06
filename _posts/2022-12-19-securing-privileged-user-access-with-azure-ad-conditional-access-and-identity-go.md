@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Securing privileged user access with Azure AD Conditional Access and Identity Governance"
-author: "Thomas Naunheim (thomas@naunheim.net)"
+author: "Thomas Naunheim"
 date: 2022-12-19
 tags: [azure-ad, azuread, privilegediam, identitygovernance]
 link: "https://www.cloud-architekt.net/securing-privileged-access-conditionalaccess-governance/"

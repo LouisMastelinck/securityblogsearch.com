@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft deprecates Conditional Access baseline policies in favour of Security Defaults, here is what you need to know and do"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-01-12
 tags: [azuread, conditional-access, policies]
 link: "https://www.vansurksum.com/2020/01/12/microsoft-deprecates-conditional-access-baseline-policies-in-favor-of-security-defaults-here-is-what-you-need-to-know-and-do/?utm_source=rss&utm_medium=rss&utm_campaign=microsoft-deprecates-conditional-access-baseline-policies-in-favor-of-security-defaults-here-is-what-you-need-to-know-and-do"

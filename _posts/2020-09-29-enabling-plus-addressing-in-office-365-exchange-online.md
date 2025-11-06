@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Enabling Plus Addressing in Office 365 Exchange Online"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-09-29
 tags: [exchange-online, modern-workplace, office-365]
 link: "https://www.vansurksum.com/2020/09/29/enabling-plus-addressing-in-office-365/?utm_source=rss&utm_medium=rss&utm_campaign=enabling-plus-addressing-in-office-365"

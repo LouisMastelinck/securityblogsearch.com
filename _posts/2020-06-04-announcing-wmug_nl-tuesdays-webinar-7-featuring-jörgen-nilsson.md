@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Announcing #WMUG_NL Tuesdays Webinar 7 featuring Jörgen Nilsson"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-06-04
 tags: [announcement, configuration-manager, wmugnl, community, configmgr]
 link: "https://www.vansurksum.com/2020/06/04/announcing-wmug_nl-tuesdays-webinar-7-featuring-jorgen-nilsson/?utm_source=rss&utm_medium=rss&utm_campaign=announcing-wmug_nl-tuesdays-webinar-7-featuring-jorgen-nilsson"

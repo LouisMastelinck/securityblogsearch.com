@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Abuse and Detection of M365D Live Response for privilege escalation on Control Plane (Tier0) assets"
-author: "Thomas Naunheim (thomas@naunheim.net)"
+author: "Thomas Naunheim"
 date: 2023-03-19
 tags: [azure-ad, azuread, privilegediam, m365defender]
 link: "https://www.cloud-architekt.net/abuse-detection-live-response-tier0/"

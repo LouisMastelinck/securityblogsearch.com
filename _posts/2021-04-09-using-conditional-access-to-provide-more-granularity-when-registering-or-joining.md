@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using Conditional Access to provide more granularity when registering or joining devices"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-04-09
 tags: [azuread, conditional-access, microsoft-endpoint-manager]
 link: "https://www.vansurksum.com/2021/04/09/using-conditional-access-to-provide-more-granularity-when-registering-or-joining-devices/?utm_source=rss&utm_medium=rss&utm_campaign=using-conditional-access-to-provide-more-granularity-when-registering-or-joining-devices"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A first look at the Microsoft 365 Apps admin center"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-03-09
 tags: [modern-workplace, office-365, overview, security]
 link: "https://www.vansurksum.com/2021/03/09/a-first-look-at-the-microsoft-365-apps-admin-center/?utm_source=rss&utm_medium=rss&utm_campaign=a-first-look-at-the-microsoft-365-apps-admin-center"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Intune Application Deployment Best Practices"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2023-11-16
 tags: [intune, modern-workplace]
 link: "https://www.vansurksum.com/2023/11/16/microsoft-intune-application-deployment-best-practices/?utm_source=rss&utm_medium=rss&utm_campaign=microsoft-intune-application-deployment-best-practices"

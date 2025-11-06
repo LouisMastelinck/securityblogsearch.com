@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Speaking at the February 2024 Azure APE Meetup"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2024-02-27
 tags: [azuread, cloud-app-security, entra-id, events, intune]
 link: "https://www.vansurksum.com/2024/02/27/speaking-at-the-february-2024-azure-ape-meetup/?utm_source=rss&utm_medium=rss&utm_campaign=speaking-at-the-february-2024-azure-ape-meetup"

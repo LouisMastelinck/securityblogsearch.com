@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Windows Management User Group Netherlands: Meeting on the 17th of September"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2013-08-07
 tags: [uncategorized]
 link: "https://www.vansurksum.com/2013/08/07/windows-management-user-group-netherlands-meeting-on-the-17th-of-september/?utm_source=rss&utm_medium=rss&utm_campaign=windows-management-user-group-netherlands-meeting-on-the-17th-of-september"

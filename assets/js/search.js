@@ -233,6 +233,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Build filter options before initial load
     buildFilterOptionsInternal();
     
+    /**
+     * Custom search function for filtering dropdown options by individual words
+     * @param {Array} choices - Array of choice objects to filter
+     * @param {string} value - Search term entered by the user
+     * @returns {Array} Filtered array of choices where at least one word starts with the search term
+     */
+    function customSearch(choices, value) {
+        const searchTerm = value.toLowerCase().trim();
+        if (!searchTerm) return choices;
+        
+        return choices.filter(choice => {
+            const label = choice.label.toLowerCase();
+            // Split label into words and check if any word starts with the search term
+            const words = label.split(/\s+/);
+            return words.some(word => word.startsWith(searchTerm));
+        });
+    }
+    
+    /**
+     * Helper function to set up event listeners for Choices.js filters
+     * @param {HTMLElement} element - The filter element
+     */
+    function setupFilterEventListeners(element) {
+        element.addEventListener('addItem', filterPosts);
+        element.addEventListener('removeItem', filterPosts);
+    }
+    
     // Initialize Choices.js with empty options
     if (tagFilter && typeof Choices !== 'undefined') {
         tagChoices = new Choices(tagFilter, {
@@ -245,15 +272,14 @@ document.addEventListener('DOMContentLoaded', function() {
             itemSelectText: '',
             shouldSort: false,
             duplicateItemsAllowed: false,
-            fuseOptions: {
-                threshold: 0.1,
-                keys: ['label']
-            }
+            searchResultLimit: 9999,
+            searchFloor: 0,
+            searchFields: ['label'],
+            fuseOptions: null,
+            searchFilter: customSearch
         });
         
-        // Listen for changes and removals
-        tagFilter.addEventListener('change', filterPosts);
-        tagFilter.addEventListener('removeItem', filterPosts);
+        setupFilterEventListeners(tagFilter);
     }
     
     if (authorFilter && typeof Choices !== 'undefined') {
@@ -267,15 +293,14 @@ document.addEventListener('DOMContentLoaded', function() {
             itemSelectText: '',
             shouldSort: false,
             duplicateItemsAllowed: false,
-            fuseOptions: {
-                threshold: 0.1,
-                keys: ['label']
-            }
+            searchResultLimit: 9999,
+            searchFloor: 0,
+            searchFields: ['label'],
+            fuseOptions: null,
+            searchFilter: customSearch
         });
         
-        // Listen for changes and removals
-        authorFilter.addEventListener('change', filterPosts);
-        authorFilter.addEventListener('removeItem', filterPosts);
+        setupFilterEventListeners(authorFilter);
     }
     
     // Initial load - populate filter options and show first batch

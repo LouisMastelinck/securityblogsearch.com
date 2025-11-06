@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Announcing #WMUG_NL Tuesdays Webinar 12 featuring Thijs Lecomte"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-10-01
 tags: [announcement, azuread, wmugnl, wmug_nl, community]
 link: "https://www.vansurksum.com/2020/10/01/announcing-wmug_nl-tuesdays-webinar-12-featuring-thijs-lecomte/?utm_source=rss&utm_medium=rss&utm_campaign=announcing-wmug_nl-tuesdays-webinar-12-featuring-thijs-lecomte"
