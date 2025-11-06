@@ -160,8 +160,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Display next batch of posts
     function displayNextBatch() {
-        if (isLoading) return;
-        
         const endIndex = Math.min(currentlyDisplayed + POSTS_PER_PAGE, filteredPosts.length);
         
         // Show posts in the current batch
