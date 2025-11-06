@@ -115,13 +115,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 summary.includes(searchTerm);
             
             // Tag filter - post must have at least one of the selected tags
-            const postTags = tags.split(',').map(t => t.trim());
+            const postTags = tags.split(',').map(t => t.trim().toLowerCase());
             const matchesTag = selectedTags.length === 0 || 
                 selectedTags.some(selectedTag => postTags.includes(selectedTag));
             
             // Author filter - post must match one of the selected authors
             const matchesAuthor = selectedAuthors.length === 0 || 
-                selectedAuthors.some(selectedAuthor => author === selectedAuthor);
+                selectedAuthors.some(selectedAuthor => author.toLowerCase() === selectedAuthor);
             
             return matchesSearch && matchesTag && matchesAuthor;
         });
@@ -243,11 +243,17 @@ document.addEventListener('DOMContentLoaded', function() {
             placeholderValue: 'Click to select tags...',
             noResultsText: 'No tags found',
             itemSelectText: '',
-            shouldSort: false
+            shouldSort: false,
+            duplicateItemsAllowed: false,
+            fuseOptions: {
+                threshold: 0.1,
+                keys: ['label']
+            }
         });
         
-        // Listen for changes
+        // Listen for changes and removals
         tagFilter.addEventListener('change', filterPosts);
+        tagFilter.addEventListener('removeItem', filterPosts);
     }
     
     if (authorFilter && typeof Choices !== 'undefined') {
@@ -259,11 +265,17 @@ document.addEventListener('DOMContentLoaded', function() {
             placeholderValue: 'Click to select authors...',
             noResultsText: 'No authors found',
             itemSelectText: '',
-            shouldSort: false
+            shouldSort: false,
+            duplicateItemsAllowed: false,
+            fuseOptions: {
+                threshold: 0.1,
+                keys: ['label']
+            }
         });
         
-        // Listen for changes
+        // Listen for changes and removals
         authorFilter.addEventListener('change', filterPosts);
+        authorFilter.addEventListener('removeItem', filterPosts);
     }
     
     // Initial load - populate filter options and show first batch
