@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Operationalizing MITRE ATT&CK to support Microsoft Sentinel deployments and detections"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2022-11-22
 tags: [sentinel]
 link: "https://hybridbrothers.com/posts/operationalizing-mitre-att-ck-to-support-microsoft-sentinel-deployments-and-detections/"

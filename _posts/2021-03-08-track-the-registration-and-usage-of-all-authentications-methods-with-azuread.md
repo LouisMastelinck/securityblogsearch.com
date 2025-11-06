@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Track the registration and usage of all authentications methods with AzureAD"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-03-08
 tags: [password-less, passwordless]
 link: "https://jeffreyappel.nl/track-the-registration-and-usage-of-all-authentications-methods-with-azuread/"

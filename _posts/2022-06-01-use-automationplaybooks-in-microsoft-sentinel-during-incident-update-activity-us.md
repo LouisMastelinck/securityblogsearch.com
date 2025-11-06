@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Use automation/playbooks in Microsoft Sentinel during incident update activity using update triggers"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-06-01
 tags: [security, microsoft-sentinel]
 link: "https://jeffreyappel.nl/use-automation-playbooks-in-microsoft-sentinel-during-incident-update-activity-using-update-triggers/"

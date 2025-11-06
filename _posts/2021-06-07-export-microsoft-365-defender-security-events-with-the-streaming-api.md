@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Export Microsoft 365 Defender security events with the streaming API"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-06-07
 tags: [security, defender-for-endpoint]
 link: "https://jeffreyappel.nl/export-microsoft-defender-for-endpoint-security-events-with-the-streaming-api/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Enroll Android smartphones into Microsoft Defender for Endpoint for blocking FluBot"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-06-02
 tags: [modern-workplace, security, defender-for-endpoint, intune]
 link: "https://jeffreyappel.nl/enroll-android-smartphones-into-defender-for-endpoint-for-blocking-fluebot/"

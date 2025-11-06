@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to use Microsoft Security Exposure Management (XSPM)"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2025-01-04
 tags: [security, defender-for-endpoint, microsoft-365-defender]
 link: "https://jeffreyappel.nl/how-to-use-microsoft-security-exposure-management-xspm/"

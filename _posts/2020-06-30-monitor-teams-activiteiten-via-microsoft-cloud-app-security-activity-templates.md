@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Monitor Teams activiteiten via Microsoft Cloud App Security Activity templates"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-06-30
 tags: [security, defender-for-cloud-apps]
 link: "https://jeffreyappel.nl/monitor-teams-activiteiten-via-microsoft-cloud-app-security/"

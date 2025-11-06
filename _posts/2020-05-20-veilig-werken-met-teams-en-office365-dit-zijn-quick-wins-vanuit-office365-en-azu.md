@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Veilig werken met Teams en Office365, dit zijn quick wins vanuit Office365 en AzureAD"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-05-20
 tags: [security]
 link: "https://jeffreyappel.nl/veilig-werken-met-teams-en-office365-dit-zijn-quick-wins-vanuit-office365-en-azuread/"

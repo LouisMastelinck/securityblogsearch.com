@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Automatically Hide IP Addresses When Recording Demos or Screen Sharing"
-author: "Ru"
+author: "Ru Campbell"
 date: 2021-05-03
 tags: [miscellaneous]
 link: "https://campbell.scot/automatically-hide-ip-addresses-when-recording-demos-or-screen-sharing/?utm_source=rss&utm_medium=rss&utm_campaign=automatically-hide-ip-addresses-when-recording-demos-or-screen-sharing"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AI workload threat protection in Microsoft Defender for Cloud"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2025-03-19
 tags: [security, defender-for-cloud]
 link: "https://jeffreyappel.nl/ai-workload-threat-protection-in-microsoft-defender-for-cloud/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Get all Conditional Access Query’s with a single click using Graph API"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-11-12
 tags: [modern-workplace, azure-ad-conditional-access]
 link: "https://jeffreyappel.nl/get-all-conditional-access-querys-with-a-single-click-using-graph-api/"

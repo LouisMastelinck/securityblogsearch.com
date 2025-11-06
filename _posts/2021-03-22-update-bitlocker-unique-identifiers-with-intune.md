@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Update BitLocker Unique Identifiers with Intune"
-author: "Ru"
+author: "Ru Campbell"
 date: 2021-03-22
 tags: [bitlocker, intune, microsoft-365, microsoft-intune, windows]
 link: "https://campbell.scot/update-bitlocker-unique-identifiers-with-intune/?utm_source=rss&utm_medium=rss&utm_campaign=update-bitlocker-unique-identifiers-with-intune"

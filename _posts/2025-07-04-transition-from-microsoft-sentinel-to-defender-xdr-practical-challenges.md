@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Transition from Microsoft Sentinel to Defender XDR - Practical challenges"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2025-07-04
 tags: [azure, security, defender, sentinel]
 link: "https://hybridbrothers.com/posts/transition-from-microsoft-sentinel-to-defender-xdr-practical-challenges/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cloud App Discovery with MCAS & MDE for Shadow IT monitoring and integration with Azure Sentinel"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-09-13
 tags: [security, defender-for-cloud-apps, microsoft-sentinel]
 link: "https://jeffreyappel.nl/cloud-app-discovery-with-mcas-mde-for-shadow-it-monitoring-and-integration-with-azure-sentinel/"

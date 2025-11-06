@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Reauthorise Windows Server DHCP with One Line of PowerShell"
-author: "Ru"
+author: "Ru Campbell"
 date: 2021-06-26
 tags: [dhcp, powershell, windows-server]
 link: "https://campbell.scot/reauthorise-windows-server-dhcp/?utm_source=rss&utm_medium=rss&utm_campaign=reauthorise-windows-server-dhcp"

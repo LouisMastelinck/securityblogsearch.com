@@ -515,8 +515,107 @@ body {
     text-decoration: underline;
 }
 
+/* Content Wrapper with Sidebar */
+.content-wrapper {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.posts-section {
+    flex: 1;
+    min-width: 0; /* Allows flex item to shrink below its content size */
+}
+
+/* Statistics Panel */
+.statistics-panel {
+    flex: 0 0 280px;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+.statistics-panel h3 {
+    margin: 0 0 1.5rem 0;
+    color: #2c3e50;
+    font-size: 1.25rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.stat-item {
+    margin-bottom: 1.5rem;
+}
+
+.stat-label {
+    display: block;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3498db;
+}
+
+.top-contributors {
+    margin-top: 0.75rem;
+}
+
+.contributor-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.contributor-item:hover {
+    background: #e9ecef;
+}
+
+.contributor-name {
+    font-weight: 500;
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+.contributor-count {
+    background: #3498db;
+    color: #fff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .statistics-panel {
+        position: static;
+        flex: 1 1 auto;
+        order: -1; /* Move stats above posts on mobile */
+        max-height: none;
+    }
+    
     .posts-grid {
         flex-direction: column;
     }

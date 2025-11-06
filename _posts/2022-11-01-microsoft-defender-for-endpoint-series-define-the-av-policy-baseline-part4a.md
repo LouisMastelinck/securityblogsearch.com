@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint series – Define the AV policy baseline – Part4A"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-11-01
 tags: [security, defender-for-endpoint, mde-series]
 link: "https://jeffreyappel.nl/microsoft-defender-for-endpoint-series-define-the-av-baseline-part4a/"

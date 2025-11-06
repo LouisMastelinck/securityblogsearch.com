@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Privacy Policy"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2025-01-18
 tags: [security]
 link: "https://hybridbrothers.com/privacy-policy/"

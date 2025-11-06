@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Troubleshooting Hybrid Azure AD Intune Automatic Enrollment"
-author: "Ru"
+author: "Ru Campbell"
 date: 2021-04-19
 tags: [entra-id-azure-active-directory, intune, microsoft-365, microsoft-intune, windows]
 link: "https://campbell.scot/troubleshooting-hybrid-azure-ad-intune-automatic-enrollment/?utm_source=rss&utm_medium=rss&utm_campaign=troubleshooting-hybrid-azure-ad-intune-automatic-enrollment"

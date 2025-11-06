@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using WDAC to ingest missing MDE events and detect token stealing"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-03-01
 tags: [entra-id]
 link: "https://hybridbrothers.com/posts/using-wdac-to-ingest-missing-mde-events/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Monitor Azure AD break-glass accounts with Microsoft Sentinel"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-06-14
 tags: [security, microsoft-sentinel]
 link: "https://jeffreyappel.nl/monitor-azure-ad-break-glass-accounts-with-azure-sentinel/"

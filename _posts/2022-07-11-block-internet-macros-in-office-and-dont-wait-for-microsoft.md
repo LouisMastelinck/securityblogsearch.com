@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Block internet macros in Office, and don’t wait for Microsoft"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-07-11
 tags: [security]
 link: "https://jeffreyappel.nl/blocking-internet-macros-in-office-and-dont-wait-for-microsoft/"

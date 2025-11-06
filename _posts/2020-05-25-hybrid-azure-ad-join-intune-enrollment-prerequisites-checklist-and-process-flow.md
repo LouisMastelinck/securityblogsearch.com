@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hybrid Azure AD Join + Intune Enrollment – Prerequisites Checklist and Process Flow"
-author: "Ru"
+author: "Ru Campbell"
 date: 2020-05-25
 tags: [entra-id-azure-active-directory, intune, microsoft-365, co-management, entra-id-connect-aad-connect]
 link: "https://campbell.scot/hybrid-azure-ad-join-intune-enrollment-prerequisites-checklist-and-process-flow/?utm_source=rss&utm_medium=rss&utm_campaign=hybrid-azure-ad-join-intune-enrollment-prerequisites-checklist-and-process-flow"

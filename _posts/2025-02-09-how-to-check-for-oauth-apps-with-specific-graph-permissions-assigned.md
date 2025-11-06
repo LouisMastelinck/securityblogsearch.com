@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to check for OAuth apps with specific Graph permissions assigned"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2025-02-09
 tags: [security, defender-for-cloud-apps, microsoft-365-defender]
 link: "https://jeffreyappel.nl/how-to-check-for-oauth-apps-with-specific-graph-permissions-assigned/"

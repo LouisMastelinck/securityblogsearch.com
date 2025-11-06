@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Use Microsoft technology for the detection and prevention of the SolarWinds chain attack"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-12-16
 tags: [security, defender-for-endpoint, microsoft-sentinel]
 link: "https://jeffreyappel.nl/use-microsoft-technology-for-the-detection-and-prevention-of-the-solarwinds-chain-attack/"

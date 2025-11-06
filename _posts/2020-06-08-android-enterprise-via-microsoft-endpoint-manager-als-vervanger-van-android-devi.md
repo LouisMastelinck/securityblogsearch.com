@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Android Enterprise via Microsoft Endpoint Manager als vervanger van Android device administrator"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-06-08
 tags: [modern-workplace, intune]
 link: "https://jeffreyappel.nl/android-enterprise-via-microsoft-endpoint-manager-als-vervanger-van-android-device-administrator/"

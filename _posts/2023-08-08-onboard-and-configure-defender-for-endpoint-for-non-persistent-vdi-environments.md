@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Onboard and configure Defender for Endpoint for non-persistent VDI environments"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-08-08
 tags: [security, defender-for-endpoint]
 link: "https://jeffreyappel.nl/onboard-and-configure-defender-for-endpoint-for-non-persistent-vdi-environments/"

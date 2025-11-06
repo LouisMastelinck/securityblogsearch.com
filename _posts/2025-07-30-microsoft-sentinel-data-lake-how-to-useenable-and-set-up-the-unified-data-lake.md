@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Sentinel data lake: How to use/enable and set-up the unified data lake"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2025-07-30
 tags: [security, datalake, microsoft-365-defender, microsoft-sentinel]
 link: "https://jeffreyappel.nl/microsoft-sentinel-data-lake-how-to-use-enable-and-set-up-the-unified-datalake/"

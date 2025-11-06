@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Office 365: Check protection policies with Configuration Analyzer"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-10-20
 tags: [security, defender-for-office]
 link: "https://jeffreyappel.nl/microsoft-defender-for-office-365-check-protection-policies-with-configuration-analyzer/"

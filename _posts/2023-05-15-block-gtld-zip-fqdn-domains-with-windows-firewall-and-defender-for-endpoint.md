@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Block gTLD (.zip)/ FQDN domains with Windows Firewall and Defender for Endpoint"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-05-15
 tags: [security, defender-for-endpoint, intune]
 link: "https://jeffreyappel.nl/block-gtld-zip-fqdn-domains-with-windows-firewall-and-defender-for-endpoint/"

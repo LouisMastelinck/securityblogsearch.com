@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Enable automatic Access Reviews for Guest users in Teams and Microsoft 365 Groups"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-01-19
 tags: [security]
 link: "https://jeffreyappel.nl/enable-automatic-access-reviews-for-guest-users/"

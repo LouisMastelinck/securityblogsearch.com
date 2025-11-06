@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint series – Configure AV/ next-generation protection  – Part4"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-10-26
 tags: [security, defender-for-endpoint, mde-series]
 link: "https://jeffreyappel.nl/microsoft-defender-for-endpoint-series-configure-av-next-generation-protection-part4/"

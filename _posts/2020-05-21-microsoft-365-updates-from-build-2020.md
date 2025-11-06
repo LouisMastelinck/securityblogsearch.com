@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft 365 Updates from Build 2020"
-author: "Ru"
+author: "Ru Campbell"
 date: 2020-05-21
 tags: [microsoft-365, news]
 link: "https://campbell.scot/microsoft-365-updates-from-build-2020/?utm_source=rss&utm_medium=rss&utm_campaign=microsoft-365-updates-from-build-2020"

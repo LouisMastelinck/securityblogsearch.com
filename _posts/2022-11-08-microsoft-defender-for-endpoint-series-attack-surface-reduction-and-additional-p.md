@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint series – Attack Surface reduction and additional protection – Part4B"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-11-08
 tags: [security, defender-for-endpoint, mde-series]
 link: "https://jeffreyappel.nl/microsoft-defender-for-endpoint-series-attack-surface-reduction-and-additional-protection-part4b/"

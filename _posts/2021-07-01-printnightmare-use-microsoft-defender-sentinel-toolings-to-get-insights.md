@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PrintNightmare – Use Microsoft Defender/ Sentinel toolings to get insights"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-07-01
 tags: [security, defender-for-cloud, defender-for-endpoint, defender-for-identity, microsoft-sentinel]
 link: "https://jeffreyappel.nl/printnightmare-cve-2021-1675-use-microsoft-defender-sentinel-toolings-to-get-insights/"

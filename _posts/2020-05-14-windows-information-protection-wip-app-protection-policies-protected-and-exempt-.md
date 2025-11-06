@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Windows Information Protection (WIP) App Protection Policies: Protected and Exempt; Denied and Allowed – What Do They Mean?"
-author: "Ru"
+author: "Ru Campbell"
 date: 2020-05-14
 tags: [intune, microsoft-365, microsoft-intune, windows-information-protection]
 link: "https://campbell.scot/windows-information-protection-wip-app-protection-policies-protected-and-exempt-denied-and-allowed-what-do-they-mean/?utm_source=rss&utm_medium=rss&utm_campaign=windows-information-protection-wip-app-protection-policies-protected-and-exempt-denied-and-allowed-what-do-they-mean"

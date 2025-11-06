@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Legacy Authentication; Zo blokkeer je Legacy Authentication voordat Microsoft het voor je doet"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-05-28
 tags: [security]
 link: "https://jeffreyappel.nl/legacy-authentication-zo-blokkeer-je-legacy-authentication-voordat-microsoft-het-verplicht/"

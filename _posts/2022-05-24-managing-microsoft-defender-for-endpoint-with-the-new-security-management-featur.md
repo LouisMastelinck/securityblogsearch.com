@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Managing Microsoft Defender for Endpoint with the new Security Management feature in MEM/Intune"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-05-24
 tags: [modern-workplace, security, defender-for-endpoint, intune]
 link: "https://jeffreyappel.nl/managing-microsoft-defender-for-endpoint-with-the-new-security-management-feature-in-mem/"

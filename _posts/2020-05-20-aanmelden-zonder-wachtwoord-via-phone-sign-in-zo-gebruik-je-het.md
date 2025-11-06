@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Aanmelden zonder wachtwoord via Phone sign-in: Zo gebruik je het!"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-05-20
 tags: [security]
 link: "https://jeffreyappel.nl/aanmelden-zonder-wachtwoord-via-phone-sign-in-zo-gebruik-je-het/"

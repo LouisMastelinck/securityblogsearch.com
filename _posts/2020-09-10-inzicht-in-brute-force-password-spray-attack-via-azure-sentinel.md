@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Inzicht in Brute-force & Password spray attack via Azure Sentinel"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-09-10
 tags: [security, microsoft-sentinel]
 link: "https://jeffreyappel.nl/inzicht-in-brute-force-password-spray-attack-via-azure-sentinel/"

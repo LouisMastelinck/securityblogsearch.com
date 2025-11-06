@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint series – Onboard using Azure Arc or Direct onboarding – Part3C"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-09-15
 tags: [security, azure-arc, defender-for-cloud, defender-for-endpoint, mde-series]
 link: "https://jeffreyappel.nl/microsoft-defender-for-endpoint-series-onboard-using-azure-arc-part3c/"

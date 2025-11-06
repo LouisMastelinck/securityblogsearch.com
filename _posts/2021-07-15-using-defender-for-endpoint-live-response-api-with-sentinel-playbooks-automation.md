@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using Defender for Endpoint Live response API with Sentinel Playbooks/ Automation"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-07-15
 tags: [security, defender-for-endpoint, microsoft-sentinel]
 link: "https://jeffreyappel.nl/using-defender-for-endpoint-live-response-api-with-sentinel-playbooks-automation/"

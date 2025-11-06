@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Edge Chromium; zo configureer je de tracking prevention functionaliteit vanuit Microsoft Endpoint Manager"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-07-05
 tags: [modern-workplace, intune]
 link: "https://jeffreyappel.nl/edge-chromium-zo-configureer-je-de-tracking-prevention-functionaliteit-vanuit-microsoft-endpoint-manager/"

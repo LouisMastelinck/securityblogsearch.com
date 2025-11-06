@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Block apps (discovered/ shadow IT) with Defender for Cloud Apps and Defender for Endpoint"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-07-25
 tags: [security, defender-for-cloud-apps, defender-for-endpoint]
 link: "https://jeffreyappel.nl/block-apps-discovered-shadow-it-with-defender-for-cloud-apps-and-defender-for-endpoint/"

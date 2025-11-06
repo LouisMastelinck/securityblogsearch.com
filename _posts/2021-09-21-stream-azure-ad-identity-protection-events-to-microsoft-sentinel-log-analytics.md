@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Stream Azure AD Identity Protection events to Microsoft Sentinel/ Log Analytics"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-09-21
 tags: [security, azure-ad-identity-protection, microsoft-sentinel]
 link: "https://jeffreyappel.nl/stream-azure-ad-identity-protection-events-to-azure-sentinel-log-analytics/"

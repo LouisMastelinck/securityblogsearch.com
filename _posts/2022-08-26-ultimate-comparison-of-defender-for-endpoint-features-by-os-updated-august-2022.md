@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ultimate Comparison of Defender for Endpoint Features by OS [Updated August 2022]"
-author: "Ru"
+author: "Ru Campbell"
 date: 2022-08-26
 tags: [microsoft-defender, microsoft-defender-xdr, atp, azure-security-center, defender]
 link: "https://campbell.scot/mde-comparison-august-2022/?utm_source=rss&utm_medium=rss&utm_campaign=mde-comparison-august-2022"

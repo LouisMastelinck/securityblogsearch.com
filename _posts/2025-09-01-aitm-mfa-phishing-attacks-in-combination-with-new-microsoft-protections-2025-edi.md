@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AiTM/ MFA phishing attacks in combination with “new” Microsoft protections (2025 edition)"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2025-09-01
 tags: [security, azure-ad, defender-for-cloud-apps, defender-for-endpoint, defender-for-identity]
 link: "https://jeffreyappel.nl/aitm-mfa-phishing-attacks-in-combination-with-new-microsoft-protections-2023-edt/"

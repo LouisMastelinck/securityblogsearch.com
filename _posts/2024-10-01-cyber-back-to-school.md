@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cyber Back to School"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-10-01
 tags: [defender, sentinel]
 link: "https://hybridbrothers.com/public-speaking/01-10-2024/"

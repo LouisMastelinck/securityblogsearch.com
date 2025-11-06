@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MDE Device Discovery - Improving the monitored network page"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2025-03-19
 tags: [entra-id, defender]
 link: "https://hybridbrothers.com/posts/mde-device-discovery-improving-the-monitored-network-page/"

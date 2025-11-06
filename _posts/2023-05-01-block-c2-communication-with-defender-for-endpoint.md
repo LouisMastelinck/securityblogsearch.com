@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Block C2 communication with Defender for Endpoint"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-05-01
 tags: [security, defender-for-endpoint]
 link: "https://jeffreyappel.nl/block-c2-communication-with-defender-for-endpoint/"

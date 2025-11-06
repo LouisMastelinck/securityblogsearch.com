@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Block low reputation apps or newly detected cloud apps with Microsoft Defender for Endpoint, MCAS and Endpoint Manager"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-10-15
 tags: [security, defender-for-cloud-apps, defender-for-endpoint]
 link: "https://jeffreyappel.nl/block-low-reputation-apps-or-newly-detected-cloud-apps-with-microsoft-defender-for-endpoint-mcas-and-endpoint-manager/"

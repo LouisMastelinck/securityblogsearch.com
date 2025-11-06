@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to secure OAuth apps with App Governance in Defender XDR"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2024-08-01
 tags: [security, app-governance, defender-for-cloud-apps]
 link: "https://jeffreyappel.nl/how-to-secure-oauth-apps-with-app-governance-in-defender-xdr/"

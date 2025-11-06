@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Onboard Microsoft Defender for Endpoint using Azure Arc for non-Azure devices"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-01-11
 tags: [security, azure-arc, defender-for-cloud, defender-for-endpoint]
 link: "https://jeffreyappel.nl/onboard-microsoft-defender-for-endpoint-using-azure-arc-for-non-azure-devices/"

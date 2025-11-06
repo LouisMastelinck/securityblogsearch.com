@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cyber back to school: Microsoft Token Theft Unveiled"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-10-25
 tags: [entra-id]
 link: "https://hybridbrothers.com/posts/cyber-back-to-school-microsoft-token-theft-unveiled/"

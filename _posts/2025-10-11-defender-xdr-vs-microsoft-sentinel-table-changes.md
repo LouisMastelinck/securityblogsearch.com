@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Defender XDR VS Microsoft Sentinel table changes"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2025-10-11
 tags: [azure, defender, sentinel, identity]
 link: "https://hybridbrothers.com/posts/defender-xdr-vs-sentinel-table-changes/"

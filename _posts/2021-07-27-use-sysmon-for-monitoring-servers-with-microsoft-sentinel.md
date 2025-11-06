@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Use Sysmon for monitoring servers with Microsoft Sentinel"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-07-27
 tags: [security, microsoft-sentinel, sysmon]
 link: "https://jeffreyappel.nl/use-sysmon-for-monitoring-servers-with-azure-sentinel/"

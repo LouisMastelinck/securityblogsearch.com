@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Warn/monitor users for Shadow IT usage with Microsoft Cloud App Security"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-10-04
 tags: [security, defender-for-cloud-apps]
 link: "https://jeffreyappel.nl/warn-monitor-users-for-shadow-it-usage-with-cloud-app-security/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint series – Advanced hunting and custom detections – Part8"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-01-23
 tags: [security, defender-for-endpoint, mde-series]
 link: "https://jeffreyappel.nl/microsoft-defender-for-endpoint-series-advanced-hunting-and-custom-detections-part8/"

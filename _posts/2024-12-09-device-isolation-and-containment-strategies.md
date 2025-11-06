@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Device isolation and containment strategies"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-12-09
 tags: [security]
 link: "https://hybridbrothers.com/posts/device-isolation-and-containment-strategies/"

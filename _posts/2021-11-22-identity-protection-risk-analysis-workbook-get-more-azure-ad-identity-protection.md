@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Identity Protection Risk Analysis workbook: Get more Azure AD Identity Protection insights"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-11-22
 tags: [security, azure-ad-identity-protection]
 link: "https://jeffreyappel.nl/identity-protection-risk-analysis-workbook-get-more-azure-ad-identity-protection-insights/"

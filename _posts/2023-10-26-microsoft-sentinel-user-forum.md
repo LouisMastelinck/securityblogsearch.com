@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Sentinel User Forum"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2023-10-26
 tags: [sentinel]
 link: "https://hybridbrothers.com/public-speaking/26-10-2023/"

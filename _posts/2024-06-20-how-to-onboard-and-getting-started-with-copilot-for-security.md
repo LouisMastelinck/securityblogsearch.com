@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to onboard and getting started with Copilot for Security"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2024-06-20
 tags: [security, microsoft-365-defender, security-copilot]
 link: "https://jeffreyappel.nl/how-to-onboard-and-getting-started-with-copilot-for-security/"

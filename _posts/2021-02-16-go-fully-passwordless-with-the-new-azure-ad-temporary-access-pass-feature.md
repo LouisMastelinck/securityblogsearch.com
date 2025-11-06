@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Go fully passwordless with the new Azure AD Temporary Access Pass feature"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-02-16
 tags: [security, passwordless]
 link: "https://jeffreyappel.nl/go-fully-passwordless-with-the-new-azure-ad-temporary-access-pass-feature/"

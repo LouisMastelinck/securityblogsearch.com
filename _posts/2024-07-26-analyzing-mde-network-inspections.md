@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Analyzing MDE Network Inspections"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-07-26
 tags: [security, defender]
 link: "https://hybridbrothers.com/posts/analyzing-mde-network-inspections/"

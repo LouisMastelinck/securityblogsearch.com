@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Protecting Microsoft Teams with Microsoft Sentinel"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-03-02
 tags: [security, microsoft-sentinel]
 link: "https://jeffreyappel.nl/protecting-microsoft-teams-with-microsoft-sentinel/"

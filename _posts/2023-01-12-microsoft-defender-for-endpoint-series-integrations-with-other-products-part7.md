@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint series – integrations with other products – Part7"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-01-12
 tags: [security, defender-for-endpoint, mde-series]
 link: "https://jeffreyappel.nl/microsoft-defender-for-endpoint-series-integrations-with-other-products/"

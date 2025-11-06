@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MC2MC Live - Forward to the Past"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-12-19
 tags: [azure]
 link: "https://hybridbrothers.com/public-speaking/19-04-2024/"

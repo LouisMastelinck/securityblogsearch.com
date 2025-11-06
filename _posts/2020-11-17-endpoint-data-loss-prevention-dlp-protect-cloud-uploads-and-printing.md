@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Endpoint Data Loss Prevention (DLP): Protect cloud uploads and printing"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-11-17
 tags: [security, microsoft-purview]
 link: "https://jeffreyappel.nl/endpoint-data-loss-prevention-protect-cloud-uploads-and-printing/"

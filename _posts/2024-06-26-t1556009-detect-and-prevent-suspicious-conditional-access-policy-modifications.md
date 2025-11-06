@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "T1556.009 - Detect and prevent suspicious conditional access policy modifications"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-06-26
 tags: [entra-id, conditional-access]
 link: "https://hybridbrothers.com/posts/suspicious-conditional-access-modifications/"

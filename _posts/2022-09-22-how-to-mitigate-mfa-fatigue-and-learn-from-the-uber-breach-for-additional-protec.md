@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to mitigate MFA fatigue and learn from the Uber breach for additional protection"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-09-22
 tags: [security, azure-ad, azure-ad-identity-protection]
 link: "https://jeffreyappel.nl/how-to-prevent-mfa-fatigue-and-learn-from-the-uber-breach-for-additional-protection/"

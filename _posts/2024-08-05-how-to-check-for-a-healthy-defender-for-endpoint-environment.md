@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to check for a healthy Defender for Endpoint environment?"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2024-08-05
 tags: [security, defender-for-endpoint, microsoft-365-defender]
 link: "https://jeffreyappel.nl/how-to-check-for-a-healthy-defender-for-endpoint-environment/"

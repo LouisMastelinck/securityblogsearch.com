@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Defender for Endpoint series – Configure Defender for Endpoint – Part2"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-07-26
 tags: [security, defender-for-endpoint, mde-series]
 link: "https://jeffreyappel.nl/microsoft-defender-for-endpoint-series-configure-defender-for-endpoint-part2/"

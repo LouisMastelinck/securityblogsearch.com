@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Updated Feb 2024] Ultimate Comparison of Defender for Endpoint Features by OS"
-author: "Ru"
+author: "Ru Campbell"
 date: 2024-02-16
 tags: [microsoft-defender, microsoft-defender-for-endpoint, microsoft-defender-xdr, atp, azure-security-center]
 link: "https://campbell.scot/feb-2024-ultimate-comparison-of-defender-for-endpoint-features-by-os/?utm_source=rss&utm_medium=rss&utm_campaign=feb-2024-ultimate-comparison-of-defender-for-endpoint-features-by-os"

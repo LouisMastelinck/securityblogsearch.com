@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to troubleshoot Live Response in Defender for Endpoint"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2023-08-15
 tags: [security, defender-for-endpoint]
 link: "https://jeffreyappel.nl/how-to-troubleshoot-live-response-in-defender-for-endpoint/"

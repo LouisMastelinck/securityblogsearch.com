@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Client Credentials - Client Certificate"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2024-10-21
 tags: [security]
 link: "https://hybridbrothers.com/posts/client-credentials-client-certificate/"

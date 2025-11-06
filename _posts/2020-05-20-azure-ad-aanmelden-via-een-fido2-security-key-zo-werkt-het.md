@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure AD aanmelden via een FIDO2 Security Key; zo werkt het!"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2020-05-20
 tags: [security, passwordless]
 link: "https://jeffreyappel.nl/azure-ad-aanmelden-via-een-fido2-security-key-zo-werkt-het/"

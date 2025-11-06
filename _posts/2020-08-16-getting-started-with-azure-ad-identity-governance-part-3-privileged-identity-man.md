@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Getting Started with Azure AD Identity Governance – Part 3: Privileged Identity Management (PIM)"
-author: "Ru"
+author: "Ru Campbell"
 date: 2020-08-16
 tags: [entra-id-azure-active-directory, identity-governance, microsoft-365, privileged-identity-management, ems]
 link: "https://campbell.scot/getting-started-with-azure-ad-identity-governance-part-3-privileged-identity-management-pim/?utm_source=rss&utm_medium=rss&utm_campaign=getting-started-with-azure-ad-identity-governance-part-3-privileged-identity-management-pim"

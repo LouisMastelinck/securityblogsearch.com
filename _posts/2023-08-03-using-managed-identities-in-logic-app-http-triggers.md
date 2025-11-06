@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using Managed Identities in Logic App HTTP triggers"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2023-08-03
 tags: [identity]
 link: "https://hybridbrothers.com/posts/using-managed-identities-in-logic-app-http-triggers/"

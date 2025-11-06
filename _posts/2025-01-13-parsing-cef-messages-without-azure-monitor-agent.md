@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Parsing CEF messages without Azure Monitor Agent"
-author: "Unknown"
+author: "Robbe Van den Daele"
 date: 2025-01-13
 tags: [azure, security, sentinel]
 link: "https://hybridbrothers.com/posts/parsing-cef-messages-without-azure-monitor-agent/"

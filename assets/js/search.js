@@ -30,6 +30,69 @@ document.addEventListener('DOMContentLoaded', function() {
     let filteredPosts = [];
     let isLoading = false;
     
+    // Calculate and display statistics
+    function calculateStatistics() {
+        // Calculate top contributors
+        const authorCounts = {};
+        posts.forEach(post => {
+            const author = post.dataset.author || 'Unknown';
+            authorCounts[author] = (authorCounts[author] || 0) + 1;
+        });
+        
+        // Sort authors by post count and get top 3
+        const topAuthors = Object.entries(authorCounts)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 3);
+        
+        // Display top contributors
+        const topContributorsEl = document.getElementById('topContributors');
+        if (topContributorsEl) {
+            topContributorsEl.innerHTML = topAuthors
+                .map(([author, count]) => {
+                    // Capitalize each word in the author name
+                    const displayName = author.split(' ')
+                        .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+                        .join(' ');
+                    return `<div class="contributor-item">
+                        <span class="contributor-name">${displayName}</span>
+                        <span class="contributor-count">${count}</span>
+                    </div>`;
+                })
+                .join('');
+        }
+        
+        // Calculate last crawl time from the newest post date
+        const lastCrawlEl = document.getElementById('lastCrawlTime');
+        if (lastCrawlEl && posts.length > 0) {
+            // Get the most recent post date
+            const dates = posts.map(post => new Date(post.dataset.date)).filter(d => !isNaN(d));
+            if (dates.length > 0) {
+                const mostRecent = new Date(Math.max(...dates));
+                const now = new Date();
+                const diffTime = Math.abs(now - mostRecent);
+                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                
+                let timeAgo;
+                if (diffDays === 0) {
+                    timeAgo = 'Today';
+                } else if (diffDays === 1) {
+                    timeAgo = 'Yesterday';
+                } else if (diffDays < 7) {
+                    timeAgo = `${diffDays} days ago`;
+                } else if (diffDays < 30) {
+                    const weeks = Math.floor(diffDays / 7);
+                    timeAgo = `${weeks} week${weeks > 1 ? 's' : ''} ago`;
+                } else {
+                    const months = Math.floor(diffDays / 30);
+                    timeAgo = `${months} month${months > 1 ? 's' : ''} ago`;
+                }
+                
+                lastCrawlEl.textContent = timeAgo;
+                lastCrawlEl.title = mostRecent.toLocaleString();
+            }
+        }
+    }
+    
     // Filter and search function
     function filterPosts() {
         const searchTerm = searchInput.value.toLowerCase();
@@ -135,8 +198,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isLoading || currentlyDisplayed >= filteredPosts.length) return;
         
         isLoading = true;
-        if (loadMoreBtn) loadMoreBtn.style.display = 'none';
-        
         displayNextBatch();
         isLoading = false;
     }
@@ -205,6 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Initial load - populate filter options and show first batch
+    calculateStatistics();
     updateFilterOptions();
     filterPosts();
     

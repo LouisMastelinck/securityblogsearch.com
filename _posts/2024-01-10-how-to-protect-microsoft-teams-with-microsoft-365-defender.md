@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to protect Microsoft Teams with Microsoft 365 Defender"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2024-01-10
 tags: [security, defender-for-office]
 link: "https://jeffreyappel.nl/how-to-protect-microsoft-teams-with-microsoft-365-defender/"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Defender for Endpoint Device Discovery: Discover the unmanaged part of the corporate network"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-05-03
 tags: [security, defender-for-endpoint]
 link: "https://jeffreyappel.nl/defender-for-endpoint-discovery-discover-the-unmanaged-part-of-the-corporate-network/"

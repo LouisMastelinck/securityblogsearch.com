@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Use the Azure Monitor Agent (AMA) for Defender for Cloud and migrate from MMA agent"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2022-08-15
 tags: [security, defender-for-cloud]
 link: "https://jeffreyappel.nl/use-the-azure-monitor-agent-ama-for-defender-for-cloud-and-migrate-from-mma-agent/"

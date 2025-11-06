@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Enabling and configuring Web content filtering in Microsoft Defender for Endpoint (MDE)"
-author: "Jeffrey"
+author: "Jeffrey Appel"
 date: 2021-10-25
 tags: [security, defender-for-endpoint]
 link: "https://jeffreyappel.nl/enabling-and-configure-web-content-filtering-in-microsoft-defender-for-endpoint-mde/"

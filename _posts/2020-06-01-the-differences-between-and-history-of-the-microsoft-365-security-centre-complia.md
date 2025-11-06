@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Differences Between (and History of) the Microsoft 365 Security Centre, Compliance Centre, and Security & Compliance"
-author: "Ru"
+author: "Ru Campbell"
 date: 2020-06-01
 tags: [microsoft-365, office-365]
 link: "https://campbell.scot/the-differences-between-and-history-of-the-microsoft-365-security-centre-compliance-centre-and-security-compliance/?utm_source=rss&utm_medium=rss&utm_campaign=the-differences-between-and-history-of-the-microsoft-365-security-centre-compliance-centre-and-security-compliance"

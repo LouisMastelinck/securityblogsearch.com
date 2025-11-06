@@ -168,6 +168,30 @@ class BlogCrawler:
         
         return urls
     
+    def normalize_author_name(self, author, website_url):
+        """Normalize author names based on known mappings."""
+        if not author:
+            # Special case for Hybridbrothers.com - hardcode the author
+            if 'hybridbrothers.com' in website_url.lower():
+                return "Robbe Van den Daele"
+            return None
+        
+        author = author.strip()
+        
+        # Define author normalization mappings
+        author_mappings = {
+            'Jeffrey': 'Jeffrey Appel',
+            'jeffrey': 'Jeffrey Appel',
+            'Ru': 'Ru Campbell',
+            'ru': 'Ru Campbell',
+        }
+        
+        # Check for exact match
+        if author in author_mappings:
+            return author_mappings[author]
+        
+        return author
+    
     def extract_author_from_entry(self, entry):
         """Extract author from RSS feed entry."""
         # Try various author fields
@@ -431,6 +455,9 @@ class BlogCrawler:
         author = post_data.get('author')
         if not author:
             author = website_config.get('author', 'Unknown')
+        
+        # Normalize author name
+        author = self.normalize_author_name(author, website_config.get('url', ''))
         
         # Get tags with priority: RSS feed tags > config tags > inferred tags
         tags = post_data.get('tags', [])

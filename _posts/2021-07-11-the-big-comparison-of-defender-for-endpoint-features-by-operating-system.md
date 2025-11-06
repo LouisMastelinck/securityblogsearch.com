@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Big Comparison of Defender for Endpoint Features by Operating System"
-author: "Ru"
+author: "Ru Campbell"
 date: 2021-07-11
 tags: [microsoft-365, microsoft-defender-for-endpoint, microsoft-defender-xdr, windows, atp]
 link: "https://campbell.scot/the-big-comparison-of-defender-for-endpoint-features-by-operating-system/?utm_source=rss&utm_medium=rss&utm_campaign=the-big-comparison-of-defender-for-endpoint-features-by-operating-system"
