@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Intune: Choosing whether to assign to User or Device Groups"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2019-11-22
 tags: [intune, azuread, configuration-profiles]
 link: "https://www.vansurksum.com/2019/11/22/intune-choosing-whether-to-assign-to-user-or-device-groups/?utm_source=rss&utm_medium=rss&utm_campaign=intune-choosing-whether-to-assign-to-user-or-device-groups"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Speaking at the Nordic Virtual Summit 2021 about Conditional Access"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-01-28
 tags: [announcement, azuread, conditional-access, modern-workplace, security]
 link: "https://www.vansurksum.com/2021/01/28/speaking-at-the-nordic-virtual-summit-2021-about-conditional-access/?utm_source=rss&utm_medium=rss&utm_campaign=speaking-at-the-nordic-virtual-summit-2021-about-conditional-access"

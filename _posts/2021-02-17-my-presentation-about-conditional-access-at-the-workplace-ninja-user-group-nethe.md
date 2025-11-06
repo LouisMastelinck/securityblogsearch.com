@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My presentation about Conditional Access at the Workplace Ninja User Group Netherlands"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-02-17
 tags: [azuread, conditional-access, presentations, security, speaking]
 link: "https://www.vansurksum.com/2021/02/17/my-presentation-about-conditional-access-at-the-workplace-ninja-user-group-netherlands/?utm_source=rss&utm_medium=rss&utm_campaign=my-presentation-about-conditional-access-at-the-workplace-ninja-user-group-netherlands"

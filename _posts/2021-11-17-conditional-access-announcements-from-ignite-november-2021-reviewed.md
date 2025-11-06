@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Conditional Access announcements from Ignite November 2021 reviewed"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-11-17
 tags: [azuread, conditional-access, modern-workplace, security]
 link: "https://www.vansurksum.com/2021/11/17/conditional-access-announcements-from-ignite-november-2021-reviewed/?utm_source=rss&utm_medium=rss&utm_campaign=conditional-access-announcements-from-ignite-november-2021-reviewed"

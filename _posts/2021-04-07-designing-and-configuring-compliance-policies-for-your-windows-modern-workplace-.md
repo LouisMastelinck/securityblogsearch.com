@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Designing and configuring compliance policies for your Windows Modern Workplace using Microsoft Endpoint Manager"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-04-07
 tags: [conditional-access, intune, microsoft-endpoint-manager, modern-workplace, security]
 link: "https://www.vansurksum.com/2021/04/07/designing-and-configuring-compliance-policies-for-your-windows-modern-workplace-using-microsoft-endpoint-manager/?utm_source=rss&utm_medium=rss&utm_campaign=designing-and-configuring-compliance-policies-for-your-windows-modern-workplace-using-microsoft-endpoint-manager"

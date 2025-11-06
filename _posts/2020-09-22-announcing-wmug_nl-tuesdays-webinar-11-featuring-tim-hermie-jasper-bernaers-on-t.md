@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Announcing #WMUG_NL Tuesdays Webinar 11 featuring Tim Hermie & Jasper Bernaers on Tuesday September 29th"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-09-22
 tags: [advanced-threat-protection, announcement, modern-workplace, wmugnl]
 link: "https://www.vansurksum.com/2020/09/22/announcing-wmug_nl-tuesdays-webinar-11-featuring-tim-hermie-jasper-bernaers-on-tuesday-september-29th/?utm_source=rss&utm_medium=rss&utm_campaign=announcing-wmug_nl-tuesdays-webinar-11-featuring-tim-hermie-jasper-bernaers-on-tuesday-september-29th"

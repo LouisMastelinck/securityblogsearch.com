@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Understanding and governing reauthentication settings in Azure Active Directory"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-10-22
 tags: [azuread, conditional-access, microsoft-endpoint-manager, modern-workplace, security]
 link: "https://www.vansurksum.com/2020/10/22/understanding-and-governing-reauthentication-settings-in-azure-active-directory/?utm_source=rss&utm_medium=rss&utm_campaign=understanding-and-governing-reauthentication-settings-in-azure-active-directory"

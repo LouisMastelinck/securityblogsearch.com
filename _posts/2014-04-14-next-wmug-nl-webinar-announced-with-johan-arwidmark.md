@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Next WMUG NL Webinar announced with Johan Arwidmark"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2014-04-14
 tags: [announcement, wmugnl]
 link: "https://www.vansurksum.com/2014/04/14/next-wmug-nl-webinar-announced-with-johan-arwidmark/?utm_source=rss&utm_medium=rss&utm_campaign=next-wmug-nl-webinar-announced-with-johan-arwidmark"

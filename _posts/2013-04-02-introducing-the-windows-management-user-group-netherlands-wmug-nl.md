@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introducing the Windows Management User Group Netherlands (WMUG NL)"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2013-04-02
 tags: [announcement, community, wmug]
 link: "https://www.vansurksum.com/2013/04/02/introducing-the-windows-management-user-group-netherlands-wmug-nl/?utm_source=rss&utm_medium=rss&utm_campaign=introducing-the-windows-management-user-group-netherlands-wmug-nl"

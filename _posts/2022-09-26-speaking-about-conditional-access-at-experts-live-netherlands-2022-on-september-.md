@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Speaking about Conditional Access at Experts Live Netherlands 2022 on September 30 in Den Bosch"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2022-09-26
 tags: [azuread, conditional-access, events, speaking]
 link: "https://www.vansurksum.com/2022/09/26/speaking-about-conditional-access-at-experts-live-netherlands-2022-on-september-30-in-den-bosch/?utm_source=rss&utm_medium=rss&utm_campaign=speaking-about-conditional-access-at-experts-live-netherlands-2022-on-september-30-in-den-bosch"

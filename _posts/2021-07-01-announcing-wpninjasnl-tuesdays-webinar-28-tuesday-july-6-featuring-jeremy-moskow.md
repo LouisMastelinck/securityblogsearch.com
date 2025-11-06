@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Announcing #WPNinjasNL Tuesdays Webinar #28, Tuesday July 6, featuring Jeremy Moskowitz"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-07-01
 tags: [announcement, security, wpninjasnl]
 link: "https://www.vansurksum.com/2021/07/01/announcing-wpninjasnl-tuesdays-webinar-28-tuesday-july-6-featuring-jeremy-moskowitz/?utm_source=rss&utm_medium=rss&utm_campaign=announcing-wpninjasnl-tuesdays-webinar-28-tuesday-july-6-featuring-jeremy-moskowitz"

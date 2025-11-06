@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A guide to implementing Applocker on your Modern Workplace"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-02-24
 tags: [intune, modern-workplace, security, windows-10, applocker]
 link: "https://www.vansurksum.com/2020/02/24/a-guide-to-implementing-applocker-on-your-modern-workplace/?utm_source=rss&utm_medium=rss&utm_campaign=a-guide-to-implementing-applocker-on-your-modern-workplace"

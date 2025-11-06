@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Implementing RBAC and Scoping in Microsoft Intune"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2019-12-04
 tags: [intune, role-based-access-control, rbac, roles, scope-groups]
 link: "https://www.vansurksum.com/2019/12/04/implementing-rbac-and-scoping-in-microsoft-intune/?utm_source=rss&utm_medium=rss&utm_campaign=implementing-rbac-and-scoping-in-microsoft-intune"

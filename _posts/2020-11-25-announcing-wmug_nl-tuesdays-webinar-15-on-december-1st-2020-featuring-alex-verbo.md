@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Announcing #WMUG_NL Tuesdays Webinar 15 on December 1st, 2020 featuring Alex Verboon"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-11-25
 tags: [announcement, security, wmugnl]
 link: "https://www.vansurksum.com/2020/11/25/announcing-wmug_nl-tuesdays-webinar-15-on-december-1st-2020-featuring-alex-verboon/?utm_source=rss&utm_medium=rss&utm_campaign=announcing-wmug_nl-tuesdays-webinar-15-on-december-1st-2020-featuring-alex-verboon"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Implementing RBAC in System Center 2012 R2 Service Manager"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2014-03-29
 tags: [service-manager, rbac]
 link: "https://www.vansurksum.com/2014/03/29/implementing-rbac-in-system-center-2012-r2-service-manager/?utm_source=rss&utm_medium=rss&utm_campaign=implementing-rbac-in-system-center-2012-r2-service-manager"

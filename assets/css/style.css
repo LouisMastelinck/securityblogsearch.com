@@ -228,7 +228,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    min-width: 200px;
+    min-width: 280px;
 }
 
 .filter-group label {
@@ -646,4 +646,14 @@ body {
         padding: 0.5rem 0.9rem;
         font-size: 0.9rem;
     }
+}
+
+/* Choices.js Custom Styling for wider dropdowns */
+.choices[data-type*="select-multiple"] .choices__inner {
+    min-width: 280px;
+}
+
+.choices__list--dropdown .choices__item {
+    white-space: normal;
+    word-wrap: break-word;
 }

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A first look at using Filters for devices as conditions in Azure AD Conditional Access policies"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-05-27
 tags: [azuread, conditional-access, security]
 link: "https://www.vansurksum.com/2021/05/27/a-first-look-at-using-filters-for-devices-as-conditions-in-azure-ad-conditional-access-policies/?utm_source=rss&utm_medium=rss&utm_campaign=a-first-look-at-using-filters-for-devices-as-conditions-in-azure-ad-conditional-access-policies"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Designing and building your Microsoft Endpoint Manager/Intune environment for Operations"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-11-29
 tags: [azuread, conditional-access, microsoft-endpoint-manager, modern-workplace, windows-10]
 link: "https://www.vansurksum.com/2020/11/29/designing-and-building-your-microsoft-endpoint-manager-intune-environment-for-operations/?utm_source=rss&utm_medium=rss&utm_campaign=designing-and-building-your-microsoft-endpoint-manager-intune-environment-for-operations"

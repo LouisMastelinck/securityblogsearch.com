@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Litetouch deployment failed, Return Code = -2147467259  0x80004005 when installing Surface Pro 6 devices using MDT"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2019-10-22
 tags: [uncategorized, bcdboot, mdt, osd, surface-pro-6]
 link: "https://www.vansurksum.com/2019/10/22/litetouch-deployment-failed-return-code-2147467259-0x80004005-when-installing-surface-pro-6-devices-using-mdt/?utm_source=rss&utm_medium=rss&utm_campaign=litetouch-deployment-failed-return-code-2147467259-0x80004005-when-installing-surface-pro-6-devices-using-mdt"

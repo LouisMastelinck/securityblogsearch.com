@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Automated Lifecycle Workflows for Privileged Identities with Azure AD Identity Governance"
-author: "Thomas Naunheim (thomas@naunheim.net)"
+author: "Thomas Naunheim"
 date: 2022-11-14
 tags: [azure-ad, azuread, privilegediam, identitygovernance]
 link: "https://www.cloud-architekt.net/manage-privileged-identities-with-azuread-identity-governance/"

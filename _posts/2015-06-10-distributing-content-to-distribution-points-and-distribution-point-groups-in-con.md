@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Distributing content to Distribution points and Distribution point groups in ConfigMgr 2012"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2015-06-10
 tags: [configuration-manager, configmgr, configmgr-2012, content-distribution, distribution]
 link: "https://www.vansurksum.com/2015/06/10/distributing-content-to-distribution-points-and-distribution-point-groups-in-configmgr-2012/?utm_source=rss&utm_medium=rss&utm_campaign=distributing-content-to-distribution-points-and-distribution-point-groups-in-configmgr-2012"

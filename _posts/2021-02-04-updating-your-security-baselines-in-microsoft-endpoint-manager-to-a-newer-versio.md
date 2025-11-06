@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Updating your Security baselines in Microsoft Endpoint Manager to a newer version"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-02-04
 tags: [intune, microsoft-endpoint-manager, modern-workplace, security, windows-10]
 link: "https://www.vansurksum.com/2021/02/04/updating-your-security-baselines-in-microsoft-endpoint-manager-to-a-newer-version/?utm_source=rss&utm_medium=rss&utm_campaign=updating-your-security-baselines-in-microsoft-endpoint-manager-to-a-newer-version"

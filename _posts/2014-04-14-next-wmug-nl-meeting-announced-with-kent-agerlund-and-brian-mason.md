@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Next WMUG NL meeting announced with Kent Agerlund and Brian Mason"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2014-04-14
 tags: [announcement]
 link: "https://www.vansurksum.com/2014/04/14/next-wmug-nl-meeting-announced-with-kent-agerlund-and-brian-mason/?utm_source=rss&utm_medium=rss&utm_campaign=next-wmug-nl-meeting-announced-with-kent-agerlund-and-brian-mason"

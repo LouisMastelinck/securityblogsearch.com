@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Entra Workload ID - Incident Response with Microsoft Sentinel Playbooks and Conditional Access"
-author: "Thomas Naunheim (thomas@naunheim.net)"
+author: "Thomas Naunheim"
 date: 2024-01-11
 tags: [azure-ad, microsoft-entra, azuread, workload-id, azure]
 link: "https://www.cloud-architekt.net/entra-workload-id-incident-response/"

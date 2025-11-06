@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Continuous Access Evaluation configuration is now part of Conditional Access"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-10-30
 tags: [azuread, conditional-access, modern-workplace, security]
 link: "https://www.vansurksum.com/2021/10/30/continuous-access-evaluation-configuration-is-now-part-of-conditional-access/?utm_source=rss&utm_medium=rss&utm_campaign=continuous-access-evaluation-configuration-is-now-part-of-conditional-access"

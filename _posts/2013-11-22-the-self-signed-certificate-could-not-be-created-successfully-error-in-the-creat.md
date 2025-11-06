@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The self signed certificate could not be created successfully error in the Create Site System Server Wizard"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2013-11-22
 tags: [configuration-manager, certicate, site-system, troubleshooting]
 link: "https://www.vansurksum.com/2013/11/22/the-self-signed-certificate-could-not-be-created-successfully-error-in-the-create-site-system-server-wizard/?utm_source=rss&utm_medium=rss&utm_campaign=the-self-signed-certificate-could-not-be-created-successfully-error-in-the-create-site-system-server-wizard"

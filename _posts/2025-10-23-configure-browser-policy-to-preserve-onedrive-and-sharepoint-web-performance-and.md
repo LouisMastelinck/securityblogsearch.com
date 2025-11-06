@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Configure Browser Policy to Preserve OneDrive and SharePoint Web Performance and Offline Capability needed for upcoming Chromium versions"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2025-10-23
 tags: [intune]
 link: "https://www.vansurksum.com/2025/10/23/configure-browser-policy-to-preserve-onedrive-and-sharepoint-web-performance-and-offline-capability-needed-upcoming-chromium-versions/?utm_source=rss&utm_medium=rss&utm_campaign=configure-browser-policy-to-preserve-onedrive-and-sharepoint-web-performance-and-offline-capability-needed-upcoming-chromium-versions"

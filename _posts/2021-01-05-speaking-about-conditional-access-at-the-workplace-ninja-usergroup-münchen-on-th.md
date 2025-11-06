@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Speaking about Conditional Access at the Workplace Ninja Usergroup München on Thursday January 21st 2021"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-01-05
 tags: [azuread, conditional-access, modern-workplace, speaking, wpninjasnl]
 link: "https://www.vansurksum.com/2021/01/05/speaking-about-conditional-access-at-the-workplace-ninja-usergroup-munchen-on-thursday-january-21st-2021/?utm_source=rss&utm_medium=rss&utm_campaign=speaking-about-conditional-access-at-the-workplace-ninja-usergroup-munchen-on-thursday-january-21st-2021"

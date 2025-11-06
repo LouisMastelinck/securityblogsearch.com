@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Did you already enable DKIM and DMARC for your Office 365 domains?"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2019-11-25
 tags: [uncategorized, exchange-online, exo, security]
 link: "https://www.vansurksum.com/2019/11/25/did-you-already-enable-dkim-and-dmarc-for-your-office-365-domains/?utm_source=rss&utm_medium=rss&utm_campaign=did-you-already-enable-dkim-and-dmarc-for-your-office-365-domains"

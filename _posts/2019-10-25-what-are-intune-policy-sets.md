@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What are Intune Policy Sets?"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2019-10-25
 tags: [uncategorized, intune, policy-sets]
 link: "https://www.vansurksum.com/2019/10/25/what-are-intune-policy-sets/?utm_source=rss&utm_medium=rss&utm_campaign=what-are-intune-policy-sets"

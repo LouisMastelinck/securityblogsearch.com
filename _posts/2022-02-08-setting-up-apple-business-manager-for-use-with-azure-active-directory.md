@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Setting up Apple Business Manager for use with Azure Active Directory"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2022-02-08
 tags: [abm, azuread, intune, microsoft-endpoint-manager, modern-workplace]
 link: "https://www.vansurksum.com/2022/02/08/setting-up-apple-business-manager-for-use-with-azure-active-directory/?utm_source=rss&utm_medium=rss&utm_campaign=setting-up-apple-business-manager-for-use-with-azure-active-directory"

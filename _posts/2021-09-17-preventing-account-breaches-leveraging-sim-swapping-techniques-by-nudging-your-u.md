@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Preventing account breaches leveraging SIM swapping techniques by nudging your users to start using the Microsoft authenticator app"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-09-17
 tags: [azuread, modern-workplace, security, identity]
 link: "https://www.vansurksum.com/2021/09/17/preventing-account-breaches-leveraging-sim-swapping-techniques-by-nudging-your-users-to-start-using-the-microsoft-authenticator-app/?utm_source=rss&utm_medium=rss&utm_campaign=preventing-account-breaches-leveraging-sim-swapping-techniques-by-nudging-your-users-to-start-using-the-microsoft-authenticator-app"

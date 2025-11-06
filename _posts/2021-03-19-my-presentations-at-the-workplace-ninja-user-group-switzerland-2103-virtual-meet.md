@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My presentations at the Workplace Ninja User Group Switzerland 2103 virtual meetup"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-03-19
 tags: [azuread, microsoft-endpoint-manager, modern-workplace, presentations, wpninjasnl]
 link: "https://www.vansurksum.com/2021/03/19/my-presentations-at-the-workplace-ninja-user-group-switzerland-2103-virtual-meetup/?utm_source=rss&utm_medium=rss&utm_campaign=my-presentations-at-the-workplace-ninja-user-group-switzerland-2103-virtual-meetup"

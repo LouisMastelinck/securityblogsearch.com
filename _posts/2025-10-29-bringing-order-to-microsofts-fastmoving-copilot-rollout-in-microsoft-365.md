@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bringing Order to Microsoft’s Fast‑Moving Copilot Rollout in Microsoft 365"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2025-10-29
 tags: [intune, modern-workplace, office-365, security]
 link: "https://www.vansurksum.com/2025/10/29/bringing-order-to-microsofts-fast%e2%80%91moving-copilot-rollout-in-microsoft-365/?utm_source=rss&utm_medium=rss&utm_campaign=bringing-order-to-microsofts-fast%25e2%2580%2591moving-copilot-rollout-in-microsoft-365"

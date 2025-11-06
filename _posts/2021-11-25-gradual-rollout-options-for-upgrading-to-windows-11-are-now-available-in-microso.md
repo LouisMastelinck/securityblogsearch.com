@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Gradual rollout options for upgrading to Windows 11 are now available in Microsoft Endpoint Manager"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-11-25
 tags: [modern-workplace, windows-10, windows-11, windows-update-for-business]
 link: "https://www.vansurksum.com/2021/11/25/gradual-rollout-options-for-upgrading-to-windows-11-are-now-available-in-microsoft-endpoint-manager/?utm_source=rss&utm_medium=rss&utm_campaign=gradual-rollout-options-for-upgrading-to-windows-11-are-now-available-in-microsoft-endpoint-manager"

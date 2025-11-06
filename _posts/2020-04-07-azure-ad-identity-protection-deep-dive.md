@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure AD Identity Protection deep dive"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-04-07
 tags: [azuread, conditional-access, identity-protection, security, identity]
 link: "https://www.vansurksum.com/2020/04/07/azure-ad-identity-protection-deep-dive/?utm_source=rss&utm_medium=rss&utm_campaign=azure-ad-identity-protection-deep-dive"

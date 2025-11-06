@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Are you already synchronizing your Message Center messages to Planner? Here is why you should"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-08-31
 tags: [modern-workplace, office-365, overview, power-platform, changes]
 link: "https://www.vansurksum.com/2020/08/31/are-you-already-synchronizing-your-message-center-messages-to-planner-here-is-why-you-should/?utm_source=rss&utm_medium=rss&utm_campaign=are-you-already-synchronizing-your-message-center-messages-to-planner-here-is-why-you-should"

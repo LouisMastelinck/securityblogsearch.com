@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Some things to consider before installing the ConfigMgr database on a SQL cluster"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2013-11-27
 tags: [configuration-manager, cluster, sql]
 link: "https://www.vansurksum.com/2013/11/27/some-things-to-consider-before-installing-the-configmgr-database-on-a-sql-cluster/?utm_source=rss&utm_medium=rss&utm_campaign=some-things-to-consider-before-installing-the-configmgr-database-on-a-sql-cluster"

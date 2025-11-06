@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rebranding the Windows Management User Group Netherlands to Workplace Ninja User Group Netherlands"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-01-04
 tags: [announcement, events, wmugnl, community, webinar]
 link: "https://www.vansurksum.com/2021/01/04/rebranding-the-windows-management-user-group-netherlands-to-workplace-ninja-user-group-netherlands/?utm_source=rss&utm_medium=rss&utm_campaign=rebranding-the-windows-management-user-group-netherlands-to-workplace-ninja-user-group-netherlands"

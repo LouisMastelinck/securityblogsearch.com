@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Browser restrictions and configuration when using Conditional Access on your modern workplace"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-01-27
 tags: [conditional-access, microsoft-endpoint-manager]
 link: "https://www.vansurksum.com/2021/01/27/browser-restrictions-and-configuration-when-using-conditional-access-on-your-modern-workplace/?utm_source=rss&utm_medium=rss&utm_campaign=browser-restrictions-and-configuration-when-using-conditional-access-on-your-modern-workplace"

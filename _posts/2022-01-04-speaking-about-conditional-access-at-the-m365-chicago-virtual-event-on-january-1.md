@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Speaking about Conditional Access at the M365 Chicago Virtual Event on January 14th, 2022"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2022-01-04
 tags: [azuread, conditional-access, events, speaking]
 link: "https://www.vansurksum.com/2022/01/04/speaking-about-conditional-access-at-the-m365-chicago-virtual-event-on-january-14th-2022/?utm_source=rss&utm_medium=rss&utm_campaign=speaking-about-conditional-access-at-the-m365-chicago-virtual-event-on-january-14th-2022"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "From SPF to DANE: Securing Microsoft 365 Email Communications"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2025-01-23
 tags: [exchange-online, security, dane, dkim, dmarc]
 link: "https://www.vansurksum.com/2025/01/23/from-spf-to-dane-securing-microsoft-365-email-communications/?utm_source=rss&utm_medium=rss&utm_campaign=from-spf-to-dane-securing-microsoft-365-email-communications"

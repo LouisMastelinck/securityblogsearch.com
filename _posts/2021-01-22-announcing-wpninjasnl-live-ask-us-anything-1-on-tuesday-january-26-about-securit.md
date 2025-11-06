@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Announcing #WPNinjasNL “Live – Ask us Anything” #1,  on Tuesday January 26 about Security Awareness"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-01-22
 tags: [announcement, wpninjasnl]
 link: "https://www.vansurksum.com/2021/01/22/announcing-wpninjasnl-live-ask-us-anything-1-on-tuesday-january-26-about-security-awareness/?utm_source=rss&utm_medium=rss&utm_campaign=announcing-wpninjasnl-live-ask-us-anything-1-on-tuesday-january-26-about-security-awareness"

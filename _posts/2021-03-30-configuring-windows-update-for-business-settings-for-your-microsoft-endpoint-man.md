@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Configuring Windows Update for Business settings for your Microsoft Endpoint Manager managed Modern Workplace"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2021-03-30
 tags: [microsoft-endpoint-manager, modern-workplace, security, windows-10, windows-update-for-business]
 link: "https://www.vansurksum.com/2021/03/30/configuring-windows-update-for-business-settings-for-your-microsoft-endpoint-manager-managed-modern-workplace/?utm_source=rss&utm_medium=rss&utm_campaign=configuring-windows-update-for-business-settings-for-your-microsoft-endpoint-manager-managed-modern-workplace"

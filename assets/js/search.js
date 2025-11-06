@@ -233,6 +233,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Build filter options before initial load
     buildFilterOptionsInternal();
     
+    // Custom search function for filtering by words starting with the search term
+    function customSearch(choices, value) {
+        const searchTerm = value.toLowerCase().trim();
+        if (!searchTerm) return choices;
+        
+        return choices.filter(choice => {
+            const label = choice.label.toLowerCase();
+            // Split label into words and check if any word starts with the search term
+            const words = label.split(/\s+/);
+            return words.some(word => word.startsWith(searchTerm));
+        });
+    }
+    
     // Initialize Choices.js with empty options
     if (tagFilter && typeof Choices !== 'undefined') {
         tagChoices = new Choices(tagFilter, {
@@ -245,14 +258,15 @@ document.addEventListener('DOMContentLoaded', function() {
             itemSelectText: '',
             shouldSort: false,
             duplicateItemsAllowed: false,
-            fuseOptions: {
-                threshold: 0.1,
-                keys: ['label']
-            }
+            searchResultLimit: 9999,
+            searchFloor: 0,
+            searchFields: ['label'],
+            fuseOptions: null,
+            searchFilter: customSearch
         });
         
-        // Listen for changes and removals
-        tagFilter.addEventListener('change', filterPosts);
+        // Listen for changes and removals - use addItem event instead of change
+        tagFilter.addEventListener('addItem', filterPosts);
         tagFilter.addEventListener('removeItem', filterPosts);
     }
     
@@ -267,14 +281,15 @@ document.addEventListener('DOMContentLoaded', function() {
             itemSelectText: '',
             shouldSort: false,
             duplicateItemsAllowed: false,
-            fuseOptions: {
-                threshold: 0.1,
-                keys: ['label']
-            }
+            searchResultLimit: 9999,
+            searchFloor: 0,
+            searchFields: ['label'],
+            fuseOptions: null,
+            searchFilter: customSearch
         });
         
-        // Listen for changes and removals
-        authorFilter.addEventListener('change', filterPosts);
+        // Listen for changes and removals - use addItem event instead of change
+        authorFilter.addEventListener('addItem', filterPosts);
         authorFilter.addEventListener('removeItem', filterPosts);
     }
     

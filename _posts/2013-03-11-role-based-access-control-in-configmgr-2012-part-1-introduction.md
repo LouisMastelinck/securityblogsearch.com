@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Role Based Access Control in ConfigMgr 2012: Part 1 – Introduction"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2013-03-11
 tags: [configuration-manager, configmgr-2012, rbac]
 link: "https://www.vansurksum.com/2013/03/11/role-based-access-control-in-configmgr-2012-part-1-introduction/?utm_source=rss&utm_medium=rss&utm_campaign=role-based-access-control-in-configmgr-2012-part-1-introduction"

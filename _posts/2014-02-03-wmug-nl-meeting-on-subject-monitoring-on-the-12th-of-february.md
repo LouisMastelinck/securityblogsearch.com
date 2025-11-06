@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WMUG NL Meeting on subject Monitoring on the 12th of February"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2014-02-03
 tags: [events, wmug]
 link: "https://www.vansurksum.com/2014/02/03/wmug-nl-meeting-on-subject-monitoring-on-the-12th-of-february/?utm_source=rss&utm_medium=rss&utm_campaign=wmug-nl-meeting-on-subject-monitoring-on-the-12th-of-february"

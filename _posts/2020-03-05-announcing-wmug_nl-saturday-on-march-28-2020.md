@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Announcing WMUG_NL Saturday, on March 28 2020"
-author: "Kenneth"
+author: "Kenneth Van Surksum"
 date: 2020-03-05
 tags: [wmugnl, community, presentation, workshops]
 link: "https://www.vansurksum.com/2020/03/05/announcing-wmug_nl-saturday-on-march-28-2020/?utm_source=rss&utm_medium=rss&utm_campaign=announcing-wmug_nl-saturday-on-march-28-2020"
