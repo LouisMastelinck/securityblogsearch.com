@@ -2,13 +2,19 @@
 name: Check Modified Files for External Contributors
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize, reopened]
 
 # Set minimal permissions for the GITHUB_TOKEN
 permissions:
   contents: read
   pull-requests: write
+
+# Security Note: This workflow uses pull_request_target to have write permissions
+# for commenting on PRs from forks. This is safe because:
+# 1. We only read file paths from the PR, we don't execute any code
+# 2. The workflow script is from the base branch, not the PR
+# 3. We use GitHub API actions to get file lists, not running PR code
 
 jobs:
   check-modified-files:
@@ -22,6 +28,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
 
       - name: Get changed files
