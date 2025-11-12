@@ -611,6 +611,51 @@ def main():
             with open(github_output, 'a') as f:
                 f.write(f"new_posts={'true' if new_count > 0 else 'false'}\n")
                 f.write(f"post_count={new_count}\n")
+                
+                # Generate summary for PR body
+                summary_lines = []
+                
+                # Add summary by author and website
+                if crawler.posts_by_author or crawler.posts_by_site:
+                    summary_lines.append("### 📊 Discovery Summary\n")
+                    
+                    # Get website info for mapping URLs to authors
+                    website_by_url = {w.get('url'): w for w in crawler.websites}
+                    
+                    # Create combined author/website entries
+                    # We'll use a dict keyed by (author, website_url) to combine data
+                    combined_stats = {}
+                    
+                    # First, populate from site data
+                    for site_url, count in crawler.posts_by_site.items():
+                        if count > 0:
+                            website_config = website_by_url.get(site_url, {})
+                            author = website_config.get('author', 'Unknown')
+                            # Normalize author name
+                            author = crawler.normalize_author_name(author, site_url)
+                            key = (author, site_url)
+                            if key not in combined_stats:
+                                combined_stats[key] = count
+                    
+                    # Sort by count (descending) then by author name
+                    sorted_stats = sorted(combined_stats.items(), 
+                                        key=lambda x: (-x[1], x[0][0].lower()))
+                    
+                    # Format the output
+                    for (author, site_url), count in sorted_stats:
+                        summary_lines.append(f"**{author}**, {site_url}: {count} new post{'s' if count != 1 else ''}")
+                    
+                    # Add total
+                    summary_lines.append(f"\n**Total new blog posts found: {new_count}**")
+                    
+                    # Join and write as multiline string (using delimiter for GitHub Actions)
+                    summary_text = '\n'.join(summary_lines)
+                    # Use heredoc syntax for multiline output
+                    delimiter = 'EOF_SUMMARY'
+                    f.write(f"summary<<{delimiter}\n")
+                    f.write(summary_text)
+                    f.write(f"\n{delimiter}\n")
+                
         except Exception as e:
             print(f"Warning: Could not write to GITHUB_OUTPUT: {e}")
     
