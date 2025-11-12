@@ -35,6 +35,8 @@ class BlogCrawler:
         self.websites = []
         self.existing_links = set()
         self.new_posts = []
+        self.posts_by_site = {}  # Track posts per site URL
+        self.posts_by_author = {}  # Track posts per author
         
     def load_config(self):
         """Load website configuration from YAML file."""
@@ -529,12 +531,28 @@ summary: "{summary}"
         new_posts = [p for p in posts if p['link'] not in self.existing_links]
         print(f"Identified {len(new_posts)} new posts")
         
+        # Initialize counters for this site
+        if url not in self.posts_by_site:
+            self.posts_by_site[url] = 0
+        
         # Create files for new posts
         for post in new_posts:
             filename = self.create_post_file(post, website_config)
             if filename:
                 self.new_posts.append(filename)
                 self.existing_links.add(post['link'])
+                
+                # Track by site
+                self.posts_by_site[url] += 1
+                
+                # Track by author
+                author = post.get('author')
+                if not author:
+                    author = website_config.get('author', 'Unknown')
+                author = self.normalize_author_name(author, url)
+                if author not in self.posts_by_author:
+                    self.posts_by_author[author] = 0
+                self.posts_by_author[author] += 1
     
     def run(self):
         """Run the crawler."""
@@ -556,8 +574,25 @@ summary: "{summary}"
         print(f"Total new posts created: {len(self.new_posts)}")
         print(f"{'='*60}")
         
+        # Print summary by site
+        if self.posts_by_site:
+            print("\n📊 Summary by Site:")
+            print(f"{'='*60}")
+            for site_url, count in sorted(self.posts_by_site.items(), key=lambda x: x[1], reverse=True):
+                if count > 0:
+                    print(f"  {site_url}: {count} post(s)")
+        
+        # Print summary by author
+        if self.posts_by_author:
+            print(f"\n📝 Summary by Author:")
+            print(f"{'='*60}")
+            for author, count in sorted(self.posts_by_author.items(), key=lambda x: x[1], reverse=True):
+                if count > 0:
+                    print(f"  {author}: {count} post(s)")
+        
         if self.new_posts:
-            print("\nNew posts:")
+            print(f"\n📄 New posts created:")
+            print(f"{'='*60}")
             for post in self.new_posts:
                 print(f"  - {post}")
         
