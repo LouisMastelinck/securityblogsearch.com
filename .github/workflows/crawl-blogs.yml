@@ -63,6 +63,8 @@ jobs:
             
             **📊 Discovered ${{ steps.crawl.outputs.post_count }} new blog post(s)**
             
+            ${{ steps.crawl.outputs.summary }}
+            
             New blog posts have been added to the `_posts` directory.
             
             ### What to review:
