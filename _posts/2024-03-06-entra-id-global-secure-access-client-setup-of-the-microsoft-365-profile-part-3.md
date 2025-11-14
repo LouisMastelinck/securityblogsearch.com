@@ -3,7 +3,7 @@ layout: post
 title: "Entra ID – Global Secure Access Client – Setup of the Microsoft 365 Profile – Part 3"
 author: "Michael Morten Sonne"
 date: 2024-03-06
-tags: [azure-adentra-id, cool-tools, global-secure-access, identity, security]
+tags: [entra-id, cool-tools, global-secure-access, identity, security]
 link: "https://blog.sonnes.cloud/entra-id-global-secure-access-client-setup-of-the-microsoft-365-profile-part-3/"
 summary: "Last Updated on March 23, 2024 by Michael Morten Sonne Intoduction In an era defined by the dynamic&#8230; The post Entra ID – Global Secure Access Client – Setup of the Microsoft 365 Profile – Par..."
 ---
