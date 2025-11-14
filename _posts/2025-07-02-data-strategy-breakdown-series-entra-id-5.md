@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Data Strategy Breakdown Series - Entra ID (5)"
-author: "welka2111"
+author: "Ewelina Paczkowska"
 date: 2025-07-02
 tags: [entra-id, conditional-access, identity]
 link: "https://www.welkasworld.com/post/data-strategy-breakdown-series-entra-id-5"

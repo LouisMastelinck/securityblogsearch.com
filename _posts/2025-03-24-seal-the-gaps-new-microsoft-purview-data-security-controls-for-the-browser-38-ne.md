@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Seal the gaps: new Microsoft Purview data security controls for the browser &#38; network"
-author: "welka2111"
+author: "Ewelina Paczkowska"
 date: 2025-03-24
 tags: [security]
 link: "https://www.welkasworld.com/post/seal-the-gaps-new-microsoft-purview-data-security-controls-for-the-browser-network"

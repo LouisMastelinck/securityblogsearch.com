@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Conditional Access Essentials: RMAUs, Named Locations, Authentication Strengths, Service Principals"
-author: "welka2111"
+author: "Ewelina Paczkowska"
 date: 2025-08-26
 tags: [security, conditional-access]
 link: "https://www.welkasworld.com/post/conditional-access-essentials-rmaus-named-locations-authentication-strengths-service-principals"

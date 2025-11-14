@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Another day, another Purview solution: Data Security Investigations"
-author: "welka2111"
+author: "Ewelina Paczkowska"
 date: 2025-03-28
 tags: [security]
 link: "https://www.welkasworld.com/post/another-day-another-purview-solution-data-security-investigations"

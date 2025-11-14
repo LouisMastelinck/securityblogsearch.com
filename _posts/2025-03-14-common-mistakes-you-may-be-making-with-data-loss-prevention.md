@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Common mistakes you may be making with Data Loss Prevention"
-author: "welka2111"
+author: "Ewelina Paczkowska"
 date: 2025-03-14
 tags: [security]
 link: "https://www.welkasworld.com/post/common-mistakes-you-may-be-making-with-data-loss-prevention"

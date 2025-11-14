@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Data Strategy Breakdown Series - Secure Collaboration (3)"
-author: "welka2111"
+author: "Ewelina Paczkowska"
 date: 2025-05-28
 tags: [security]
 link: "https://www.welkasworld.com/post/data-strategy-breakdown-series-secure-collaboration-3"

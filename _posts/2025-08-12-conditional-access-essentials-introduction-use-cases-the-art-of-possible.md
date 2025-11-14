@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Conditional Access Essentials: Introduction, use cases, the art of possible"
-author: "welka2111"
+author: "Ewelina Paczkowska"
 date: 2025-08-12
 tags: [azure, entra-id, security, zero-trust, conditional-access]
 link: "https://www.welkasworld.com/post/conditional-access-essentials-introduction-use-cases-the-art-of-possible"

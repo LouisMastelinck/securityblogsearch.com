@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Conditional Access Essentials: Managing Exclusions with Identity Governance and Temporary Access Pass"
-author: "welka2111"
+author: "Ewelina Paczkowska"
 date: 2025-09-09
 tags: [security, conditional-access, identity]
 link: "https://www.welkasworld.com/post/conditional-access-essentials-managing-exclusions-with-identity-governance-and-temporary-access-pas"

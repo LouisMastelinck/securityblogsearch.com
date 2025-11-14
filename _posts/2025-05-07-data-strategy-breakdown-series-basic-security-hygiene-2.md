@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Data Strategy Breakdown Series - Basic Security Hygiene (2)"
-author: "welka2111"
+author: "Ewelina Paczkowska"
 date: 2025-05-07
 tags: [security, mfa]
 link: "https://www.welkasworld.com/post/data-strategy-breakdown-series-basic-security-hygiene-1"
