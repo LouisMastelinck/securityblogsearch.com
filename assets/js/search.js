@@ -231,10 +231,10 @@ document.addEventListener('DOMContentLoaded', function() {
     buildFilterOptionsInternal();
     
     /**
-     * Custom search function for filtering dropdown options by individual words
+     * Custom search function for filtering dropdown options
      * @param {Array} choices - Array of choice objects to filter
      * @param {string} value - Search term entered by the user
-     * @returns {Array} Filtered array of choices where at least one word starts with the search term
+     * @returns {Array} Filtered array of choices where the search term appears anywhere in the label
      */
     function customSearch(choices, value) {
         const searchTerm = value.toLowerCase().trim();
@@ -242,9 +242,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         return choices.filter(choice => {
             const label = choice.label.toLowerCase();
-            // Split label into words and check if any word starts with the search term
-            const words = label.split(/\s+/);
-            return words.some(word => word.startsWith(searchTerm));
+            // Check if the search term appears anywhere in the label
+            return label.includes(searchTerm);
         });
     }
     
@@ -272,8 +271,7 @@ document.addEventListener('DOMContentLoaded', function() {
             searchResultLimit: 9999,
             searchFloor: 0,
             searchFields: ['label'],
-            fuseOptions: null,
-            searchFilter: customSearch
+            sorter: customSearch
         });
         
         setupFilterEventListeners(tagFilter);
@@ -293,8 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {
             searchResultLimit: 9999,
             searchFloor: 0,
             searchFields: ['label'],
-            fuseOptions: null,
-            searchFilter: customSearch
+            sorter: customSearch
         });
         
         setupFilterEventListeners(authorFilter);
