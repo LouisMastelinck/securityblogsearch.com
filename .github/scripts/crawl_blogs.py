@@ -187,6 +187,7 @@ class BlogCrawler:
             'jeffrey': 'Jeffrey Appel',
             'Ru': 'Ru Campbell',
             'ru': 'Ru Campbell',
+            'welka2111': 'Ewelina Paczkowska',
         }
         
         # Check for exact match

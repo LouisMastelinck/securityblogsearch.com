@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Why Microsoft Purview projects fail before they even begin - and how to stop that from happening"
-author: "welka2111"
+author: "Ewelina Paczkowska"
 date: 2025-04-09
 tags: [security]
 link: "https://www.welkasworld.com/post/why-microsoft-purview-projects-fail-before-they-even-begin-and-how-to-stop-that-from-happening"

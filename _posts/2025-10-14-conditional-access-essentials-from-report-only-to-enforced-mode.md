@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Conditional Access Essentials: From Report-Only to Enforced Mode"
-author: "welka2111"
+author: "Ewelina Paczkowska"
 date: 2025-10-14
 tags: [security, conditional-access]
 link: "https://www.welkasworld.com/post/conditional-access-essentials-how-to-safely-transition-policies-from-report-only-to-enforced-mode"

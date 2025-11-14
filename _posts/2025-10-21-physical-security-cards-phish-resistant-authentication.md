@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Physical Security Cards: Phish-Resistant Authentication"
-author: "welka2111"
+author: "Ewelina Paczkowska"
 date: 2025-10-21
 tags: [security]
 link: "https://www.welkasworld.com/post/physical-security-cards-phish-resistant-authentication-with-a-twist"

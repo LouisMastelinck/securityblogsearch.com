@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Modern data security challenges:  defence in depth approach"
-author: "welka2111"
+author: "Ewelina Paczkowska"
 date: 2025-04-23
 tags: [security, identity]
 link: "https://www.welkasworld.com/post/modern-data-security-challenges-defence-in-depth-approach"

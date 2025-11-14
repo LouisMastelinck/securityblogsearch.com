@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Data Strategy Breakdown Series - Defender XDR and Intune (4)"
-author: "welka2111"
+author: "Ewelina Paczkowska"
 date: 2025-06-09
 tags: [security, defender, intune, compliance]
 link: "https://www.welkasworld.com/post/data-strategy-breakdown-series-defender-xdr-and-intune-4"
