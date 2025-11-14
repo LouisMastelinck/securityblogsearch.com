@@ -37,6 +37,7 @@ class BlogCrawler:
         self.new_posts = []
         self.posts_by_site = {}  # Track posts per site URL
         self.posts_by_author = {}  # Track posts per author
+        self.posts_by_author_and_site = {}  # Track posts per (author, site_url)
         
     def load_config(self):
         """Load website configuration from YAML file."""
@@ -553,6 +554,12 @@ summary: "{summary}"
                 if author not in self.posts_by_author:
                     self.posts_by_author[author] = 0
                 self.posts_by_author[author] += 1
+                
+                # Track by author and site combined
+                key = (author, url)
+                if key not in self.posts_by_author_and_site:
+                    self.posts_by_author_and_site[key] = 0
+                self.posts_by_author_and_site[key] += 1
     
     def run(self):
         """Run the crawler."""
@@ -616,29 +623,11 @@ def main():
                 summary_lines = []
                 
                 # Add summary by author and website
-                if crawler.posts_by_author or crawler.posts_by_site:
+                if crawler.posts_by_author_and_site:
                     summary_lines.append("### 📊 Discovery Summary\n")
                     
-                    # Get website info for mapping URLs to authors
-                    website_by_url = {w.get('url'): w for w in crawler.websites}
-                    
-                    # Create combined author/website entries
-                    # We'll use a dict keyed by (author, website_url) to combine data
-                    combined_stats = {}
-                    
-                    # First, populate from site data
-                    for site_url, count in crawler.posts_by_site.items():
-                        if count > 0:
-                            website_config = website_by_url.get(site_url, {})
-                            author = website_config.get('author', 'Unknown')
-                            # Normalize author name
-                            author = crawler.normalize_author_name(author, site_url)
-                            key = (author, site_url)
-                            if key not in combined_stats:
-                                combined_stats[key] = count
-                    
                     # Sort by count (descending) then by author name
-                    sorted_stats = sorted(combined_stats.items(), 
+                    sorted_stats = sorted(crawler.posts_by_author_and_site.items(), 
                                         key=lambda x: (-x[1], x[0][0].lower()))
                     
                     # Format the output
