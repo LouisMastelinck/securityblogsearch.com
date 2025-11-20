@@ -1,11 +1,11 @@
 # Automated Blog Crawling
 
-This repository includes an automated blog crawler that runs every hour to discover new security blog posts from configured websites.
+This repository includes an automated blog crawler that runs every 3 days to discover new security blog posts from configured websites.
 
 ## How It Works
 
 1. **Configuration**: Websites are configured in `websites.yml` at the root of the repository
-2. **Scheduled Runs**: A GitHub Actions workflow runs every hour to check for new posts
+2. **Scheduled Runs**: A GitHub Actions workflow runs every 3 days to check for new posts
 3. **RSS/Atom Feeds**: The crawler uses RSS/Atom feeds with pagination support to discover blog posts
 4. **Pagination**: Automatically fetches all available posts (up to 500 per website across 20 pages)
 5. **Duplicate Detection**: Posts are checked against existing links to avoid duplicates
