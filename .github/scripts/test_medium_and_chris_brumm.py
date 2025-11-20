@@ -71,7 +71,7 @@ def test_chris_brumm_author():
     # Find chris-brumm.com in config
     chris_site = None
     for site in config['websites']:
-        if 'chris-brumm.com' in site['url']:
+        if site['url'] == 'https://chris-brumm.com/':
             chris_site = site
             break
     
@@ -102,7 +102,7 @@ def test_medium_config():
     # Find Medium in config
     medium_site = None
     for site in config['websites']:
-        if 'medium.com/@' in site['url']:
+        if site['url'] == 'https://medium.com/@TimGroothuis':
             medium_site = site
             break
     
