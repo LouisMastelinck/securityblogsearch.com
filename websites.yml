@@ -46,5 +46,8 @@ websites:
   - url: https://www.chanceofsecurity.com
     author: "Sebastian Flæng Markdanner"
   - url: https://chris-brumm.com/
+    author: "Christopher Brumm"
   - url: https://medium.com/@TimGroothuis
+    rss_feed: https://medium.com/feed/@TimGroothuis
+    author: "Tim Groothuis"
 
