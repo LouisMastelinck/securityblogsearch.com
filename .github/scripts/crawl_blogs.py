@@ -71,6 +71,16 @@ class BlogCrawler:
     
     def find_feed_url(self, base_url):
         """Try to auto-detect RSS/Atom feed URL from a website."""
+        # Special case for Medium - convert user page to feed URL
+        if 'medium.com/@' in base_url:
+            # Extract username from URL like https://medium.com/@username
+            username_match = re.search(r'medium\.com/(@[^/]+)', base_url)
+            if username_match:
+                username = username_match.group(1)
+                feed_url = f'https://medium.com/feed/{username}'
+                print(f"  Detected Medium profile, using feed URL: {feed_url}")
+                return feed_url
+        
         common_feed_paths = [
             '/feed/',
             '/rss/',
@@ -177,6 +187,17 @@ class BlogCrawler:
             # Special case for Hybridbrothers.com - hardcode the author
             if 'hybridbrothers.com' in website_url.lower():
                 return "Robbe Van den Daele"
+            
+            # Special case for Medium - extract from URL
+            if 'medium.com/@' in website_url.lower():
+                username_match = re.search(r'medium\.com/@([^/]+)', website_url, re.IGNORECASE)
+                if username_match:
+                    username = username_match.group(1)
+                    # Convert username to display name (capitalize first letter of each word)
+                    display_name = username.replace('_', ' ').replace('-', ' ')
+                    display_name = ' '.join(word.capitalize() for word in display_name.split())
+                    return display_name
+            
             return None
         
         author = author.strip()
