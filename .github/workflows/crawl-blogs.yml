@@ -2,9 +2,9 @@
 name: Crawl Blogs and Create PR
 
 on:
-  # Run every hour
+  # Run every 3 days
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 0 */3 * *'
   
   # Allow manual trigger
   workflow_dispatch:
