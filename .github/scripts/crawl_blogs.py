@@ -628,10 +628,28 @@ summary: "{summary}"
         return len(self.new_posts)
 
 
+def update_last_crawl_timestamp():
+    """Update the last crawl timestamp in assets/last_crawl.json."""
+    try:
+        timestamp_file = Path('assets/last_crawl.json')
+        timestamp_data = {
+            'timestamp': datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+        }
+        with open(timestamp_file, 'w') as f:
+            json.dump(timestamp_data, f, indent=2)
+            f.write('\n')  # Add trailing newline
+        print(f"Updated last crawl timestamp: {timestamp_data['timestamp']}")
+    except Exception as e:
+        print(f"Warning: Could not update last crawl timestamp: {e}")
+
+
 def main():
     """Main entry point."""
     crawler = BlogCrawler()
     new_count = crawler.run()
+    
+    # Update the last crawl timestamp
+    update_last_crawl_timestamp()
     
     # Write result to GitHub Actions output if running in GitHub Actions
     github_output = os.environ.get('GITHUB_OUTPUT')

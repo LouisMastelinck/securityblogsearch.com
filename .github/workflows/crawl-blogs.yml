@@ -47,7 +47,7 @@ jobs:
         id: crawl
         run: python3 .github/scripts/crawl_blogs.py
       
-      - name: Create Pull Request
+      - name: Create Pull Request for new posts
         if: steps.crawl.outputs.new_posts == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
@@ -84,6 +84,13 @@ jobs:
             automated
             new-content
           assignees: LouisMastelinck
+      
+      - name: Commit timestamp update when no new posts
+        if: steps.crawl.outputs.new_posts != 'true'
+        run: |
+          git add assets/last_crawl.json
+          git commit -m "Update last crawl timestamp" || echo "No changes to commit"
+          git push origin HEAD:main || echo "Nothing to push"
       
       - name: Summary
         run: |
