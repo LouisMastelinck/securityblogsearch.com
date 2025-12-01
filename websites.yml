@@ -50,4 +50,13 @@ websites:
   - url: https://medium.com/@TimGroothuis
     rss_feed: https://medium.com/feed/@TimGroothuis
     author: "Tim Groothuis"
+  - url: https://derkvanderwoude.medium.com
+    rss_feed: https://derkvanderwoude.medium.com/feed
+    author: "Derk Van Der Woude"
+  - url: https://derkvanderwoude.medium.com
+    rss_feed: https://derkvanderwoude.medium.com/feed
+    author: "Derk Van Der Woude"
+  - url: https://medium.com/@verboonalex
+    rss_feed: https://medium.com/@verboonalex/feed
+    author: "Alex Verboon"
 
