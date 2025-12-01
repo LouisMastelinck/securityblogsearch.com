@@ -89,8 +89,12 @@ jobs:
         if: steps.crawl.outputs.new_posts != 'true'
         run: |
           git add assets/last_crawl.json
-          git commit -m "Update last crawl timestamp" || echo "No changes to commit"
-          git push origin HEAD:main || echo "Nothing to push"
+          if ! git diff --staged --quiet; then
+            git commit -m "Update last crawl timestamp"
+            git push origin HEAD:main
+          else
+            echo "No timestamp changes to commit"
+          fi
       
       - name: Summary
         run: |

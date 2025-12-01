@@ -11,7 +11,7 @@ import sys
 import yaml
 import feedparser
 import requests
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 import re
 import json
@@ -633,7 +633,7 @@ def update_last_crawl_timestamp():
     try:
         timestamp_file = Path('assets/last_crawl.json')
         timestamp_data = {
-            'timestamp': datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+            'timestamp': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
         }
         with open(timestamp_file, 'w') as f:
             json.dump(timestamp_data, f, indent=2)

@@ -64,7 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Calculate last crawl time from the stored timestamp file
         const lastCrawlEl = document.getElementById('lastCrawlTime');
         if (lastCrawlEl) {
-            fetch('/assets/last_crawl.json')
+            // Add cache-busting to ensure fresh data
+            fetch('/assets/last_crawl.json?t=' + Date.now())
                 .then(response => response.json())
                 .then(data => {
                     if (data.timestamp) {
