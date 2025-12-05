@@ -146,6 +146,46 @@ def test_summary_extraction():
     else:
         print("  ✗ Should return None for invalid URLs")
 
+def test_last_crawl_timestamp():
+    """Test last crawl timestamp update functionality"""
+    from crawl_blogs import update_last_crawl_timestamp
+    import json
+    import tempfile
+    import shutil
+    
+    print("\nTesting last crawl timestamp update:")
+    
+    # Create a temporary directory to test in
+    original_dir = os.getcwd()
+    with tempfile.TemporaryDirectory() as tmpdir:
+        os.chdir(tmpdir)
+        os.makedirs('assets', exist_ok=True)
+        
+        # Test the function
+        update_last_crawl_timestamp()
+        
+        # Verify the file was created
+        timestamp_file = Path('assets/last_crawl.json')
+        if timestamp_file.exists():
+            print("  ✓ Timestamp file created")
+            
+            # Verify content is valid JSON with expected structure
+            with open(timestamp_file) as f:
+                data = json.load(f)
+                if 'timestamp' in data:
+                    print(f"  ✓ Timestamp present: {data['timestamp']}")
+                    # Verify ISO format
+                    if data['timestamp'].endswith('Z') and 'T' in data['timestamp']:
+                        print("  ✓ Timestamp is in correct ISO format")
+                    else:
+                        print("  ✗ Timestamp format is incorrect")
+                else:
+                    print("  ✗ Timestamp field missing")
+        else:
+            print("  ✗ Timestamp file was not created")
+        
+        os.chdir(original_dir)
+
 if __name__ == '__main__':
     print("Blog Crawler Unit Tests")
     print("=" * 60)
@@ -158,6 +198,7 @@ if __name__ == '__main__':
         test_author_extraction()
         test_tag_extraction()
         test_summary_extraction()
+        test_last_crawl_timestamp()
         
         print("\n" + "=" * 60)
         print("All tests completed!")

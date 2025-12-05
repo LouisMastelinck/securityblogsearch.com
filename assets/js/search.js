@@ -61,35 +61,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 .join('');
         }
         
-        // Calculate last crawl time from the newest post date
+        // Calculate last crawl time from the stored timestamp file
         const lastCrawlEl = document.getElementById('lastCrawlTime');
-        if (lastCrawlEl && posts.length > 0) {
-            // Get the most recent post date
-            const dates = posts.map(post => new Date(post.dataset.date)).filter(d => !isNaN(d));
-            if (dates.length > 0) {
-                const mostRecent = new Date(Math.max(...dates));
-                const now = new Date();
-                const diffTime = Math.abs(now - mostRecent);
-                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-                
-                let timeAgo;
-                if (diffDays === 0) {
-                    timeAgo = 'Today';
-                } else if (diffDays === 1) {
-                    timeAgo = 'Yesterday';
-                } else if (diffDays < 7) {
-                    timeAgo = `${diffDays} days ago`;
-                } else if (diffDays < 30) {
-                    const weeks = Math.floor(diffDays / 7);
-                    timeAgo = `${weeks} week${weeks > 1 ? 's' : ''} ago`;
-                } else {
-                    const months = Math.floor(diffDays / 30);
-                    timeAgo = `${months} month${months > 1 ? 's' : ''} ago`;
-                }
-                
-                lastCrawlEl.textContent = timeAgo;
-                lastCrawlEl.title = mostRecent.toLocaleString();
-            }
+        if (lastCrawlEl) {
+            // Add cache-busting to ensure fresh data
+            fetch('/assets/last_crawl.json?t=' + Date.now())
+                .then(response => response.json())
+                .then(data => {
+                    if (data.timestamp) {
+                        const crawlDate = new Date(data.timestamp);
+                        const now = new Date();
+                        const diffTime = Math.abs(now - crawlDate);
+                        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                        
+                        let timeAgo;
+                        if (diffDays === 0) {
+                            timeAgo = 'Today';
+                        } else if (diffDays === 1) {
+                            timeAgo = 'Yesterday';
+                        } else if (diffDays < 7) {
+                            timeAgo = `${diffDays} days ago`;
+                        } else if (diffDays < 30) {
+                            const weeks = Math.floor(diffDays / 7);
+                            timeAgo = `${weeks} week${weeks > 1 ? 's' : ''} ago`;
+                        } else {
+                            const months = Math.floor(diffDays / 30);
+                            timeAgo = `${months} month${months > 1 ? 's' : ''} ago`;
+                        }
+                        
+                        lastCrawlEl.textContent = timeAgo;
+                        lastCrawlEl.title = crawlDate.toLocaleString();
+                    }
+                })
+                .catch(error => {
+                    console.error('Could not fetch last crawl time:', error);
+                    lastCrawlEl.textContent = 'Unknown';
+                });
         }
     }
     
