@@ -19,6 +19,7 @@ To add a new website to the crawler, edit the `websites.yml` file:
 websites:
   - url: https://example.com
     rss_feed: https://example.com/feed/  # Optional - will auto-detect if omitted
+    full_crawl: true  # Optional - force full crawl (see Crawler Optimization below)
 ```
 
 ### Configuration Options
@@ -27,6 +28,37 @@ websites:
 - **rss_feed** (optional): Direct URL to RSS/Atom feed. If not provided, the crawler will attempt to auto-detect the feed URL
 - **author** (optional): Default author name for posts from this site. If not provided, the crawler will extract the author from the RSS feed entries
 - **tags** (optional): List of default tags to apply to posts from this site. If not provided, the crawler will extract tags from the RSS feed categories or infer them from the post content
+- **full_crawl** (optional): Boolean flag to force a full crawl of the website. Default is `false`. See "Crawler Optimization" section below for details.
+
+## Crawler Optimization
+
+The crawler uses an intelligent scanning strategy to reduce processing time and resource usage:
+
+### Scan Modes
+
+1. **Full Scan**: Crawls all available posts from the RSS feed (up to 500 posts across 20 pages)
+   - Used when a website is **newly added** to `websites.yml`
+   - Used when `full_crawl: true` is set for the website
+   
+2. **Quick Scan**: Only crawls the top 6 most recent posts
+   - Used for websites that have been successfully crawled before
+   - Efficiently checks for new blog posts without processing the entire feed
+
+### Crawl History
+
+The crawler maintains a history file (`assets/crawl_history.json`) that tracks which websites have been successfully crawled. This enables the optimization between full and quick scans.
+
+### Forcing a Full Scan
+
+If you need to force a full scan of a previously crawled website (e.g., to backfill older posts), set `full_crawl: true` in `websites.yml`:
+
+```yaml
+websites:
+  - url: https://example.com
+    full_crawl: true  # Forces a complete scan
+```
+
+After the full scan completes, you can remove or set `full_crawl: false` to return to quick scans.
 
 ## Manual Triggering
 

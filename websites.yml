@@ -56,4 +56,6 @@ websites:
   - url: https://medium.com/@verboonAlex
     rss_feed: https://medium.com/feed/@verboonAlex
     author: "Alex Verboon"
+  - url: https://ericonidentity.com/
+    author: "Erik Woodruff"
 

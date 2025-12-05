@@ -186,6 +186,62 @@ def test_last_crawl_timestamp():
         
         os.chdir(original_dir)
 
+def test_crawl_history():
+    """Test crawl history tracking functionality"""
+    from crawl_blogs import BlogCrawler
+    import json
+    import tempfile
+    
+    print("\nTesting crawl history tracking:")
+    
+    original_dir = os.getcwd()
+    with tempfile.TemporaryDirectory() as tmpdir:
+        os.chdir(tmpdir)
+        os.makedirs('assets', exist_ok=True)
+        
+        history_file = Path('assets/crawl_history.json')
+        
+        # Test creating a new crawler with no history
+        crawler = BlogCrawler(config_path='../../websites.yml', history_path=history_file)
+        crawler.load_crawl_history()
+        
+        if len(crawler.crawl_history) == 0:
+            print("  ✓ Empty crawl history loaded for new crawler")
+        else:
+            print("  ✗ Expected empty crawl history")
+        
+        # Test marking a site as crawled
+        test_url = "https://example.com"
+        crawler.mark_site_crawled(test_url)
+        
+        if test_url in crawler.crawl_history:
+            print(f"  ✓ Site marked as crawled: {test_url}")
+            if 'last_crawled' in crawler.crawl_history[test_url]:
+                print(f"  ✓ Timestamp recorded: {crawler.crawl_history[test_url]['last_crawled']}")
+            else:
+                print("  ✗ Missing timestamp")
+        else:
+            print("  ✗ Site not marked in history")
+        
+        # Test saving history
+        crawler.save_crawl_history()
+        
+        if history_file.exists():
+            print("  ✓ History file saved")
+            
+            # Test loading saved history
+            crawler2 = BlogCrawler(config_path='../../websites.yml', history_path=history_file)
+            crawler2.load_crawl_history()
+            
+            if test_url in crawler2.crawl_history:
+                print("  ✓ History loaded from file correctly")
+            else:
+                print("  ✗ History not loaded correctly")
+        else:
+            print("  ✗ History file not created")
+        
+        os.chdir(original_dir)
+
 if __name__ == '__main__':
     print("Blog Crawler Unit Tests")
     print("=" * 60)
@@ -199,6 +255,7 @@ if __name__ == '__main__':
         test_tag_extraction()
         test_summary_extraction()
         test_last_crawl_timestamp()
+        test_crawl_history()
         
         print("\n" + "=" * 60)
         print("All tests completed!")
