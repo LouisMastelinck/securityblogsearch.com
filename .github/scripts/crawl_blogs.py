@@ -28,6 +28,7 @@ class BlogCrawler:
     MAX_PAGES_PER_FEED = 20  # Maximum RSS feed pages to crawl (prevents infinite loops)
     MAX_POSTS_PER_WEBSITE = 500  # Maximum posts to process per website (safety limit)
     QUICK_SCAN_LIMIT = 6  # Number of posts to scan for previously crawled sites
+    MIN_ENTRIES_PER_PAGE = 10  # Minimum entries per page to continue pagination
     
     def __init__(self, config_path='websites.yml', posts_dir='_posts', history_path='assets/crawl_history.json'):
         """Initialize the crawler."""
@@ -489,7 +490,7 @@ class BlogCrawler:
                     break
                 
                 # If pagination is disabled or we got fewer entries than expected, stop
-                if not paginate or len(feed.entries) < 10:
+                if not paginate or len(feed.entries) < self.MIN_ENTRIES_PER_PAGE:
                     break
                 
                 page += 1
