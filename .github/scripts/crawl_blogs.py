@@ -27,17 +27,20 @@ class BlogCrawler:
     MAX_SUMMARY_LENGTH = 200  # Maximum length before truncation
     MAX_PAGES_PER_FEED = 20  # Maximum RSS feed pages to crawl (prevents infinite loops)
     MAX_POSTS_PER_WEBSITE = 500  # Maximum posts to process per website (safety limit)
+    QUICK_SCAN_LIMIT = 6  # Number of posts to scan for previously crawled sites
     
-    def __init__(self, config_path='websites.yml', posts_dir='_posts'):
+    def __init__(self, config_path='websites.yml', posts_dir='_posts', history_path='assets/crawl_history.json'):
         """Initialize the crawler."""
         self.config_path = config_path
         self.posts_dir = Path(posts_dir)
+        self.history_path = Path(history_path)
         self.websites = []
         self.existing_links = set()
         self.new_posts = []
         self.posts_by_site = {}  # Track posts per site URL
         self.posts_by_author = {}  # Track posts per author
         self.posts_by_author_and_site = {}  # Track posts per (author, site_url)
+        self.crawl_history = {}  # Track successfully crawled sites
         
     def load_config(self):
         """Load website configuration from YAML file."""
@@ -49,6 +52,40 @@ class BlogCrawler:
         except Exception as e:
             print(f"Error loading config: {e}")
             sys.exit(1)
+    
+    def load_crawl_history(self):
+        """Load crawl history to determine which sites have been crawled before."""
+        try:
+            if self.history_path.exists():
+                with open(self.history_path, 'r') as f:
+                    self.crawl_history = json.load(f)
+                print(f"Loaded crawl history for {len(self.crawl_history)} websites")
+            else:
+                print("No crawl history found - all sites will be fully crawled")
+                self.crawl_history = {}
+        except Exception as e:
+            print(f"Warning: Could not load crawl history: {e}")
+            self.crawl_history = {}
+    
+    def save_crawl_history(self):
+        """Save crawl history after successful crawls."""
+        try:
+            # Ensure the directory exists
+            self.history_path.parent.mkdir(parents=True, exist_ok=True)
+            
+            with open(self.history_path, 'w') as f:
+                json.dump(self.crawl_history, f, indent=2)
+                f.write('\n')  # Add trailing newline
+            print(f"Saved crawl history for {len(self.crawl_history)} websites")
+        except Exception as e:
+            print(f"Warning: Could not save crawl history: {e}")
+    
+    def mark_site_crawled(self, url):
+        """Mark a site as successfully crawled with timestamp."""
+        self.crawl_history[url] = {
+            'last_crawled': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+            'crawled': True
+        }
     
     def load_existing_posts(self):
         """Load existing post links to avoid duplicates."""
@@ -346,8 +383,15 @@ class BlogCrawler:
         
         return None
     
-    def crawl_rss_feed(self, feed_url, base_url, paginate=True):
-        """Crawl an RSS/Atom feed for blog posts with pagination support."""
+    def crawl_rss_feed(self, feed_url, base_url, paginate=True, max_posts=None):
+        """Crawl an RSS/Atom feed for blog posts with pagination support.
+        
+        Args:
+            feed_url: URL of the RSS/Atom feed
+            base_url: Base URL of the website
+            paginate: Whether to paginate through multiple pages
+            max_posts: Maximum number of posts to retrieve (None for no limit)
+        """
         all_posts = []
         seen_links = set()
         page = 1
@@ -376,6 +420,11 @@ class BlogCrawler:
                 
                 posts_on_page = 0
                 for entry in feed.entries:
+                    # Check if we've reached the max_posts limit
+                    if max_posts is not None and len(all_posts) >= max_posts:
+                        print(f"  Reached maximum posts limit ({max_posts}), stopping")
+                        return all_posts
+                    
                     # Extract post data
                     link = entry.get('link', '')
                     
@@ -535,6 +584,23 @@ summary: "{summary}"
         print(f"Crawling: {url}")
         print(f"{'='*60}")
         
+        # Determine scan mode based on history and configuration
+        full_crawl = website_config.get('full_crawl', False)
+        previously_crawled = url in self.crawl_history and self.crawl_history[url].get('crawled', False)
+        
+        # Decide on post limit
+        if full_crawl:
+            max_posts = None
+            scan_mode = "FULL (forced by full_crawl flag)"
+        elif not previously_crawled:
+            max_posts = None
+            scan_mode = "FULL (new website)"
+        else:
+            max_posts = self.QUICK_SCAN_LIMIT
+            scan_mode = f"QUICK (top {self.QUICK_SCAN_LIMIT} posts)"
+        
+        print(f"Scan mode: {scan_mode}")
+        
         # Get or find feed URL
         feed_url = website_config.get('rss_feed')
         if not feed_url:
@@ -546,9 +612,9 @@ summary: "{summary}"
         
         print(f"Using feed: {feed_url}")
         
-        # Crawl the feed with pagination enabled
-        posts = self.crawl_rss_feed(feed_url, url, paginate=True)
-        print(f"Found {len(posts)} total posts across all pages")
+        # Crawl the feed with appropriate limits
+        posts = self.crawl_rss_feed(feed_url, url, paginate=(max_posts is None), max_posts=max_posts)
+        print(f"Found {len(posts)} total posts")
         
         # Filter new posts
         new_posts = [p for p in posts if p['link'] not in self.existing_links]
@@ -582,6 +648,9 @@ summary: "{summary}"
                 if key not in self.posts_by_author_and_site:
                     self.posts_by_author_and_site[key] = 0
                 self.posts_by_author_and_site[key] += 1
+        
+        # Mark site as successfully crawled
+        self.mark_site_crawled(url)
     
     def run(self):
         """Run the crawler."""
@@ -589,6 +658,7 @@ summary: "{summary}"
         print(f"Working directory: {os.getcwd()}")
         
         self.load_config()
+        self.load_crawl_history()
         self.load_existing_posts()
         
         for website in self.websites:
@@ -597,6 +667,9 @@ summary: "{summary}"
             except Exception as e:
                 print(f"Error crawling {website.get('url')}: {e}")
                 continue
+        
+        # Save crawl history after all crawls complete
+        self.save_crawl_history()
         
         print(f"\n{'='*60}")
         print(f"Crawling complete!")
