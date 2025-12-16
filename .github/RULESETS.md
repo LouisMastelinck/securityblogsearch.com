@@ -1,11 +1,11 @@
 # GitHub Repository Rulesets Configuration Guide
 
-This document provides instructions for configuring GitHub Repository Rulesets to restrict third-party contributors to only modify files in the `_posts` folder.
+This document provides instructions for configuring GitHub Repository Rulesets to restrict third-party contributors to only modify files in the `_posts` and `_linkedin_posts` folders.
 
 ## Overview
 
 The goal is to:
-- Allow external contributors to **only** create/modify files in the `_posts/` directory
+- Allow external contributors to **only** create/modify files in the `_posts/` and `_linkedin_posts/` directories
 - Prevent external contributors from modifying any other files (configuration, layouts, workflows, etc.)
 - Allow repository owners and GitHub Copilot to make changes anywhere in the repository
 
@@ -49,8 +49,9 @@ Enable the following rules:
      ```
      **
      !_posts/**
+     !_linkedin_posts/**
      ```
-   - This means: Block ALL files except those in `_posts/` directory
+   - This means: Block ALL files except those in `_posts/` and `_linkedin_posts/` directories
    - **Who can push**: Only repository administrators and bypass users
 
 2. **Require pull request before merging**
@@ -113,8 +114,8 @@ For additional protection, create a second ruleset:
 ### For External Contributors
 
 When an external contributor:
-1. ✅ **Can** create/modify files in `_posts/` - These PRs will be allowed
-2. ❌ **Cannot** modify files outside `_posts/` - These PRs will be blocked by the ruleset
+1. ✅ **Can** create/modify files in `_posts/` or `_linkedin_posts/` - These PRs will be allowed
+2. ❌ **Cannot** modify files outside `_posts/` or `_linkedin_posts/` - These PRs will be blocked by the ruleset
 3. ⚠️ **Must** submit changes via Pull Request - Direct pushes are not allowed
 4. ⚠️ **Requires** approval from code owners before merging
 
