@@ -2,6 +2,25 @@
 
 This guide explains how to add LinkedIn posts to the security blog search.
 
+## Quick Start Tools
+
+We provide two easy ways to submit LinkedIn posts:
+
+### 1. 📱 Bookmarklet (Recommended)
+Install our browser bookmarklet to capture LinkedIn posts with one click:
+- See [BOOKMARKLET.md](BOOKMARKLET.md) for installation and usage instructions
+- Automatically extracts post title, author, URL, and summary
+- Works directly from LinkedIn.com
+
+### 2. 📝 Web Form Helper
+Use our web form to manually create properly formatted submissions:
+- Open `linkedin-helper.html` in your browser
+- Fill in the form with post details
+- Copy the generated markdown
+
+### 3. ✍️ Manual Method
+For advanced users who prefer direct file creation (see below)
+
 ## Manual Method
 
 To manually add a LinkedIn post:

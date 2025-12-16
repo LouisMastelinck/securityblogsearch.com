@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Post Submission Helper</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0077B5;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 600;
+            color: #333;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        textarea {
+            min-height: 80px;
+            font-family: inherit;
+        }
+        button {
+            background-color: #0077B5;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #005885;
+        }
+        .output {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            display: none;
+        }
+        .output pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .copy-btn {
+            background-color: #28a745;
+            margin-top: 10px;
+        }
+        .copy-btn:hover {
+            background-color: #218838;
+        }
+        .instructions {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #0077B5;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📝 LinkedIn Post Submission Helper</h1>
+        <p class="subtitle">Generate a formatted markdown file for submitting LinkedIn posts to Security Blog Search</p>
+        
+        <div class="instructions">
+            <strong>How to use:</strong>
+            <ol>
+                <li>Fill in the form below with the LinkedIn post details</li>
+                <li>Click "Generate Markdown File"</li>
+                <li>Copy the generated content</li>
+                <li>Create a new file in the <code>_linkedin_posts</code> directory with the suggested filename</li>
+                <li>Submit a pull request</li>
+            </ol>
+        </div>
+
+        <form id="linkedinForm">
+            <label for="title">Post Title *</label>
+            <input type="text" id="title" required placeholder="e.g., Best Practices for Securing Microsoft Entra ID">
+            
+            <label for="author">Author Name *</label>
+            <input type="text" id="author" required placeholder="e.g., John Doe">
+            
+            <label for="date">Publication Date *</label>
+            <input type="date" id="date" required>
+            
+            <label for="link">LinkedIn Post URL *</label>
+            <input type="url" id="link" required placeholder="https://www.linkedin.com/posts/...">
+            
+            <label for="tags">Tags (comma-separated) *</label>
+            <input type="text" id="tags" required placeholder="entra-id, conditional-access, security">
+            
+            <label for="summary">Summary *</label>
+            <textarea id="summary" required placeholder="A brief summary of the LinkedIn post (2-3 sentences)"></textarea>
+            
+            <button type="submit">Generate Markdown File</button>
+        </form>
+
+        <div class="output" id="output">
+            <h3>Generated Content</h3>
+            <p><strong>Suggested Filename:</strong> <code id="filename"></code></p>
+            <pre id="markdown"></pre>
+            <button class="copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('linkedinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            const date = document.getElementById('date').value;
+            const link = document.getElementById('link').value;
+            const tags = document.getElementById('tags').value;
+            const summary = document.getElementById('summary').value;
+            
+            // Generate slug from title
+            const slug = title.toLowerCase()
+                .replace(/[^a-z0-9\s-]/g, '')
+                .replace(/\s+/g, '-')
+                .replace(/-+/g, '-')
+                .substring(0, 60);
+            
+            const filename = `${date}-${slug}.md`;
+            
+            // Format tags
+            const tagsArray = tags.split(',').map(t => t.trim()).filter(t => t);
+            const tagsFormatted = `[${tagsArray.join(', ')}]`;
+            
+            // Generate markdown
+            const markdown = `---
+layout: post
+title: "${title}"
+author: "${author}"
+date: ${date}
+tags: ${tagsFormatted}
+link: "${link}"
+summary: "${summary}"
+---`;
+            
+            // Display output
+            document.getElementById('filename').textContent = filename;
+            document.getElementById('markdown').textContent = markdown;
+            document.getElementById('output').style.display = 'block';
+            
+            // Scroll to output
+            document.getElementById('output').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        function copyToClipboard() {
+            const markdown = document.getElementById('markdown').textContent;
+            navigator.clipboard.writeText(markdown).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = '✓ Copied!';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            });
+        }
+        
+        // Set today's date as default
+        document.getElementById('date').valueAsDate = new Date();
+    </script>
+</body>
+</html>
