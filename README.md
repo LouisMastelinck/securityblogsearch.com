@@ -12,6 +12,7 @@ Security Blog Search helps security professionals, researchers, and enthusiasts 
 - 🏷️ **Filter by Tags**: Organize and discover posts by security topics
 - 👤 **Filter by Author**: Find posts from specific authors
 - 📅 **Sort by Date**: View newest or oldest posts first
+- 💼 **LinkedIn Posts**: Support for LinkedIn security posts alongside blog articles
 - 📝 **Community-Driven**: Submit posts via pull request
 - 🤖 **Automated Crawling**: Automated discovery of new blog posts from configured websites every 3 days
 - 🎨 **Clean Interface**: Easy-to-use, responsive design
@@ -19,14 +20,25 @@ Security Blog Search helps security professionals, researchers, and enthusiasts 
 
 ## Contributing
 
-We welcome contributions! To submit a blog post:
+We welcome contributions! You can submit both blog posts and LinkedIn posts.
+
+### Submit a Blog Post
 
 1. Fork this repository
 2. Create a new file in `_posts` directory with format: `YYYY-MM-DD-title-slug.md`
 3. Add required front matter (see below)
 4. Submit a pull request
 
-**Note for External Contributors:** For security, external contributors can only modify files in the `_posts/` directory. Pull requests that modify other files (configuration, layouts, workflows, etc.) will be automatically blocked. See [.github/RULESETS.md](.github/RULESETS.md) for more information.
+### Submit a LinkedIn Post
+
+1. Fork this repository
+2. Create a new file in `_linkedin_posts` directory with format: `YYYY-MM-DD-title-slug.md`
+3. Add required front matter (same as blog posts)
+4. Submit a pull request
+
+See [LINKEDIN_POSTS.md](LINKEDIN_POSTS.md) for detailed LinkedIn post guidelines.
+
+**Note for External Contributors:** For security, external contributors can only modify files in the `_posts/` and `_linkedin_posts/` directories. Pull requests that modify other files (configuration, layouts, workflows, etc.) will be automatically blocked. See [.github/RULESETS.md](.github/RULESETS.md) for more information.
 
 ### Post Format
 

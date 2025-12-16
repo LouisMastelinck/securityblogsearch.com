@@ -12,6 +12,12 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+# Collections
+collections:
+  linkedin_posts:
+    output: true
+    permalink: /linkedin/:title/
+
 # Defaults
 defaults:
   - scope:
@@ -19,6 +25,12 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: ""
+      type: "linkedin_posts"
+    values:
+      layout: "post"
+      post_type: "linkedin"
 
 # Exclude from processing
 exclude:

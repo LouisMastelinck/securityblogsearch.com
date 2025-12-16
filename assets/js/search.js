@@ -1,6 +1,7 @@
 // Search and filter functionality for security blog posts
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
+    const typeFilter = document.getElementById('typeFilter');
     const tagFilter = document.getElementById('tagFilter');
     const authorFilter = document.getElementById('authorFilter');
     const sortBy = document.getElementById('sortBy');
@@ -17,10 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Initialize Choices.js for multi-select dropdowns
+    let typeChoices = null;
     let tagChoices = null;
     let authorChoices = null;
     
-    // Store all available tags and authors for filtering
+    // Store all available types, tags and authors for filtering
+    let allTypes = [];
     let allTags = [];
     let allAuthors = [];
     
@@ -103,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Filter and search function
     function filterPosts() {
         const searchTerm = searchInput.value.toLowerCase();
+        const selectedTypes = typeChoices ? typeChoices.getValue(true).map(t => t.toLowerCase()) : [];
         const selectedTags = tagChoices ? tagChoices.getValue(true).map(t => t.toLowerCase()) : [];
         const selectedAuthors = authorChoices ? authorChoices.getValue(true).map(a => a.toLowerCase()) : [];
         const sortOption = sortBy.value;
@@ -113,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const author = post.dataset.author || '';
             const tags = post.dataset.tags || '';
             const summary = post.dataset.summary || '';
+            const type = (post.dataset.type || 'blog').toLowerCase();
             
             // Search filter
             const matchesSearch = !searchTerm || 
@@ -120,6 +125,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 author.includes(searchTerm) || 
                 tags.includes(searchTerm) || 
                 summary.includes(searchTerm);
+            
+            // Type filter
+            const matchesType = selectedTypes.length === 0 || 
+                selectedTypes.includes(type);
             
             // Tag filter - post must have at least one of the selected tags
             const postTags = tags.split(',').map(t => t.trim().toLowerCase());
@@ -130,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const matchesAuthor = selectedAuthors.length === 0 || 
                 selectedAuthors.some(selectedAuthor => author.toLowerCase() === selectedAuthor);
             
-            return matchesSearch && matchesTag && matchesAuthor;
+            return matchesSearch && matchesType && matchesTag && matchesAuthor;
         });
         
         // Sort posts
@@ -207,6 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Reset filters
     function resetAllFilters() {
         searchInput.value = '';
+        if (typeChoices) typeChoices.removeActiveItems();
         if (tagChoices) tagChoices.removeActiveItems();
         if (authorChoices) authorChoices.removeActiveItems();
         sortBy.value = 'date-desc';
@@ -264,6 +274,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Initialize Choices.js with empty options
+    if (typeFilter && typeof Choices !== 'undefined') {
+        typeChoices = new Choices(typeFilter, {
+            removeItemButton: true,
+            searchEnabled: true,
+            searchPlaceholderValue: 'Type to search types...',
+            placeholder: true,
+            placeholderValue: 'Click to select types...',
+            noResultsText: 'No types found',
+            itemSelectText: '',
+            shouldSort: false,
+            duplicateItemsAllowed: false,
+            searchResultLimit: 9999,
+            searchFloor: 0,
+            searchFields: ['label'],
+            sorter: customSearch
+        });
+        
+        setupFilterEventListeners(typeFilter);
+    }
+    
     if (tagFilter && typeof Choices !== 'undefined') {
         tagChoices = new Choices(tagFilter, {
             removeItemButton: true,
@@ -311,10 +341,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Helper function to build filter options (called internally)
     function buildFilterOptionsInternal() {
+        const types = new Set();
         const tags = new Set();
         const authors = new Set();
         
         posts.forEach(post => {
+            const postType = (post.dataset.type || 'blog').trim();
+            if (postType) types.add(postType);
+            
             const postTags = (post.dataset.tags || '').split(',').filter(t => t.trim());
             postTags.forEach(tag => {
                 const trimmedTag = tag.trim();
@@ -325,13 +359,24 @@ document.addEventListener('DOMContentLoaded', function() {
             if (author) authors.add(author);
         });
         
-        // Store all available tags and authors for dynamic filtering
+        // Store all available types, tags and authors for dynamic filtering
+        allTypes = Array.from(types).sort();
         allTags = Array.from(tags).sort();
         allAuthors = Array.from(authors).sort();
     }
     
     // Function to populate initial filter options
     function updateFilterOptions() {
+        // Update type choices
+        if (typeChoices) {
+            const typeOptions = allTypes.map(type => ({
+                value: type,
+                label: type.charAt(0).toUpperCase() + type.slice(1)
+            }));
+            
+            typeChoices.setChoices(typeOptions, 'value', 'label', true);
+        }
+        
         // Update tag choices
         if (tagChoices) {
             const tagOptions = allTags.map(tag => ({
