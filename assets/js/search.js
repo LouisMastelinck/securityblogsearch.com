@@ -288,7 +288,10 @@ document.addEventListener('DOMContentLoaded', function() {
             searchResultLimit: 9999,
             searchFloor: 0,
             searchFields: ['label'],
-            sorter: customSearch
+            fuseOptions: {
+                includeScore: true
+            },
+            searchFunction: customSearch
         });
         
         setupFilterEventListeners(typeFilter);
@@ -308,7 +311,10 @@ document.addEventListener('DOMContentLoaded', function() {
             searchResultLimit: 9999,
             searchFloor: 0,
             searchFields: ['label'],
-            sorter: customSearch
+            fuseOptions: {
+                includeScore: true
+            },
+            searchFunction: customSearch
         });
         
         setupFilterEventListeners(tagFilter);
@@ -328,7 +334,10 @@ document.addEventListener('DOMContentLoaded', function() {
             searchResultLimit: 9999,
             searchFloor: 0,
             searchFields: ['label'],
-            sorter: customSearch
+            fuseOptions: {
+                includeScore: true
+            },
+            searchFunction: customSearch
         });
         
         setupFilterEventListeners(authorFilter);

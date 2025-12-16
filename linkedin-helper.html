@@ -144,12 +144,18 @@
             const tags = document.getElementById('tags').value;
             const summary = document.getElementById('summary').value;
             
-            // Generate slug from title
-            const slug = title.toLowerCase()
+            // Generate slug from title with better edge case handling
+            let slug = title.toLowerCase()
                 .replace(/[^a-z0-9\s-]/g, '')
                 .replace(/\s+/g, '-')
                 .replace(/-+/g, '-')
+                .replace(/^-+|-+$/g, '')  // Remove leading/trailing hyphens
                 .substring(0, 60);
+            
+            // Fallback if slug becomes empty
+            if (!slug) {
+                slug = 'linkedin-post';
+            }
             
             const filename = `${date}-${slug}.md`;
             
