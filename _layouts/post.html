@@ -8,18 +8,18 @@ layout: default
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "{{ page.title }}",
-  "description": "{{ page.summary | strip_html | normalize_whitespace | truncate: 160 }}",
+  "description": "{{ page.summary | default: page.excerpt | default: page.description | strip_html | normalize_whitespace | truncate: 160 }}",
   "author": {
     "@type": "Person",
-    "name": "{{ page.author }}"
+    "name": "{{ page.author | default: site.author }}"
   },
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}"{% if page.last_modified_at %},
+  "dateModified": "{{ page.last_modified_at | date_to_xmlschema }}"{% endif %},
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "{{ page.url | absolute_url }}"
-  },
-  "keywords": "{{ page.tags | join: ', ' }}",
+  }{% if page.tags and page.tags.size > 0 %},
+  "keywords": "{{ page.tags | join: ', ' }}"{% endif %},
   "url": "{{ page.url | absolute_url }}"
 }
 </script>
