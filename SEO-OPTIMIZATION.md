@@ -27,8 +27,8 @@ This document summarizes the SEO improvements made to Security Blog Search to ma
 ### 4. **Structured Data (Schema.org)** ✅
 - **Problem**: No structured data to help search engines understand the content
 - **Solution**: 
-  - Added WebSite schema with SearchAction for the homepage
-  - Added BlogPosting schema for individual blog posts
+  - Added WebSite schema for the homepage
+  - Added BlogPosting schema for individual blog posts with proper fallbacks
   - Included author, date, keywords, and description metadata
 - **Impact**: Eligible for rich snippets in search results, better understanding of content
 
@@ -44,9 +44,10 @@ This document summarizes the SEO improvements made to Security Blog Search to ma
 - **Impact**: Complete SEO foundation for the entire site
 
 ### 6. **Open Graph & Social Sharing** ✅
-- **Problem**: jekyll-seo-tag wasn't fully configured
-- **Solution**: Enhanced configuration with Twitter card settings and social metadata
+- **Problem**: jekyll-seo-tag wasn't fully configured for social sharing
+- **Solution**: Enhanced configuration with proper social metadata
 - **Impact**: Better appearance when shared on social media platforms
+- **Note**: Twitter-specific metadata not included pending verification of account ownership
 
 ## What Search Engines Will See Now
 
@@ -54,7 +55,7 @@ This document summarizes the SEO improvements made to Security Blog Search to ma
 - **Title**: Security Blog Search - Find the Best Microsoft Security Posts
 - **Description**: Discover and search thousands of Microsoft security blog posts from the community. Find insights on Azure, Defender, Entra, Intune, Sentinel, Purview, and Office 365 security.
 - **Canonical URL**: https://securityblogsearch.com/
-- **Structured Data**: WebSite with SearchAction
+- **Structured Data**: WebSite schema with name, description, and URL
 
 ### Blog Posts
 - **Title**: [Post Title] - Security Blog Search
