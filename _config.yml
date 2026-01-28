@@ -2,8 +2,21 @@
 title: Security Blog Search
 description: >-
   Search for Microsoft security blog posts written and shared by the community.
+  Discover insights on Azure, Defender, Entra, Intune, Sentinel, and more.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://securityblogsearch.com" # the base hostname & protocol for your site
+
+# SEO settings
+author: Security Blog Search Community
+lang: en
+logo: /assets/logo.png
+twitter:
+  card: summary_large_image
+  username: securityblogsearch
+social:
+  name: Security Blog Search
+  links:
+    - https://github.com/LouisMastelinck/securityblogsearch.com
 
 # Build settings
 markdown: kramdown
@@ -11,6 +24,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Defaults
 defaults:

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About Security Blog Search
+description: Learn about Security Blog Search, a community-driven platform for discovering Microsoft security blog posts on Azure, Defender, Entra, Intune, and more.
 ---
 
 <div class="container">

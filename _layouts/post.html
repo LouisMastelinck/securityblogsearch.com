@@ -2,6 +2,28 @@
 layout: default
 ---
 
+<!-- Blog Post Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title }}",
+  "description": "{{ page.summary | strip_html | normalize_whitespace | truncate: 160 }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.author }}"
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url }}"
+  },
+  "keywords": "{{ page.tags | join: ', ' }}",
+  "url": "{{ page.url | absolute_url }}"
+}
+</script>
+
 <article class="post">
     <header class="post-header">
         <h1 class="post-title">{{ page.title }}</h1>
