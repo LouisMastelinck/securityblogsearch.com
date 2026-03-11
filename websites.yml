@@ -58,4 +58,6 @@ websites:
     author: "Alex Verboon"
   - url: https://ericonidentity.com/
     author: "Erik Woodruff"
+  - url: https://www.appgovscore.com/blog
+    rss_feed: https://www.appgovscore.com/blog/rss.xml
 
