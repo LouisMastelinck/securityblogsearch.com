@@ -60,4 +60,6 @@ websites:
     author: "Erik Woodruff"
   - url: https://www.appgovscore.com/blog
     rss_feed: https://www.appgovscore.com/blog/rss.xml
+  - url: https://dominiekverham.com/
+    rss_feed: https://dominiekverham.com/feed/
 
