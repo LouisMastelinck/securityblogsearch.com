@@ -18,6 +18,16 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Check for CRAWLER_PAT secret
+        env:
+          CRAWLER_PAT: ${{ secrets.CRAWLER_PAT }}
+        run: |
+          if [ -z "$CRAWLER_PAT" ]; then
+            echo "::warning::CRAWLER_PAT secret is not set. The workflow will attempt to use the built-in github.token, but this may fail if a repository ruleset restricts branch creation by github-actions[bot]. To fix this permanently, either: (1) create a new Personal Access Token with 'repo' scope and save it as the CRAWLER_PAT secret, or (2) add 'github-actions[bot]' as a bypass actor in your repository rulesets (Settings → Rules → Rulesets)."
+          else
+            echo "CRAWLER_PAT secret is set — will use it to bypass repository rulesets."
+          fi
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
@@ -50,7 +60,7 @@ jobs:
         if: steps.crawl.outputs.new_posts == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.CRAWLER_PAT || github.token }}
           commit-message: 'Add new blog posts from automated crawl'
           branch: automated-blog-posts-${{ github.run_number }}
           delete-branch: true
