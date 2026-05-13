@@ -74,6 +74,7 @@ Add the following bypass actors (these can modify any files):
 - Repository administrators
 - Specific users (add your GitHub username: `@LouisMastelinck`)
 - GitHub Apps (add GitHub Copilot if available in your organization)
+- **`github-actions` (GitHub Actions bot, actor ID 15368)** — required so the automated crawler workflow can create `automated-blog-posts-*` branches without needing a Personal Access Token. Without this, the crawler will fail with "Cannot create ref due to creations being restricted" unless a `CRAWLER_PAT` secret is set.
 
 ### Step 3: Create "Protected Files" Ruleset (Optional)
 
@@ -244,6 +245,11 @@ jobs:
 - **Solution**: Use `pull_request_target` instead of `pull_request` in the workflow
 - **Note**: This has been fixed in the current workflow configuration
 - See: `.github/workflows/check-external-contributor-files.yml`
+
+### Issue: Crawler workflow fails with "Cannot create ref due to creations being restricted"
+- **Cause**: The `github-actions[bot]` is not in the bypass actors list of a ruleset that restricts branch creation. The crawler workflow needs to create `automated-blog-posts-*` branches.
+- **Solution (preferred)**: Add `github-actions` (GitHub App, actor ID 15368) to the bypass actors list of every ruleset that has a `creation` restriction. Go to **Settings → Rules → Rulesets**, edit each ruleset, and add it under "Bypass list".
+- **Alternative solution**: Create a Personal Access Token with `repo` scope and save it as the `CRAWLER_PAT` repository secret. The workflow is already configured to use this token when available.
 
 ## Additional Resources
 

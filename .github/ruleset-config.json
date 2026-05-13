@@ -57,6 +57,12 @@
       "actor_type": "RepositoryRole", 
       "bypass_mode": "always",
       "repository_role_name": "maintain"
+    },
+    {
+      "actor_type": "Integration",
+      "bypass_mode": "always",
+      "actor_id": 15368,
+      "actor_name": "github-actions"
     }
   ]
 }
