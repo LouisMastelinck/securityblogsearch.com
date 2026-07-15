@@ -62,4 +62,6 @@ websites:
     rss_feed: https://www.appgovscore.com/blog/rss.xml
   - url: https://dominiekverham.com/
     rss_feed: https://dominiekverham.com/feed/
+  - url: https://www.resilix.be
+    listing_url: https://www.resilix.be/blog/page/
 

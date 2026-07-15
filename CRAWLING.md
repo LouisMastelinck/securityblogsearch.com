@@ -22,10 +22,19 @@ websites:
     full_crawl: true  # Optional - force full crawl (see Crawler Optimization below)
 ```
 
+For websites without an RSS feed (e.g. Odoo CMS sites), use `listing_url` instead:
+
+```yaml
+websites:
+  - url: https://example.com
+    listing_url: https://example.com/blog/page/  # Paginated HTML listing pages
+```
+
 ### Configuration Options
 
 - **url** (required): The base URL of the website
 - **rss_feed** (optional): Direct URL to RSS/Atom feed. If not provided, the crawler will attempt to auto-detect the feed URL
+- **listing_url** (optional): Base URL for paginated HTML blog listing pages, used for sites that have no RSS feed (e.g. Odoo CMS). The page number is appended to this URL (e.g. `https://example.com/blog/page/` → `https://example.com/blog/page/1`, `…/page/2`, …). Authors are extracted from the HTML and any leading `"OrgName, "` prefix is stripped automatically.
 - **author** (optional): Default author name for posts from this site. If not provided, the crawler will extract the author from the RSS feed entries
 - **tags** (optional): List of default tags to apply to posts from this site. If not provided, the crawler will extract tags from the RSS feed categories or infer them from the post content
 - **full_crawl** (optional): Boolean flag to force a full crawl of the website. Default is `false`. See "Crawler Optimization" section below for details.

@@ -578,6 +578,138 @@ summary: "{summary}"
             print(f"Error creating file {filename}: {e}")
             return None
     
+    def crawl_html_pages(self, listing_url, base_url, paginate=True, max_posts=None):
+        """Crawl paginated HTML blog listing pages for posts (e.g. Odoo CMS sites).
+
+        Args:
+            listing_url: Base URL for paginated listing pages. Page number is appended,
+                         e.g. 'https://example.com/blog/page/' → page 1 becomes
+                         'https://example.com/blog/page/1'.
+            base_url: Base URL of the website (used to resolve relative links).
+            paginate: Whether to paginate through multiple pages.
+            max_posts: Maximum number of posts to retrieve (None for no limit).
+        """
+        all_posts = []
+        seen_links = set()
+        page = 1
+
+        while page <= self.MAX_PAGES_PER_FEED:
+            try:
+                page_url = f"{listing_url}{page}"
+                print(f"Fetching HTML listing page {page}: {page_url}")
+
+                response = requests.get(page_url, timeout=10, headers={
+                    'User-Agent': 'SecurityBlogSearch-Crawler/1.0'
+                })
+
+                if response.status_code == 404:
+                    print(f"  Page {page} not found (404), stopping pagination")
+                    break
+
+                response.raise_for_status()
+                soup = BeautifulSoup(response.content, 'html.parser')
+
+                # Find all blog post articles (Odoo-style markup)
+                articles = soup.find_all('article', attrs={'name': 'blog_post'})
+
+                if not articles:
+                    print(f"  No articles found on page {page}, stopping pagination")
+                    break
+
+                posts_on_page = 0
+                for article in articles:
+                    if max_posts is not None and len(all_posts) >= max_posts:
+                        print(f"  Reached maximum posts limit ({max_posts}), stopping")
+                        return all_posts
+
+                    # Extract link (first <a href> in the article)
+                    link_el = article.find('a', href=True)
+                    if not link_el:
+                        continue
+                    link = urljoin(base_url, link_el['href'])
+
+                    if link in seen_links:
+                        continue
+                    seen_links.add(link)
+
+                    # Extract title
+                    title_el = article.find(class_='o_blog_post_title')
+                    title = title_el.get_text().strip() if title_el else 'Untitled'
+
+                    # Extract author — strip leading "OrgName, " prefix when present
+                    author = None
+                    author_container = article.find(class_='o_wblog_post_list_author')
+                    if author_container:
+                        author_span = author_container.find('span')
+                        if author_span:
+                            raw_author = author_span.get_text().strip()
+                            if ', ' in raw_author:
+                                author = raw_author.split(', ', 1)[1]
+                            else:
+                                author = raw_author
+
+                    # Extract date
+                    date = datetime.now()
+                    time_el = article.find('time')
+                    if time_el:
+                        date_text = time_el.get_text().strip()
+                        for fmt in ('%b %d, %Y', '%B %d, %Y', '%d %b %Y', '%Y-%m-%d'):
+                            try:
+                                date = datetime.strptime(date_text, fmt)
+                                break
+                            except ValueError:
+                                continue
+
+                    # Extract summary from the article text preview
+                    summary = None
+                    for div in article.find_all(class_='o_wblog_normalize_font'):
+                        text = div.get_text().strip()
+                        if len(text) >= self.MIN_SUMMARY_LENGTH:
+                            summary = ' '.join(text.split())
+                            if len(summary) > self.MAX_SUMMARY_LENGTH:
+                                summary = summary[:self.MAX_SUMMARY_LENGTH - 3] + '...'
+                            break
+
+                    if not summary or len(summary) < self.MIN_SUMMARY_LENGTH:
+                        print(f"  Attempting to extract better summary from: {link}")
+                        extracted = self.extract_summary_from_url(link)
+                        if extracted:
+                            summary = extracted
+                            print(f"  ✓ Extracted summary from post URL")
+
+                    if not summary:
+                        summary = f"Blog post from {author if author else 'the author'}"
+
+                    entry = {'title': title, 'summary': summary}
+
+                    all_posts.append({
+                        'link': link,
+                        'title': title,
+                        'date': date,
+                        'summary': summary,
+                        'author': author,
+                        'tags': [],
+                        'entry': entry,
+                    })
+                    posts_on_page += 1
+
+                print(f"  Found {posts_on_page} posts on page {page}")
+
+                if len(all_posts) >= self.MAX_POSTS_PER_WEBSITE:
+                    print(f"  Reached maximum posts limit ({self.MAX_POSTS_PER_WEBSITE}), stopping")
+                    break
+
+                if not paginate:
+                    break
+
+                page += 1
+
+            except Exception as e:
+                print(f"Error crawling HTML listing page {page}: {e}")
+                break
+
+        return all_posts
+
     def crawl_website(self, website_config):
         """Crawl a single website for new posts."""
         url = website_config.get('url')
@@ -602,19 +734,24 @@ summary: "{summary}"
         
         print(f"Scan mode: {scan_mode}")
         
-        # Get or find feed URL
+        # Determine crawl method: RSS feed or HTML listing pages
         feed_url = website_config.get('rss_feed')
-        if not feed_url:
+        listing_url = website_config.get('listing_url')
+
+        if not feed_url and not listing_url:
             print("No RSS feed specified, attempting auto-detection...")
             feed_url = self.find_feed_url(url)
-            if not feed_url:
-                print(f"Could not find RSS feed for {url}")
-                return
-        
-        print(f"Using feed: {feed_url}")
-        
-        # Crawl the feed with appropriate limits
-        posts = self.crawl_rss_feed(feed_url, url, paginate=(max_posts is None), max_posts=max_posts)
+
+        if feed_url:
+            print(f"Using feed: {feed_url}")
+            posts = self.crawl_rss_feed(feed_url, url, paginate=(max_posts is None), max_posts=max_posts)
+        elif listing_url:
+            print(f"Using HTML listing pages: {listing_url}")
+            posts = self.crawl_html_pages(listing_url, url, paginate=(max_posts is None), max_posts=max_posts)
+        else:
+            print(f"Could not find RSS feed for {url} and no listing_url configured")
+            return
+
         print(f"Found {len(posts)} total posts")
         
         # Filter new posts

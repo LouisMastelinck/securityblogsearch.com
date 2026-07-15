@@ -86,6 +86,13 @@ def validate_websites_yml(config_path='websites.yml'):
                 for tag in tags:
                     if not isinstance(tag, str):
                         errors.append(f"Website #{i+1} ({url}): Each tag must be a string")
+        
+        if 'listing_url' in website:
+            listing_url = website.get('listing_url')
+            if listing_url is not None and not isinstance(listing_url, str):
+                errors.append(f"Website #{i+1} ({url}): 'listing_url' must be a string or omitted")
+            elif isinstance(listing_url, str) and not listing_url.startswith(('http://', 'https://')):
+                warnings.append(f"Website #{i+1} ({url}): 'listing_url' should start with http:// or https://")
     
     return errors, warnings
 
