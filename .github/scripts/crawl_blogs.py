@@ -578,16 +578,23 @@ summary: "{summary}"
             print(f"Error creating file {filename}: {e}")
             return None
     
-    def crawl_html_pages(self, listing_url, base_url, paginate=True, max_posts=None):
-        """Crawl paginated HTML blog listing pages for posts (e.g. Odoo CMS sites).
+    def crawl_html_pages(self, listing_url, base_url, paginate=True, max_posts=None, author_prefix=None):
+        """Crawl paginated HTML blog listing pages for posts (Odoo CMS sites).
+
+        This method targets the Odoo CMS blog markup, looking for
+        ``<article name="blog_post">`` elements on each listing page.
 
         Args:
-            listing_url: Base URL for paginated listing pages. Page number is appended,
-                         e.g. 'https://example.com/blog/page/' → page 1 becomes
-                         'https://example.com/blog/page/1'.
+            listing_url: Base URL for paginated listing pages. Page number is
+                         appended, e.g. 'https://example.com/blog/page/' yields
+                         'https://example.com/blog/page/1', '…/page/2', etc.
             base_url: Base URL of the website (used to resolve relative links).
             paginate: Whether to paginate through multiple pages.
             max_posts: Maximum number of posts to retrieve (None for no limit).
+            author_prefix: Optional prefix to strip from extracted author names,
+                           e.g. 'Resilix, ' to turn 'Resilix, Jane Doe' into
+                           'Jane Doe'. Only this exact prefix is removed, so
+                           author names that do not start with it are left as-is.
         """
         all_posts = []
         seen_links = set()
@@ -609,7 +616,7 @@ summary: "{summary}"
                 response.raise_for_status()
                 soup = BeautifulSoup(response.content, 'html.parser')
 
-                # Find all blog post articles (Odoo-style markup)
+                # Find all blog post articles (Odoo CMS markup)
                 articles = soup.find_all('article', attrs={'name': 'blog_post'})
 
                 if not articles:
@@ -636,19 +643,19 @@ summary: "{summary}"
                     title_el = article.find(class_='o_blog_post_title')
                     title = title_el.get_text().strip() if title_el else 'Untitled'
 
-                    # Extract author — strip leading "OrgName, " prefix when present
+                    # Extract author; strip a configurable org prefix when present
                     author = None
                     author_container = article.find(class_='o_wblog_post_list_author')
                     if author_container:
                         author_span = author_container.find('span')
                         if author_span:
                             raw_author = author_span.get_text().strip()
-                            if ', ' in raw_author:
-                                author = raw_author.split(', ', 1)[1]
+                            if author_prefix and raw_author.startswith(author_prefix):
+                                author = raw_author[len(author_prefix):]
                             else:
                                 author = raw_author
 
-                    # Extract date
+                    # Extract date; fall back to today (consistent with RSS crawler)
                     date = datetime.now()
                     time_el = article.find('time')
                     if time_el:
@@ -747,7 +754,8 @@ summary: "{summary}"
             posts = self.crawl_rss_feed(feed_url, url, paginate=(max_posts is None), max_posts=max_posts)
         elif listing_url:
             print(f"Using HTML listing pages: {listing_url}")
-            posts = self.crawl_html_pages(listing_url, url, paginate=(max_posts is None), max_posts=max_posts)
+            author_prefix = website_config.get('author_prefix')
+            posts = self.crawl_html_pages(listing_url, url, paginate=(max_posts is None), max_posts=max_posts, author_prefix=author_prefix)
         else:
             print(f"Could not find RSS feed for {url} and no listing_url configured")
             return

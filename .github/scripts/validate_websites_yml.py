@@ -93,6 +93,11 @@ def validate_websites_yml(config_path='websites.yml'):
                 errors.append(f"Website #{i+1} ({url}): 'listing_url' must be a string or omitted")
             elif isinstance(listing_url, str) and not listing_url.startswith(('http://', 'https://')):
                 warnings.append(f"Website #{i+1} ({url}): 'listing_url' should start with http:// or https://")
+        
+        if 'author_prefix' in website:
+            author_prefix = website.get('author_prefix')
+            if author_prefix is not None and not isinstance(author_prefix, str):
+                errors.append(f"Website #{i+1} ({url}): 'author_prefix' must be a string or omitted")
     
     return errors, warnings
 
