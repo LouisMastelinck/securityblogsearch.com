@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Major data lake changes in Microsoft Sentinel September 2026 Update"
+author: "Truls Dahlsveen"
+date: 2026-09-24
+tags: [microsoft-sentinel, microsoft-defender-xdr, data-lake, microsoft-fabric]
+link: "https://infernux.no/blog/microsoft-sentinel-september-2026/"
+summary: "Sentinel Data Lake onboarding is now integrated, Advanced Hunting supports interactive queries against Data Lake data, and Fabric integration has expanded."
+---
